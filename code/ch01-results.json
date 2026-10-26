@@ -1,0 +1,57 @@
+{
+  "flow_exact_mean": 2,
+  "flow_exact_variance": 4,
+  "flow_euler": [
+    {
+      "steps": 4,
+      "mean": 1.7900656022648387,
+      "variance": 3.5911493173677838,
+      "mean_error": 0.20993439773516132
+    },
+    {
+      "steps": 16,
+      "mean": 1.9420473192213277,
+      "variance": 3.884934266745014,
+      "mean_error": 0.05795268077867233
+    },
+    {
+      "steps": 64,
+      "mean": 1.9851211182279318,
+      "variance": 3.97029758173656,
+      "mean_error": 0.014878881772068198
+    },
+    {
+      "steps": 256,
+      "mean": 1.9962549767484807,
+      "variance": 3.99251345979675,
+      "mean_error": 0.003745023251519264
+    }
+  ],
+  "ou_exact_at_one": {
+    "mean": 1.2642411176571153,
+    "variance": 3.593994150290163
+  },
+  "ou_euler_four_steps": {
+    "mean": 1.3671875,
+    "variance": 4.213882446289063
+  },
+  "ou_euler_stationary_variance_h_quarter": 4.571428571428571,
+  "brownian_scaling": [
+    {
+      "steps": 4,
+      "correct_variance": 1.0,
+      "incorrect_h_variance": 0.25
+    },
+    {
+      "steps": 16,
+      "correct_variance": 1.0,
+      "incorrect_h_variance": 0.0625
+    },
+    {
+      "steps": 64,
+      "correct_variance": 1.0,
+      "incorrect_h_variance": 0.015625
+    }
+  ],
+  "scope": "analytic Gaussian moments and discrete recurrence checks; no training"
+}

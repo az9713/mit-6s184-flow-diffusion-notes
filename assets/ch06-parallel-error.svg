@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="390" viewBox="0 0 900 390" role="img" aria-labelledby="title desc">
+<title id="title">Parallel step error in a correlated target</title>
+<desc id="desc">Invalid sequences 01 or 10 have probability one over twice the number of parallel steps. Exact event sampling has zero invalid mass.</desc>
+<rect width="900" height="390" fill="#101827"/>
+<g fill="#e2e8f0" font-family="sans-serif">
+<text x="45" y="38" font-size="23">Correct token marginals can hide a wrong joint law</text>
+<text x="45" y="70" font-size="16">Target: P(00)=P(11)=1/2; invalid: 01 or 10</text>
+<path d="M80 110V300H840" stroke="#94a3b8" fill="none"/>
+<rect x="135" y="130.0" width="85" height="170.0" fill="#f59e0b"/>
+<text x="177.5" y="115.0" text-anchor="middle" font-size="16">0.5</text>
+<text x="177.5" y="326" text-anchor="middle" font-size="16">1 steps</text>
+<rect x="310" y="257.5" width="85" height="42.5" fill="#f59e0b"/>
+<text x="352.5" y="242.5" text-anchor="middle" font-size="16">0.125</text>
+<text x="352.5" y="326" text-anchor="middle" font-size="16">4 steps</text>
+<rect x="485" y="289.375" width="85" height="10.625" fill="#f59e0b"/>
+<text x="527.5" y="274.375" text-anchor="middle" font-size="16">0.03125</text>
+<text x="527.5" y="326" text-anchor="middle" font-size="16">16 steps</text>
+<rect x="660" y="297.34375" width="85" height="2.65625" fill="#f59e0b"/>
+<text x="702.5" y="282.34375" text-anchor="middle" font-size="16">0.0078125</text>
+<text x="702.5" y="326" text-anchor="middle" font-size="16">64 steps</text>
+<text x="80" y="366" font-size="16">Exact event-time process: invalid mass = 0 at every time.</text>
+</g></svg>

@@ -1,0 +1,487 @@
+{
+  "created_at": "2026-10-26T16:40:38.330966+00:00",
+  "experiment": "Conditional flow regression with fitted affine time bins",
+  "model_class": "One affine scalar function per time bin; no neural network",
+  "data": {
+    "clean": "Z~N(2,4)",
+    "noise": "epsilon~N(0,1), independent",
+    "bridge": "X_t=tZ+(1-t)epsilon",
+    "target": "V=Z-epsilon",
+    "time": "Independent uniform t on [0,1)"
+  },
+  "configuration": {
+    "bins": 32,
+    "training_samples": 300000,
+    "heldout_samples": 200000,
+    "generated_samples": 20000,
+    "euler_steps": 1024,
+    "training_seed": 1842026,
+    "heldout_seed": 1842027,
+    "generation_seed": 1842028,
+    "python": "3.13.5",
+    "dependencies": "Python standard library only"
+  },
+  "training": {
+    "empirical_cfm_loss": 3.140799134703582,
+    "bin_counts": [
+      9306,
+      9255,
+      9439,
+      9385,
+      9399,
+      9406,
+      9358,
+      9212,
+      9272,
+      9329,
+      9385,
+      9234,
+      9393,
+      9410,
+      9496,
+      9456,
+      9313,
+      9256,
+      9553,
+      9336,
+      9517,
+      9516,
+      9352,
+      9221,
+      9214,
+      9370,
+      9336,
+      9133,
+      9579,
+      9643,
+      9380,
+      9546
+    ],
+    "coefficients": [
+      {
+        "bin": 0,
+        "left": 0.0,
+        "right": 0.03125,
+        "fitted_slope": -0.9548696124598214,
+        "fitted_intercept": 2.0029848028433057,
+        "population_slope": -0.9496981891348089,
+        "population_intercept": 2.0296780684104627
+      },
+      {
+        "bin": 1,
+        "left": 0.03125,
+        "right": 0.0625,
+        "fitted_slope": -0.8417527533073932,
+        "fitted_intercept": 2.0648965765320626,
+        "population_slope": -0.8340425531914893,
+        "population_intercept": 2.078191489361702
+      },
+      {
+        "bin": 2,
+        "left": 0.0625,
+        "right": 0.09375,
+        "fitted_slope": -0.7011945956580168,
+        "fitted_intercept": 2.1314830993284555,
+        "population_slope": -0.6964285714285714,
+        "population_intercept": 2.1088169642857144
+      },
+      {
+        "bin": 3,
+        "left": 0.09375,
+        "right": 0.125,
+        "fitted_slope": -0.5635269423891044,
+        "fitted_intercept": 2.119789021584317,
+        "population_slope": -0.5382830626450116,
+        "population_intercept": 2.1177494199535962
+      },
+      {
+        "bin": 4,
+        "left": 0.125,
+        "right": 0.15625,
+        "fitted_slope": -0.3710829780682225,
+        "fitted_intercept": 2.1159892783038066,
+        "population_slope": -0.3627684964200477,
+        "population_intercept": 2.1020286396181382
+      },
+      {
+        "bin": 5,
+        "left": 0.15625,
+        "right": 0.1875,
+        "fitted_slope": -0.1765273737471347,
+        "fitted_intercept": 2.0341206713910056,
+        "population_slope": -0.17475728155339806,
+        "population_intercept": 2.0600728155339807
+      },
+      {
+        "bin": 6,
+        "left": 0.1875,
+        "right": 0.21875,
+        "fitted_slope": -0.030661488127083608,
+        "fitted_intercept": 1.9864061176316934,
+        "population_slope": 0.01951219512195122,
+        "population_intercept": 1.9920731707317074
+      },
+      {
+        "bin": 7,
+        "left": 0.21875,
+        "right": 0.25,
+        "fitted_slope": 0.2068374257562095,
+        "fitted_intercept": 1.902303535554684,
+        "population_slope": 0.21307506053268765,
+        "population_intercept": 1.9001210653753027
+      },
+      {
+        "bin": 8,
+        "left": 0.25,
+        "right": 0.28125,
+        "fitted_slope": 0.3934055227631513,
+        "fitted_intercept": 1.7735107420056464,
+        "population_slope": 0.3990498812351544,
+        "population_intercept": 1.7880047505938244
+      },
+      {
+        "bin": 9,
+        "left": 0.28125,
+        "right": 0.3125,
+        "fitted_slope": 0.5962071167374885,
+        "fitted_intercept": 1.6312517668444104,
+        "population_slope": 0.5714285714285714,
+        "population_intercept": 1.6607142857142858
+      },
+      {
+        "bin": 10,
+        "left": 0.3125,
+        "right": 0.34375,
+        "fitted_slope": 0.7010525379528819,
+        "fitted_intercept": 1.54045138907595,
+        "population_slope": 0.7256637168141593,
+        "population_intercept": 1.523783185840708
+      },
+      {
+        "bin": 11,
+        "left": 0.34375,
+        "right": 0.375,
+        "fitted_slope": 0.861491142725365,
+        "fitted_intercept": 1.3839172534814925,
+        "population_slope": 0.8589473684210527,
+        "population_intercept": 1.3826315789473684
+      },
+      {
+        "bin": 12,
+        "left": 0.375,
+        "right": 0.40625,
+        "fitted_slope": 0.9698981866573726,
+        "fitted_intercept": 1.2532421401680383,
+        "population_slope": 0.9701789264413518,
+        "population_intercept": 1.2420477137176937
+      },
+      {
+        "bin": 13,
+        "left": 0.40625,
+        "right": 0.4375,
+        "fitted_slope": 1.0497140120990085,
+        "fitted_intercept": 1.1342820456106808,
+        "population_slope": 1.0597014925373134,
+        "population_intercept": 1.1058768656716418
+      },
+      {
+        "bin": 14,
+        "left": 0.4375,
+        "right": 0.46875,
+        "fitted_slope": 1.119292780726886,
+        "fitted_intercept": 0.9578470097624918,
+        "population_slope": 1.1289198606271778,
+        "population_intercept": 0.9769163763066202
+      },
+      {
+        "bin": 15,
+        "left": 0.46875,
+        "right": 0.5,
+        "fitted_slope": 1.1883621431247433,
+        "fitted_intercept": 0.8568351360819002,
+        "population_slope": 1.179902755267423,
+        "population_intercept": 0.8569692058346838
+      },
+      {
+        "bin": 16,
+        "left": 0.5,
+        "right": 0.53125,
+        "fitted_slope": 1.2111833752847545,
+        "fitted_intercept": 0.7382841822988697,
+        "population_slope": 1.2150375939849625,
+        "population_intercept": 0.7469924812030075
+      },
+      {
+        "bin": 17,
+        "left": 0.53125,
+        "right": 0.5625,
+        "fitted_slope": 1.2507053069301912,
+        "fitted_intercept": 0.6254834712913286,
+        "population_slope": 1.2367688022284122,
+        "population_intercept": 0.6472841225626742
+      },
+      {
+        "bin": 18,
+        "left": 0.5625,
+        "right": 0.59375,
+        "fitted_slope": 1.258945412511788,
+        "fitted_intercept": 0.5286161835685843,
+        "population_slope": 1.2474226804123711,
+        "population_intercept": 0.5576675257731958
+      },
+      {
+        "bin": 19,
+        "left": 0.59375,
+        "right": 0.625,
+        "fitted_slope": 1.2399691597359699,
+        "fitted_intercept": 0.4967185837156449,
+        "population_slope": 1.2491060786650774,
+        "population_intercept": 0.477651966626937
+      },
+      {
+        "bin": 20,
+        "left": 0.625,
+        "right": 0.65625,
+        "fitted_slope": 1.237066227513769,
+        "fitted_intercept": 0.4235693133026557,
+        "population_slope": 1.2436604189636162,
+        "population_intercept": 0.4065600882028666
+      },
+      {
+        "bin": 21,
+        "left": 0.65625,
+        "right": 0.6875,
+        "fitted_slope": 1.2254902566169064,
+        "fitted_intercept": 0.3506988759713876,
+        "population_slope": 1.2326530612244897,
+        "population_intercept": 0.34362244897959204
+      },
+      {
+        "bin": 22,
+        "left": 0.6875,
+        "right": 0.71875,
+        "fitted_slope": 1.2296725817651981,
+        "fitted_intercept": 0.30368761783914366,
+        "population_slope": 1.2173913043478262,
+        "population_intercept": 0.2880434782608694
+      },
+      {
+        "bin": 23,
+        "left": 0.71875,
+        "right": 0.75,
+        "fitted_slope": 1.2123038428310982,
+        "fitted_intercept": 0.22305120009021917,
+        "population_slope": 1.1989482909728308,
+        "population_intercept": 0.23904469763365466
+      },
+      {
+        "bin": 24,
+        "left": 0.75,
+        "right": 0.78125,
+        "fitted_slope": 1.1765159053780088,
+        "fitted_intercept": 0.18656819334631014,
+        "population_slope": 1.178193653376729,
+        "population_intercept": 0.19589096826688368
+      },
+      {
+        "bin": 25,
+        "left": 0.78125,
+        "right": 0.8125,
+        "fitted_slope": 1.162405482450651,
+        "fitted_intercept": 0.14358051375519776,
+        "population_slope": 1.1558245083207261,
+        "population_intercept": 0.15790468986384276
+      },
+      {
+        "bin": 26,
+        "left": 0.8125,
+        "right": 0.84375,
+        "fitted_slope": 1.1332144413183118,
+        "fitted_intercept": 0.11245264415918288,
+        "population_slope": 1.1323943661971831,
+        "population_intercept": 0.12447183098591541
+      },
+      {
+        "bin": 27,
+        "left": 0.84375,
+        "right": 0.875,
+        "fitted_slope": 1.1035320844393928,
+        "fitted_intercept": 0.11595779795467664,
+        "population_slope": 1.108338804990151,
+        "population_intercept": 0.09504267892317797
+      },
+      {
+        "bin": 28,
+        "left": 0.875,
+        "right": 0.90625,
+        "fitted_slope": 1.0878824545067385,
+        "fitted_intercept": 0.05046430591632123,
+        "population_slope": 1.0839975475168608,
+        "population_intercept": 0.06912936848559159
+      },
+      {
+        "bin": 29,
+        "left": 0.90625,
+        "right": 0.9375,
+        "fitted_slope": 1.046294659154021,
+        "fitted_intercept": 0.06071292167501241,
+        "population_slope": 1.0596330275229358,
+        "population_intercept": 0.046301605504587284
+      },
+      {
+        "bin": 30,
+        "left": 0.9375,
+        "right": 0.96875,
+        "fitted_slope": 1.0457283274397595,
+        "fitted_intercept": 0.0010768044800910648,
+        "population_slope": 1.0354457572502684,
+        "population_intercept": 0.026181525241675718
+      },
+      {
+        "bin": 31,
+        "left": 0.96875,
+        "right": 1.0,
+        "fitted_slope": 1.0140429188178859,
+        "fitted_intercept": -0.009978037045798693,
+        "population_slope": 1.0115869017632242,
+        "population_intercept": 0.008438287153652357
+      }
+    ]
+  },
+  "population_risk": {
+    "oracle_cfm_loss": 3.141592653589793,
+    "population_bin_optimum_cfm_loss": 3.142705089709533,
+    "fitted_model_cfm_loss": 3.14315158329486,
+    "time_bin_class_excess": 0.001112436119739879,
+    "finite_training_sample_excess": 0.00044649358532700134,
+    "total_fm_loss": 0.0015589297050668804,
+    "note": "Exact Gaussian moment integration for the frozen fitted coefficients; not Monte Carlo evaluation."
+  },
+  "heldout": {
+    "samples": 200000,
+    "model_cfm_loss": 3.1360815260184287,
+    "oracle_cfm_loss": 3.134447345886186,
+    "oracle_population_cfm_loss": 3.141592653589793,
+    "model_loss_standard_error": 0.011282959454911302,
+    "oracle_loss_standard_error": 0.011276388705873913,
+    "paired_model_minus_oracle": 0.001634180132242695,
+    "paired_difference_standard_error": 0.0003469501177003402,
+    "difference_note": "Paired samples reduce comparison noise; the empirical difference may be negative even though population excess risk is nonnegative."
+  },
+  "terminal": {
+    "target_exact": {
+      "scale": 2,
+      "mean": 2,
+      "standard_deviation": 2,
+      "variance": 4,
+      "mean_error": 0,
+      "standard_deviation_error": 0,
+      "gaussian_w2_to_target": 0.0
+    },
+    "oracle_smooth_euler": {
+      "scale": 1.9971080528432281,
+      "mean": 2.0,
+      "standard_deviation": 1.9971080528432281,
+      "variance": 3.98844057473127,
+      "mean_error": 0.0,
+      "standard_deviation_error": -0.002891947156771879,
+      "gaussian_w2_to_target": 0.002891947156771879
+    },
+    "population_time_bins_exact_integration": {
+      "scale": 1.9997559332604136,
+      "mean": 1.9997562059443772,
+      "standard_deviation": 1.9997559332604136,
+      "variance": 3.9990237926102274,
+      "mean_error": -0.00024379405562280354,
+      "standard_deviation_error": -0.00024406673958643488,
+      "gaussian_w2_to_target": 0.00034496973045379975
+    },
+    "fitted_time_bins_exact_integration": {
+      "scale": 1.993815069575789,
+      "mean": 1.9926922864349546,
+      "standard_deviation": 1.993815069575789,
+      "variance": 3.9752985316675082,
+      "mean_error": -0.007307713565045448,
+      "standard_deviation_error": -0.006184930424210977,
+      "gaussian_w2_to_target": 0.009573716201197936
+    },
+    "fitted_time_bins_euler": {
+      "scale": 1.9928758482410232,
+      "mean": 1.9917260166344137,
+      "standard_deviation": 1.9928758482410232,
+      "variance": 3.9715541465023776,
+      "mean_error": -0.008273983365586268,
+      "standard_deviation_error": -0.007124151758976849,
+      "gaussian_w2_to_target": 0.010918440319886865
+    },
+    "error_decomposition": {
+      "representation_and_time_bin_error": [
+        -0.00024406673958643488,
+        -0.00024379405562280354
+      ],
+      "finite_training_sample_error": [
+        -0.005940863684624542,
+        -0.007063919509422645
+      ],
+      "euler_solver_error": [
+        -0.0009392213347658718,
+        -0.0009662698005408199
+      ],
+      "total_terminal_error": [
+        -0.007124151758976849,
+        -0.008273983365586268
+      ],
+      "coordinate_order": [
+        "scale",
+        "mean"
+      ],
+      "note": "Signed coordinate differences telescope exactly; squared W2 errors are not additive."
+    }
+  },
+  "generated_sample": {
+    "samples": 20000,
+    "sample_mean": 1.9894181553491537,
+    "sample_variance": 3.9967169677355048,
+    "sample_standard_deviation": 1.9991790734537775,
+    "mean_standard_error_under_generated_law": 0.014091760263541205,
+    "variance_standard_error_under_generated_law": 0.03971653439079527,
+    "ks_to_target": 0.00499527369203423,
+    "ks_to_generated_exact_law": 0.003383743343686074,
+    "ks_note": "Descriptive empirical CDF discrepancies; no p-value or distributional guarantee is inferred."
+  },
+  "solver_refinement": [
+    {
+      "steps": 256,
+      "oracle_smooth_w2_to_target": 0.011542813955041975,
+      "fitted_solver_coordinate_error_norm": 0.005373421852908639,
+      "fitted_total_w2_to_target": 0.014938870704513846
+    },
+    {
+      "steps": 512,
+      "oracle_smooth_w2_to_target": 0.005779721783226943,
+      "fitted_solver_coordinate_error_norm": 0.0026922600350622506,
+      "fitted_total_w2_to_target": 0.012260976201581791
+    },
+    {
+      "steps": 1024,
+      "oracle_smooth_w2_to_target": 0.002891947156771879,
+      "fitted_solver_coordinate_error_norm": 0.0013475214443995247,
+      "fitted_total_w2_to_target": 0.010918440319886865
+    },
+    {
+      "steps": 2048,
+      "oracle_smooth_w2_to_target": 0.0014464960934923443,
+      "fitted_solver_coordinate_error_norm": 0.0006741090995670467,
+      "fitted_total_w2_to_target": 0.010246337552237155
+    }
+  ],
+  "limitations": [
+    "Synthetic one-dimensional Gaussian target only.",
+    "Affine least squares has an analytic solution; this does not reproduce neural optimization.",
+    "Time binning restricts the fitted function class.",
+    "One training seed is not a study of training variability.",
+    "Population-risk and Gaussian W2 diagnostics rely on this exact synthetic model.",
+    "Terminal first and second moments determine these Gaussian laws, but would not determine a general distribution."
+  ],
+  "runtime_seconds": 0.8830614000034984
+}

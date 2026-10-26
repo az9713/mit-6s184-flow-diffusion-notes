@@ -1,0 +1,24 @@
+<h1>Numerical laboratory</h1>
+<p>Each available chapter links to a runnable numerical check with its input model, actual output, and limitations. These original constructions use explicit low-dimensional laws so numerical discrepancies can be compared with exact answers.</p>
+<p>The course's own labs are linked from the <a href="https://diffusion.csail.mit.edu/2026/index.html#labs">2026 course page</a>: ODEs and SDEs; flow matching and score matching; diffusion transformers and variational autoencoders. Those third-party notebooks are not redistributed here. They may require PyTorch, training time, and external datasets.</p>
+<h2 id="programs">Portable chapter programs</h2>
+<p>The list below follows the manuscripts currently available in this reading edition. A chapter's status remains visible on its own page. Saved results retain the assumptions, configuration, and scope of the corresponding computation.</p>
+<!-- CHAPTER-PROGRAMS -->
+<h2 id="verification-sequence">A verification sequence for a learned sampler</h2>
+<ol>
+<li><strong>Start with a tractable law.</strong> Specify the source, target, time path, and any conditioning. Derive exact moments or probabilities before fitting a model.</li>
+<li><strong>Check the target used for regression.</strong> The conditional training target and its posterior average have different roles. The finite-risk projection identity explains why the former can train the latter.</li>
+<li><strong>Fit a declared model class.</strong> Chapter 2 actually fits one affine function per time bin from synthetic Gaussian bridge samples. This is parameter fitting with heldout evaluation, rather than neural image training. Compare the finite fit with the best member of the chosen class and with the unrestricted oracle.</li>
+<li><strong>Freeze the model before refining the solver.</strong> Changing model parameters and step count together confounds learning and discretization. Compare numerical integration with the exact flow when that flow can be calculated.</li>
+<li><strong>Compare complete laws when available.</strong> Mean and variance determine the Gaussian examples here, but do not determine arbitrary non-Gaussian distributions. The finite-state chapter can compare its entire probability vector.</li>
+<li><strong>Probe a deliberate error.</strong> Wrong Brownian scaling, an omitted score correction, a mistaken guidance interpretation, or a transposed rate matrix should fail an appropriate diagnostic. A diagnostic that cannot detect its intended error is insufficient for that purpose.</li>
+</ol>
+<p>The numerical programs are small enough to inspect. Exact finite-model calculations, statistical fitting checks, and solver-refinement studies supply different evidence. None reproduces the image-model benchmarks in the cited research.</p>
+<h2 id="run-checks">Rebuild and check the reader</h2>
+<p>From the extracted book directory, use the following commands. Rendering uses Python's standard library. The validators require the pinned packages in <a href="requirements.txt">requirements.txt</a>; browser checks also require an installed supported Chrome or Playwright Chromium. Reading the already-built book uses its bundled assets.</p>
+<pre><code class="language-text">python tools/build_book.py
+python tools/check_chapter_code.py
+python tools/validate_book.py --browser</code></pre>
+<p>The execution checker copies programs into a temporary book before running them. This matters because some programs deliberately write their result files. It compares regenerated numerical results with the saved records while excluding declared creation-time and runtime fields. Scientific review of the mathematics and exercise solutions remains a separate gate.</p>
+<h2 id="project">A cumulative project</h2>
+<p>Build a sampler evaluation workbench around a distribution with a known answer. Keep the chosen law, fitted field, solver settings, random seeds, and results as separate saved records. Add conditional generation only after the unconditional case passes. Then test whether changing guidance, latent representation, or the state space preserves the particular properties you intended to preserve. The chapter counterexamples supply concrete failure cases for that workbench.</p>

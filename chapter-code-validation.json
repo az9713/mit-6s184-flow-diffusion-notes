@@ -1,0 +1,114 @@
+{
+  "checked_at": "2026-10-26T19:05:40.271273+00:00",
+  "status": "passed",
+  "chapters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "checks": [
+    {
+      "chapter": 1,
+      "listing": 1,
+      "exit_code": 0,
+      "displayed_output_checked": true,
+      "displayed_output_matches": true,
+      "code_sha256": "8e4037e91fcc54272be9ee1f2df1f2211ce8526d49cd1eb113dde53977564d6e"
+    },
+    {
+      "chapter": 1,
+      "program": "ch01.py",
+      "exit_code": 0,
+      "saved_json_matches_except_declared_volatile_fields": true,
+      "code_sha256": "3c7a30d89c5c8b33994d74d3a068db92c167dffd6e583da8cd1f3fc36d07064d"
+    },
+    {
+      "chapter": 2,
+      "listing": 1,
+      "exit_code": 0,
+      "displayed_output_checked": true,
+      "displayed_output_matches": true,
+      "code_sha256": "eeed53d2d6c21ed66093b86badb5b77653bb1cd8d47c5960810f77dc87525683"
+    },
+    {
+      "chapter": 2,
+      "program": "ch02.py",
+      "exit_code": 0,
+      "saved_json_matches_except_declared_volatile_fields": true,
+      "code_sha256": "37cbf38d2a10c9d39932bf536827476bcf93bddda4dd3eb85f7c2f1f3877faf6"
+    },
+    {
+      "chapter": 3,
+      "listing": 1,
+      "exit_code": 0,
+      "displayed_output_checked": true,
+      "displayed_output_matches": true,
+      "code_sha256": "1ca5ae56c4abc403988bc62e1f9e8f6cba4d24d76a52d74136f19c498a01314c"
+    },
+    {
+      "chapter": 3,
+      "program": "ch03.py",
+      "exit_code": 0,
+      "saved_json_matches_except_declared_volatile_fields": true,
+      "code_sha256": "2ba9c9dfe5776dc678426ddd3cc14a0648a8c8b2354f52af42683a920dece52d"
+    },
+    {
+      "chapter": 4,
+      "listing": 1,
+      "exit_code": 0,
+      "displayed_output_checked": true,
+      "displayed_output_matches": true,
+      "code_sha256": "13226d4e352000477469004b7b3d1718545b5cdeb995941aef20d1ac53a067f6"
+    },
+    {
+      "chapter": 4,
+      "program": "ch04.py",
+      "exit_code": 0,
+      "saved_json_matches_except_declared_volatile_fields": true,
+      "code_sha256": "2194097d9f405b2097e75e6c279fa80bc83d1c24faec53f4e79da4f9b8fd8651"
+    },
+    {
+      "chapter": 5,
+      "listing": 1,
+      "exit_code": 0,
+      "displayed_output_checked": false,
+      "displayed_output_matches": true,
+      "code_sha256": "3771838f89ccc229bf75170f017b14154306502d50d1a450770a7ecc6e4fae4d"
+    },
+    {
+      "chapter": 5,
+      "program": "ch05.py",
+      "exit_code": 0,
+      "saved_json_matches_except_declared_volatile_fields": true,
+      "code_sha256": "757d914946bc766ce0e875faf27aa81b248c0b749b424ba3a3d0b02318404956"
+    },
+    {
+      "chapter": 6,
+      "listing": 1,
+      "exit_code": 0,
+      "displayed_output_checked": false,
+      "displayed_output_matches": true,
+      "code_sha256": "045d3ea76cb6935fe1727e1b8c902752355f0299d5160cfc90c33671a2217d45"
+    },
+    {
+      "chapter": 6,
+      "program": "ch06.py",
+      "exit_code": 0,
+      "saved_json_matches_except_declared_volatile_fields": true,
+      "code_sha256": "31cdf5fd4d72e236d889477f7aa643102f401ec20ddcbbf1823d9a78902d81a5"
+    }
+  ],
+  "failures": [],
+  "volatile_fields_excluded_from_json_comparison": [
+    "created_at",
+    "elapsed_s",
+    "elapsed_seconds",
+    "runtime_s",
+    "runtime_seconds",
+    "wall_time_seconds"
+  ],
+  "scope": "actual isolated listing/program execution and stated output checks; independent scientific arithmetic review is separate"
+}

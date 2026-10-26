@@ -1,0 +1,74 @@
+{
+  "status": "complete",
+  "accepted_chapter_count": 6,
+  "planned_chapter_count": 6,
+  "chapters": [
+    {
+      "chapter": 1,
+      "verdict": "accepted",
+      "rounds": 2,
+      "blocking_findings_remaining": 0,
+      "accepted_body_sha256": "6dfaeeabf778217e7de8eadb9d45549f5268dc85c31d366c3dba44af87bc5ae7",
+      "independent_numeric_checks": "passed",
+      "worked_solutions_independently_checked": 6,
+      "scope": "scientific content of exact authored body; local mechanical checks separately recorded"
+    },
+    {
+      "chapter": 2,
+      "verdict": "accepted",
+      "rounds": 1,
+      "blocking_findings_remaining": 0,
+      "accepted_body_sha256": "aba79645cb38e69186cc338c8f920a5e5388826fc20a285d2fbb7831cb006eaf",
+      "independent_numeric_checks": "passed",
+      "worked_solutions_independently_checked": 6,
+      "scope": "scientific content and actual finite fitted-model experiment; reader checks separately recorded"
+    },
+    {
+      "chapter": 3,
+      "verdict": "accepted",
+      "rounds": 1,
+      "blocking_findings_remaining": 0,
+      "accepted_body_sha256": "907b3b2baf57382122b897ec89d940cdced4d365d965bc1974931f8ef53b3c1a",
+      "independent_numeric_checks": "passed",
+      "worked_solutions_independently_checked": 6,
+      "scope": "scientific content of exact authored fragment; local reader checks separately recorded"
+    },
+    {
+      "chapter": 4,
+      "verdict": "accepted",
+      "rounds": 2,
+      "blocking_findings_remaining": 0,
+      "accepted_body_sha256": "0e1f78efd05614c863fc1b2021efc15487fd1abbecc43abbf69e96b70473b5e6",
+      "independent_numeric_checks": "passed",
+      "worked_solutions_independently_checked": 6,
+      "scope": "scientific content and supporting record repaired; local reader checks separately recorded"
+    },
+    {
+      "chapter": 5,
+      "verdict": "accepted",
+      "rounds": 1,
+      "blocking_findings_remaining": 0,
+      "accepted_body_sha256": "50854ee3414ce7173fe1878ac784b3df6abe17165e1cd639ab3886dc9d8c0d0f",
+      "independent_numeric_checks": "passed",
+      "worked_solutions_independently_checked": 6,
+      "scope": "scientific content and declared finite computations; reader checks separately recorded"
+    },
+    {
+      "chapter": 6,
+      "verdict": "accepted",
+      "rounds": 1,
+      "blocking_findings_remaining": 0,
+      "accepted_body_sha256": "dddfabc31b940a091690ac4e023869ecebcef197e6538e96d40a5c1b1ef805b2",
+      "independent_numeric_checks": "passed",
+      "worked_solutions_independently_checked": 6,
+      "scope": "scientific content and declared finite computations; reader checks separately recorded"
+    }
+  ],
+  "limitations": [
+    "No audiovisual review",
+    "No complete visual slide review",
+    "No neural image-model training",
+    "No new independent whole-book review"
+  ],
+  "supporting_materials_and_continuity": "independently reviewed; zero blocking findings"
+}

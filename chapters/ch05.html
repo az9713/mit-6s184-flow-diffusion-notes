@@ -1,0 +1,291 @@
+<h1 id="ch05-title">5. Latent spaces and the networks that generate them</h1>
+<p class="subtitle">Latent spaces and architectures · MIT 6.S184 Lecture 4, 2026 · Independent study edition</p>
+<p class="lead">An image generator must repeatedly produce an image-shaped velocity. Compressing its state can make those evaluations affordable, but introduces a second problem: which distribution should the smaller generator learn? We develop the compression model, derive its variational objective, and then follow its tensors through a diffusion transformer. A two-dimensional Gaussian example makes the likelihood, gradients, and distribution changes exactly visible.</p>
+
+<h2 id="compression">5.1 Why compress the state? <a class="timestamp" href="https://www.youtube.com/watch?v=g0MB1CCBmsI&amp;t=75s">[01:15]</a></h2>
+<p>Consider a color image with three channels, height 600, and width 1000. Its state contains 1.8 million real coordinates. A classifier can eventually reduce those coordinates to a few class probabilities. A flow network must return one velocity per state coordinate: the ordinary differential equation needs a direction in the same space in which its state lives. Repeated numerical steps therefore repeatedly invoke a large input and output contract, even when the mathematical training objective is a simple squared error.</p>
+<p>Let a raw observation be $X\in\mathbb R^d$, with data law $P_{\mathrm{data}}$. An encoder $E_\phi:\mathbb R^d\to\mathbb R^k$ and decoder $G_\theta:\mathbb R^k\to\mathbb R^d$, with $k&lt;d$, map between data and latent coordinates. The vectors $\phi,\theta$ contain their adjustable parameters. A <em>latent</em> is an internal representation $H=E_\phi(X)$, not an observed class label. We reserve $H$ for this representation and retain $Z$ for the clean endpoint used in earlier bridge constructions.</p>
+<p>The proposed pipeline trains a generator for the latent law, then decodes its samples. It exchanges repeated high-dimensional field evaluations for repeated smaller evaluations and a final decoding pass. Whether this is a useful exchange depends on the decoder preserving the information relevant to the task. Small image errors can erase a character, change a measurement, or alter a scientifically meaningful feature. Compression quality is therefore a modeling requirement, not a consequence of the flow-matching theorem.</p>
+<p>We will use an original example with $d=2$ and $k=1$. A scalar latent explains a correlated direction in two-dimensional data; independent observation noise remains in the other direction. Its scale is deliberately small enough that we can evaluate the exact marginal density. The example is a mathematical microscope for the method, not a miniature image benchmark.</p>
+
+<h2 id="autoencoders">5.2 Reconstruction does not specify a latent law <a class="timestamp" href="https://www.youtube.com/watch?v=g0MB1CCBmsI&amp;t=248s">[04:08]</a></h2>
+<p>A deterministic autoencoder minimizes a reconstruction loss such as</p>
+<div class="equation">$$
+\mathcal R_{\mathrm{AE}}(\phi,\theta)
+=\mathbb E_{X\sim P_{\mathrm{data}}}
+ \|G_\theta(E_\phi(X))-X\|^2.
+$$</div>
+<p>The norm is Euclidean: its square sums squared coordinate errors. The expectation is assumed finite. This objective evaluates the composite map on data, but does not uniquely determine the coordinates between its two parts. For any scalar $c&gt;0$, replace $E_\phi(x)$ by $cE_\phi(x)$ and $G_\theta(h)$ by $G_\theta(h/c)$. Every reconstruction is unchanged while every encoded variance is multiplied by $c^2$. More general invertible changes of latent coordinates create the same ambiguity. Reconstruction alone cannot establish that the latent distribution is a standard normal.</p>
+<p>Compression also has an unavoidable boundary. Suppose both maps are differentiable and their composition equals the identity on an open subset of $\mathbb R^d$. The chain rule gives</p>
+<div class="equation">$$
+D G_\theta(E_\phi(x))\,D E_\phi(x)=I_d.
+$$</div>
+<p>Here $D$ denotes the derivative matrix and $I_d$ the $d$-dimensional identity. The matrix product has rank at most $k$, whereas $I_d$ has rank $d$. For $k&lt;d$ this is impossible. Exact smooth reconstruction may still be possible on a lower-dimensional data manifold; an open region is a different requirement. This rank argument explains why a useful compressed representation must discard some variation, model that variation probabilistically, or exploit special structure in the data support.</p>
+<p>The reconstruction criterion and the ease of generating latents are consequently separate design questions. A code that reconstructs well can have awkward geometry or an inconvenient distribution. Conversely, forcing every input to produce nearly identical latents makes generation trivial while destroying information. A variational autoencoder supplies a precise probabilistic tradeoff between these demands.</p>
+
+<h2 id="probabilistic-codec">5.3 A probabilistic encoder and decoder <a class="timestamp" href="https://www.youtube.com/watch?v=g0MB1CCBmsI&amp;t=708s">[11:48]</a></h2>
+<p>A <em>variational autoencoder</em> (VAE) replaces a deterministic code by a conditional distribution $q_\phi(h\mid x)$. This is the encoder: for a fixed observation it describes possible latent explanations. The decoder $p_\theta(x\mid h)$ is a conditional data density given a latent. A chosen prior density $p_H(h)$, here standard Gaussian, completes the generative model</p>
+<div class="equation">$$
+p_\theta(x,h)=p_H(h)p_\theta(x\mid h),\qquad
+p_\theta(x)=\int_{\mathbb R^k}p_H(h)p_\theta(x\mid h)\,dh.
+$$</div>
+<p>The second expression is the model's marginal density, also called its evidence at $x$. Generating from this model means sampling $H$ from the prior and then $X$ from the decoder. The encoder is an inference aid; it is not needed in this prior-to-data sampling route. Kingma and Welling distinguish these generative and recognition distributions in <a href="#ref-vae">Section 2.1, PDF pp2–3</a>.</p>
+<p>We write $\mathcal N(m,V)$ for a Gaussian law with mean $m$ and covariance $V$; in one dimension its second argument is the variance. The numerical coordinates and time in our examples are dimensionless. A common continuous encoder is a diagonal Gaussian with mean $m_\phi(x)\in\mathbb R^k$ and strictly positive variance vector $v_\phi(x)\in(0,\infty)^k$. “Diagonal” means the coordinates are independent conditional on $x$; it does not mean their variances are equal. For clarity, take the decoder to be Gaussian with mean $G_\theta(h)$ and scalar variance $r&gt;0$:</p>
+<div class="equation">$$
+q_\phi(h\mid x)=\mathcal N(h;m_\phi(x),\operatorname{diag}v_\phi(x)),
+\qquad p_\theta(x\mid h)=\mathcal N(x;G_\theta(h),r I_d).
+$$</div>
+<p>All density and logarithm calculations below use positive variances. A deterministic map is a singular zero-noise limit, not a Gaussian density with variance zero substituted into a log formula. With this convention the decoder's negative log density is exactly</p>
+<div class="equation">$$
+-\log p_\theta(x\mid h)
+=\frac{\|x-G_\theta(h)\|^2}{2r}+\frac d2\log(2\pi r).
+$$</div>
+<p>Only when $r$ is fixed is the second term constant during training. Changing $r$ also changes the coefficient of squared reconstruction error relative to the prior penalty. If a trainable variance depends on $h$, both terms must stay inside the encoder expectation. Dropping the logarithm while learning the variance permits an arbitrarily large variance to suppress the error term without the density-normalization cost. A low squared error and a high normalized likelihood are therefore related objectives only under a specified observation model.</p>
+<p>Our running model chooses $A=(1,2)^\top$, $G(h)=Ah$, $r=1$, and $p_H=\mathcal N(0,1)$. Thus $X=AH+\xi$, where $H$ and $\xi\sim\mathcal N(0,I_2)$ are independent. Its marginal covariance and posterior can both be obtained exactly:</p>
+<div class="equation">$$
+\Sigma=AA^\top+I_2=
+\begin{pmatrix}2&amp;2\\2&amp;5\end{pmatrix},\qquad
+p(h\mid x)=\mathcal N\!\left(h;
+ \frac{A^\top x}{6},\frac16\right).
+$$</div>
+<p>To derive the posterior, retain the $h$-dependent terms of its log density. Prior and likelihood contribute $-[h^2+\|x-Ah\|^2]/2$. Expanding the square gives precision $1+A^\top A=6$ and linear coefficient $A^\top x$; completing the square gives the displayed mean and variance. For the fixed observation $x=(2,1)^\top$, the posterior mean is $2/3$. The exact posterior is available here because the model is linear Gaussian. A nonlinear neural decoder generally removes this analytic convenience.</p>
+
+<h2 id="variational-objective">5.4 KL regularization and the evidence lower bound <a class="timestamp" href="https://www.youtube.com/watch?v=g0MB1CCBmsI&amp;t=1246s">[20:46]</a></h2>
+<p>For normalized densities $q,p$, define their Kullback–Leibler divergence by $\operatorname{KL}(q\|p)=\int q\log(q/p)$. It is infinite if $q$ places mass where $p$ is zero. With common positive support and finite integrals, the inequality $-\log a\geq1-a$, applied to $a=p/q$ and integrated under $q$, gives $\operatorname{KL}(q\|p)\geq0$. Equality requires $p/q=1$ almost everywhere under $q$, and normalization then identifies the laws. It is a directional divergence, not a symmetric distance.</p>
+<p>The encoder's prior penalty is $\operatorname{KL}(q_\phi(\cdot\mid x)\|p_H)$. Its closed form follows from elementary Gaussian expectations. For diagonal $q=\mathcal N(m_q,\operatorname{diag}v_q)$ and $p=\mathcal N(m_p,\operatorname{diag}v_p)$, with every variance positive, subtract their log densities coordinate by coordinate. Under $q$, the centered square has expectation $v_{q,j}$, while the square around $m_{p,j}$ has expectation $v_{q,j}+(m_{q,j}-m_{p,j})^2$. Hence</p>
+<div class="equation">$$
+\operatorname{KL}(q\|p)=\frac12\sum_{j=1}^k
+ \left[\log\frac{v_{p,j}}{v_{q,j}}
+ +\frac{v_{q,j}+(m_{q,j}-m_{p,j})^2}{v_{p,j}}-1\right].
+$$</div>
+<p>For the standard-normal prior this becomes one half the sum of $m_j^2+v_j-\log v_j-1$. The function $v-\log v-1$ has derivative $1-1/v$ and unique minimum zero at $v=1$. The prior penalty alone therefore favors mean zero and variance one. Variance approaching zero makes this penalty diverge. <em>Posterior collapse</em> means an encoder that ignores its input and approximates the prior, not an encoder with zero variance. The sign here is positive because we minimize a loss; <a href="#ref-vae">Kingma–Welling Appendix B, pp10–11</a> displays negative KL inside a maximized objective.</p>
+<div class="prop"><p><b>Proposition 5.1 (Variational bound).</b> Fix an observation $x$ with $0&lt;p_\theta(x)&lt;\infty$. Let $q=q_\phi(\cdot\mid x)$, assume the relevant densities have compatible support, and assume all displayed log expectations are finite. Define $\mathcal L=\mathbb E_q\log p_\theta(x\mid H)-\operatorname{KL}(q\|p_H)$. Then $\mathcal L\leq\log p_\theta(x)$, with equality exactly when $q$ equals the model posterior almost everywhere.</p></div>
+<div class="proof"><p><strong>Proof.</strong> Bayes' formula gives the model posterior $p_\theta(h\mid x)=p_H(h)p_\theta(x\mid h)/p_\theta(x)$. Inserting this formula into the posterior divergence gives</p>
+<div class="equation">$$
+\begin{aligned}
+\operatorname{KL}(q\|p_\theta(\cdot\mid x))
+&amp;=\mathbb E_q[\log q(H)-\log p_H(H)
+ -\log p_\theta(x\mid H)]+\log p_\theta(x),\\
+\log p_\theta(x)
+&amp;=\underbrace{\mathbb E_q\log p_\theta(x\mid H)
+ -\operatorname{KL}(q\|p_H)}_{\mathcal L(x;\phi,\theta)}
+ +\operatorname{KL}(q\|p_\theta(\cdot\mid x)).
+\end{aligned}
+$$</div>
+<p>Nonnegative posterior KL proves the bound; zero posterior KL gives its equality condition. <span class="qed">∎</span></p></div>
+<p>The term $\mathcal L$ is the <em>evidence lower bound</em>, or ELBO. This derivation is local at $x$, so it does not require a density for the empirical data distribution. Averaging over observations gives the training objective. It also separates the simple prior in the regularizer from the generally difficult model posterior in the equality gap. These are two different distributions. <a href="#ref-vae">Equations 1–3 on p3</a> are the original paper's corresponding identity and decomposition.</p>
+<p>The Gaussian example checks the constants, not merely the sign. Here $\det\Sigma=6$, and at $x=(2,1)^\top$ the quadratic form $x^\top\Sigma^{-1}x=7/3$. Consequently</p>
+<div class="equation">$$
+\log p(x)=-\log(2\pi)-\frac12\log6-\frac76
+\approx-3.900423468.
+$$</div>
+<p>Choose an approximate encoder $q=\mathcal N(1/2,1/4)$. Its expected squared decoder residual is $\|x-Am\|^2+5v=3.5$. Its reconstruction negative log likelihood is $3.587877066$, prior KL is $0.443147181$, and ELBO is $-4.031024247$. The difference from the exact log density is $0.130600779$, exactly the KL to $\mathcal N(2/3,1/6)$. Choosing the true posterior closes this gap while retaining a nonzero prior penalty. Perfect inference does not mean every observation has a prior-like posterior.</p>
+<p>The lecture permits a tunable prior weight. Write this weight as $\rho\geq0$, keeping it distinct from the bridge coefficient $\beta_t$. The maximized weighted objective and its gap are</p>
+<div class="equation">$$
+\mathcal L_\rho=\mathbb E_q\log p_\theta(x\mid H)
+ -\rho\operatorname{KL}(q\|p_H),\qquad
+\log p_\theta(x)-\mathcal L_\rho
+=\operatorname{KL}(q\|p_\theta(\cdot\mid x))
+ +(\rho-1)\operatorname{KL}(q\|p_H).
+$$</div>
+<p>At $\rho=1$ this is the ordinary ELBO identity. For $\rho&gt;1$ it remains a lower bound but has an extra gap. For $\rho&lt;1$ it need not be a bound: choosing the exact posterior in our example makes the right side negative. Such weights can be useful reconstruction–regularization controls without being ordinary likelihood bounds. Neural capacity, encoder restrictions, and numerical optimization add further errors; increasing a training objective does not establish that any of those errors vanished.</p>
+<figure><img src="assets/ch05-elbo.svg" alt="Exact computed ELBO and half-weight KL objective versus encoder mean; the ordinary ELBO touches log likelihood and the half-weight curve exceeds it." loading="lazy"><figcaption>Original exact Gaussian calculation at fixed encoder variance $1/6$. The ordinary ELBO touches the log likelihood at mean $2/3$; a half-weight prior penalty can cross it. Generated by <a href="code/ch05.py">the chapter program</a>, without model training.</figcaption></figure>
+
+<h2 id="reparameterization">5.5 Differentiate through a fixed noise law <a class="timestamp" href="https://www.youtube.com/watch?v=g0MB1CCBmsI&amp;t=2408s">[40:08]</a></h2>
+<p>The reconstruction expectation depends on the encoder parameters through its sampling law. Differentiating the decoder at a sampled value while treating that value as constant omits this dependence. It does not follow that parameter-dependent sampling makes every gradient estimator invalid: differentiating a density gives score-function estimators under appropriate assumptions. The reparameterization method supplies a different estimator that exposes an ordinary differentiable path from encoder parameters to each sampled latent. <a href="#ref-vae">Sections 2.2–2.4, pp3–4</a> distinguish these approaches.</p>
+<p>Let $\ell_\phi(x)=\log v_\phi(x)$ be the encoder's componentwise log variance. Draw $\epsilon\sim\mathcal N(0,I_k)$ independently of the parameters and set</p>
+<div class="equation">$$
+H=T_\phi(x,\epsilon)
+=m_\phi(x)+\exp\!\left(\frac12\ell_\phi(x)\right)\odot\epsilon.
+$$</div>
+<p>The symbol $\odot$ denotes componentwise multiplication. The factor one half converts log variance into standard deviation. This affine transformation has exactly the desired conditional Gaussian law. It moves parameter dependence from the distribution of random numbers into a deterministic function of fixed-law random numbers. It is a distributional identity, not an assertion that noise itself becomes differentiable.</p>
+<p>For a loss integrand $f_\theta(x,h)$, expectation under $q_\phi$ becomes expectation of $f_\theta(x,T_\phi(x,\epsilon))$. Suppose this composition is differentiable in a parameter neighborhood almost everywhere in $\epsilon$, and its parameter derivatives are bounded there by an integrable function of $\epsilon$. Dominated differentiation then permits</p>
+<div class="equation">$$
+\nabla_\phi\mathbb E_\epsilon f_\theta(x,T_\phi(x,\epsilon))
+=\mathbb E_\epsilon\left[
+ (D_\phi T_\phi)^\top\nabla_h f_\theta(x,T_\phi(x,\epsilon))\right].
+$$</div>
+<p>Other sufficient conditions are possible, but an algebraic substitution alone does not justify arbitrary derivative–expectation interchange. A finite average of these path derivatives is unbiased when the identity holds and samples are independent. Its variance and optimization behavior remain separate questions. The analytic Gaussian prior KL can be differentiated directly rather than estimated with extra noise.</p>
+<p>In our scalar encoder let $m$ and $\ell=\log v$ be independent adjustable numbers. Up to no omitted constants, the negative ELBO is</p>
+<div class="equation">$$
+J(m,\ell)=\log(2\pi)
++\frac12\bigl(\|x-Am\|^2+5e^\ell\bigr)
++\frac12\bigl(m^2+e^\ell-\ell-1\bigr).
+$$</div>
+<p>Its derivatives are $6m-4$ and $3e^\ell-1/2$. At $m=1/2,v=1/4$ they are $-1$ and $1/4$. The polynomial reconstruction integrand and its path derivatives satisfy the domination condition on bounded parameter neighborhoods because Gaussian moments are finite. We can therefore test the gradient by integrating the path derivative itself, not only by differentiating an already integrated formula.</p>
+<p>The standalone snippet uses three normal-quadrature nodes. Their weights reproduce mean zero and variance one, so they integrate the quadratic loss and these derivatives exactly. This deterministic check is not Monte Carlo training. Its inputs are the fixed model and encoder above; it prints the two derivatives and asserts agreement. It needs only Python's standard library and writes no files.</p>
+<div class="codewrap"><button class="copybtn" type="button">Copy</button><pre><code>import math
+
+m, ell = 0.5, math.log(0.25)
+sd = math.exp(ell / 2)
+g_m = g_ell = 0.0
+for eps, weight in [(-math.sqrt(3), 1/6), (0.0, 2/3),
+                    (math.sqrt(3), 1/6)]:
+    h = m + sd * eps
+    derivative = (h - 2) + 2 * (2*h - 1)
+    g_m += weight * derivative
+    g_ell += weight * derivative * sd * eps / 2
+g_m += m
+g_ell += (math.exp(ell) - 1) / 2
+assert abs(g_m + 1) &lt; 1e-12
+assert abs(g_ell - 0.25) &lt; 1e-12
+print(round(g_m, 12), round(g_ell, 12))</code></pre></div>
+<p>The executed output is <code>-1.0 0.25</code>. The <a href="code/ch05.py">full audit</a> additionally compares with central finite differences of step $10^{-5}$; its maximum discrepancy is about $5.1\times10^{-11}$. Positive-variance checks reject invalid Gaussian inputs. These checks establish the stated finite example, not reliable differentiation for every neural architecture or an image model's training convergence.</p>
+
+<h2 id="latent-generation">5.6 Which latent distribution should a flow learn? <a class="timestamp" href="https://www.youtube.com/watch?v=g0MB1CCBmsI&amp;t=3295s">[54:55]</a></h2>
+<p>Once the codec is trained, freeze it and encode the training observations. There are at least two distinct datasets one can construct. Sampling $H\sim q_\phi(\cdot\mid X)$ gives the <em>aggregate posterior</em>, whose density is</p>
+<div class="equation">$$
+q_{\mathrm{agg}}(h)=
+\int q_\phi(h\mid x)\,P_{\mathrm{data}}(dx).
+$$</div>
+<p>Taking only $m_\phi(X)$ gives the law of encoder means. It removes conditional encoder noise and generally changes the distribution. The recording's recipe allows taking means; the written notes' Remark 32 describes sampled encodings. Neither choice may silently stand in for the other. A flow trained on one must be evaluated as a model of that same law. The prior penalty does not prove either dataset is exactly standard Gaussian.</p>
+<p>The Gaussian example quantifies the difference. Suppose now that observations really follow the model, $P_{\mathrm{data}}=\mathcal N(0,\Sigma)$, and use the exact posterior encoder. Its mean is $m(X)=A^\top X/6$. A linear transform of a Gaussian is Gaussian, and</p>
+<div class="equation">$$
+\operatorname{Var}(m(X))
+=\frac{A^\top\Sigma A}{36}=\frac56,\qquad
+\operatorname{Var}(H)
+=\operatorname{Var}(m(X))+\mathbb E\operatorname{Var}(H\mid X)
+=\frac56+\frac16=1.
+$$</div>
+<p>The second equality is the law of total variance; the conditional mean has zero covariance with the centered conditional fluctuation. Thus the encoder means follow $\mathcal N(0,5/6)$, while sampled encodings follow $\mathcal N(0,1)$. The latter equality with the prior uses both exact posterior inference and the assumption that data follow the model. If only inference is exact but the observed marginal differs, integrating the posterior against the wrong data law need not recover the prior.</p>
+<p>A useful identity also reveals that the expected prior KL is stronger than aggregate matching alone. Define the encoder joint law $Q(dx,dh)=P_{\mathrm{data}}(dx)q_\phi(h\mid x)\,dh$. Define its mutual information by $I_Q(X;H)=\mathbb E_Q\log[q_\phi(H\mid X)/q_{\mathrm{agg}}(H)]$, a KL to the product of its marginals.</p>
+<div class="prop"><p><b>Proposition 5.2 (Information and aggregate matching).</b> For the encoder joint above, assume the displayed log integrals are finite and the density ratios are defined almost surely. Then</p>
+<div class="equation">$$
+\mathbb E_X\operatorname{KL}(q_\phi(\cdot\mid X)\|p_H)
+=I_Q(X;H)+\operatorname{KL}(q_{\mathrm{agg}}\|p_H).
+$$</div>
+ </div>
+<div class="proof"><p><strong>Proof.</strong> Inside the joint expectation write</p>
+<div class="equation">$$
+\log\frac{q_\phi(H\mid X)}{p_H(H)}
+=\log\frac{q_\phi(H\mid X)}{q_{\mathrm{agg}}(H)}
++\log\frac{q_{\mathrm{agg}}(H)}{p_H(H)}.
+$$</div>
+<p>The first expectation is mutual information by definition. The second depends only on $H$, whose joint marginal is $q_{\mathrm{agg}}$, so it is the aggregate KL. Finite integrals justify splitting the expectation. <span class="qed">∎</span></p></div>
+<p>This teaching extension is an algebraic consequence of the definitions. The penalty charges both dependence of latents on observations and mismatch of their aggregate to the prior. In our example the aggregate KL is zero, but the left side is $\tfrac12\log6\approx0.895879735$, entirely mutual information. Pushing this penalty to zero would erase useful dependence on $X$. A perfectly prior-matched aggregate can still have informative, non-prior conditional encodings.</p>
+<p>To train a latent flow, let $H_1$ follow the selected encoded data law and let $\epsilon_0\sim\mathcal N(0,I_k)$ be independent. A straight bridge uses $H_t=tH_1+(1-t)\epsilon_0$, with generation time $t\in[0,1]$. The velocity network learns the conditional target $H_1-\epsilon_0$ by the earlier regression construction. A prompt or class $Y$ can condition this law just as in data space. Sampling integrates the learned latent velocity from zero to one and then decodes the terminal latent. The theory supplies a route to the encoded law under its assumptions; it does not automatically supply the original data law after a lossy decode.</p>
+<p>Even perfect latent sampling leaves a decoding choice. In the original probabilistic model, a prior draw followed by a sampled decoder has covariance $AA^\top+I_2=\Sigma$. Passing that prior draw only through the decoder mean $G(H)=AH$ has covariance $AA^\top$, a rank-one matrix. It omits observation noise and lives on a line. This is not the full-dimensional model distribution. Using means at decoding can be desirable for avoiding pixel noise, as the course notes propose, but it changes what is generated.</p>
+<p>Likewise, excellent reconstruction does not prove correct unconditional sampling. For our exact encoder, decoding its mean has expected squared reconstruction error $7/6$. Sampling the encoder and then decoding its mean has error $2$. Independently sampling the decoder as well raises it to $4$. The lower error of the first procedure does not make its generated law equal to the data law. Reconstruction rewards a coupling with the particular input; generation concerns a marginal distribution. Exercise 5.5 derives these values rather than treating them as perceptual scores.</p>
+<p>Practical compression objectives also extend beyond the Gaussian VAE derivation. Rombach and colleagues use perceptual and adversarial reconstruction criteria, and compare mild KL regularization with vector-quantization regularization in <a href="#ref-ldm">Sections 3.1–3.2, pp3–4</a>. Such losses can favor useful image structure without retaining the ordinary ELBO identity for the complete training objective. Their two-stage design is the relevant connection: learn a representation and then learn a more expressive distribution in it. It does not require the representation to have exactly the VAE prior.</p>
+
+<h2 id="architectures">5.7 From a latent tensor to a velocity tensor <a class="timestamp" href="https://www.youtube.com/watch?v=g0MB1CCBmsI&amp;t=3458s">[57:38]</a></h2>
+<p>The latent field still needs three inputs: state $h$, generation time $t$, and optional condition $y$. A network $u_t^\theta(h\mid y)$ returns a velocity of the same shape as $h$. Image latents commonly retain a channel–height–width arrangement rather than an unstructured vector. A <em>tensor</em> here means a multidimensional array; flattening it identifies its coordinates with a Euclidean vector. This storage convention does not alter the differential equation, but it strongly affects how a network shares computations across coordinates.</p>
+<p>A scalar time can be embedded through predetermined frequencies $\omega_1,\ldots,\omega_M$, where $M$ is a positive integer. For example, concatenate $\cos(2\pi\omega_jt)$ and $\sin(2\pi\omega_jt)$ for all $j$, and divide by $\sqrt M$. This gives a vector in $\mathbb R^{2M}$ of norm one because each sine–cosine pair contributes one to the squared norm. It provides functions of time that subsequent learned layers can combine. Frequencies and normalization are design choices, not a theorem that more coordinates contain more information about $t$.</p>
+<p>A text encoder maps a prompt $y$ to $S$ vectors of width $D_{\mathrm{text}}$. The positive integer $S$ is a token count; the width is the number of coordinates in each vector. Class conditioning may instead use a learned vector per class. The time embedding and the text representation have different roles: generation time describes the current corruption level; the prompt describes the desired content. Neither is the temporal frame index of a video.</p>
+<h3>Spatial compression and U-Nets</h3>
+<p>Take an illustrative RGB image of shape $3\times512\times512$ and a codec latent of shape $4\times64\times64$. The spatial size shrinks eightfold in each direction, but the scalar-coordinate reduction is $48$, because channels change from three to four. A <em>U-Net</em> processes such an array through spatial downsampling blocks and corresponding upsampling blocks, with skip connections that transfer intermediate features across the two sides. The internal contracting and expanding feature maps are distinct from the external codec that defines the generative latent space.</p>
+<p>One valid illustrative feature path is $4\times64\times64$ to $32\times64\times64$, then $64\times32\times32$, followed by upsampling to $32\times64\times64$. Concatenating a $32\times64\times64$ skip feature gives $64\times64\times64$, which a final projection maps back to four channels. Concatenation requires matching spatial sizes; elementwise addition additionally requires matching channel counts. These numbers define a shape example, not the exact architecture of any cited trained model. Attention can be inserted into a U-Net: <a href="#ref-ldm">Rombach et al., p4, Section 3.3</a> explicitly use cross-attention for conditioning.</p>
+<h3>Patches and diffusion transformers</h3>
+<p>A diffusion transformer (DiT) represents spatial patches as a sequence. Let the latent have $C$ channels, height $H_{\mathrm{lat}}$, and width $W_{\mathrm{lat}}$. A positive integer patch side $p$ divides both spatial dimensions. Rearranging coordinates gives $N$ patches, each with $Cp^2$ entries. A learned linear map embeds each patch into hidden width $D$:</p>
+<div class="equation">$$
+N=\frac{H_{\mathrm{lat}}W_{\mathrm{lat}}}{p^2},\qquad
+\operatorname{Patchify}(h)\in\mathbb R^{N\times Cp^2},\qquad
+W_{\mathrm{patch}}\in\mathbb R^{Cp^2\times D},\qquad
+B_0=\operatorname{Patchify}(h)W_{\mathrm{patch}}
+\in\mathbb R^{N\times D}.
+$$</div>
+<p>Position information must also distinguish patches; the inspected DiT uses sinusoidal positional embeddings. A sequence of $L$ blocks updates $B_0$ through $B_L$, retaining shape $N\times D$. Here $N$ always counts patches and $L$ always counts blocks. A final map of shape $D\times C_{\mathrm{out}}p^2$ produces output patches. Rearranging these gives a tensor with $C_{\mathrm{out}}$ channels. For velocity prediction $C_{\mathrm{out}}=C$; the target is one velocity per latent coordinate.</p>
+<p>In the four-channel example, patch side two gives 1024 patches of width 16. Hidden width 128 produces a $1024\times128$ sequence, and a velocity output projection returns width 16 per patch. The original Peebles–Xie DiT instead predicts both diffusion noise and diagonal covariance, so its final width is $2Cp^2=32$ for this example. <a href="#ref-dit">Section 3.2 and Figure 4, pp4–5</a> specify these input and output contracts. One cannot copy that doubled head into a velocity model without deciding what the additional channels mean.</p>
+<h3>Attention with compatible dimensions</h3>
+<p>Attention forms weighted averages of source values. In one head, image queries $Q\in\mathbb R^{N\times D_h}$ and source keys $K\in\mathbb R^{S\times D_h}$ produce pairwise compatibility scores. Source values $V\in\mathbb R^{S\times D_v}$ are averaged using their row-normalized exponential weights:</p>
+<div class="equation">$$
+\operatorname{Attention}(Q,K,V)
+=\operatorname{softmax}_{\mathrm{row}}
+ \left(\frac{QK^\top}{\sqrt{D_h}}\right)V
+\in\mathbb R^{N\times D_v},\qquad
+\operatorname{softmax}(a)_j=\frac{e^{a_j}}{\sum_i e^{a_i}}.
+$$</div>
+<p>The positive integers $D_h,D_v$ are the key/query width and value width. For self-attention the source is the image sequence itself, so $S=N$. For cross-attention the source is the prompt sequence, and $S$ can differ from $N$. Each output row is a convex combination of values because its weights are nonnegative and sum to one. The scale $\sqrt{D_h}$ is the conventional dot-product normalization, not a change in output dimension.</p>
+<p>For four heads with $D_h=D_v=32$, image projections of shape $128\times32$ give queries. If prompt width is 96, separate prompt projections of shape $96\times32$ give keys and values. With twelve prompt tokens, each cross-attention score matrix has shape $1024\times12$, and each head returns $1024\times32$. Concatenating four heads yields $1024\times128$; an output projection of shape $128\times128$ makes a residual addition to the image sequence well defined. Directly adding twelve prompt vectors to 1024 image vectors would not.</p>
+<p>Time can modulate normalized features through learned channelwise scales and shifts broadcast over all token rows. A block can also contain a feedforward map applied separately at every token and residual additions of compatible shape. These are design ingredients, not a unique mandatory composite block. <a href="#ref-dit">Peebles–Xie pp3–5</a> compare in-context conditioning, cross-attention, adaptive layer normalization, and its zero-initialized variant as distinct designs. The course's generic attention block should be read at that level of generality.</p>
+<p>Compression changes several cost terms differently. With patch side two, the uncompressed $512\times512$ image would have 65,536 patches, versus 1024 latent patches. A self-attention score matrix therefore has 4096 times fewer entries after this spatial compression, at fixed patch side and hidden width. A single latent head has 1,048,576 self-attention pairs but only 12,288 prompt cross-attention pairs in the example. Linear projections and feedforward maps have different dependencies, including terms proportional to $ND^2$. None of these counts is a measured 4096-fold runtime improvement.</p>
+<p>The CPU audit actually rearranges and recovers all 48 entries of a $2\times4\times6$ tensor using six patches of width eight. It also evaluates a tiny three-query, two-key cross-attention calculation with three-dimensional values. A query with equal scores returns the value average $(1,2,0)$, and every probability row sums to one. These operations test indexing and rectangular attention; no trained transformer weights or hardware performance measurements are implied.</p>
+
+<h2 id="case-studies">5.8 Reading large-model designs precisely <a class="timestamp" href="https://www.youtube.com/watch?v=g0MB1CCBmsI&amp;t=4043s">[1:07:23]</a></h2>
+<p>The lecture connects these components to Stable Diffusion 3 and Movie Gen. We use their inspected 2024 research snapshots to establish design choices, rather than infer the internals of current services. Source images and generated demonstration videos are not reproduced here. The mathematical and tensor examples above are original constructions, and no published image-quality benchmark has been rerun.</p>
+<p><a href="#ref-sd3">Esser et al., pp3–5, Sections 3–4 and Figure 2</a> combine latent representations, a straight interpolation path, and a multimodal transformer. Their clock runs from data to noise: write it as $\tau$, with state $(1-\tau)h_{\mathrm{data}}+\tau\epsilon$. Our generation clock is $t=1-\tau$, so this same path becomes $t h_{\mathrm{data}}+(1-t)\epsilon$, and its velocity changes sign under the clock substitution. The paper also investigates nonuniform time sampling; equal endpoint laws do not make those weighted finite-model training objectives identical.</p>
+<p>Their multimodal DiT embeds image patches and text tokens to a common hidden width, uses separate weights for the two modalities, and joins their sequences for the attention operation. Both image and text representations can then update using the other modality. This differs from a block that always holds text features fixed and only updates image queries through cross-attention. Shared attention does not require shared modality projections. The architecture implements a conditional field; it does not change the ELBO or prove that a codec is lossless.</p>
+<p><a href="#ref-moviegen">The Movie Gen report, pp4–8, Sections 3.1.1–3.1.3</a> extends generation to video through a temporal autoencoder, a latent flow, and a transformer with bidirectional attention and text cross-attention. Its temporal autoencoder uses sixteen latent channels and nominal eightfold compression along each spatial and temporal dimension. For a raw frame count $F'$, the actual latent frame count is $\lceil F'/8\rceil$; decoding crops surplus frames. The ceiling matters for short clips and single images. Dividing every frame count by eight without a rounding rule would give an impossible fractional tensor.</p>
+<p>Let a generic video latent have $F_{\mathrm{lat}}$ frames, $C$ channels, and spatial dimensions $H_{\mathrm{lat}},W_{\mathrm{lat}}$. With patch sizes $p_f,p_h,p_w$ dividing the respective dimensions, the token count is their spatial–temporal volume divided by the patch volume. Each patch contains $Cp_fp_hp_w$ coordinates. Movie Gen uses $p_f=1,p_h=p_w=2$ in the inspected backbone, so its patching is temporally indexed but does not merge several latent frames per token. Frame position and generation time remain independent inputs.</p>
+<p>The actual report's training bridge also retains a small noise coefficient, $\delta=10^{-5}$:</p>
+<div class="equation">$$
+H_t=tH_{\mathrm{data}}+\bigl[1-(1-\delta)t\bigr]\epsilon,\qquad
+\frac{dH_t}{dt}=H_{\mathrm{data}}-(1-\delta)\epsilon.
+$$</div>
+<p>At $t=1$ this reaches $H_{\mathrm{data}}+\delta\epsilon$, not the exact clean endpoint. The course's zero-residual straight-path description is a useful idealization; the distinction matters in a literal implementation. The report also uses logit-normal time sampling and a particular Euler sampling schedule. Those are inspected engineering choices, not universal consequences of flow matching.</p>
+<p>The recording closes by comparing noising-clock conventions and reviewing guidance. Changing a clock requires changing derivative signs and schedule arguments; it does not by itself identify different stochastic path laws. Similarly, randomly dropping conditions during classifier-free training is a chosen sampling mechanism, not a theorem fixing one universal dropout probability. The earlier score and guidance chapters supply the respective mathematics. Here the central engineering decision is more basic: declare the encoded law, decoder operation, field output, and tensor dimensions before deciding that two implementations represent the same generator.</p>
+<p>The remaining uncertainty is empirical. A small variational gap does not certify that the data marginal was learned; a small reconstruction error does not certify perceptual fidelity; a dimension count does not measure training throughput. The following problems isolate decisions that can be settled from the stated model, while the full CPU record in <a href="code/ch05-results.json">ch05-results.json</a> preserves what was actually checked.</p>
+
+<h2 id="exercises">5.9 Problems with worked solutions</h2>
+<section class="exercise" id="ex-decoder-variance">
+<h3>Problem 5.1 — A variance is part of a likelihood</h3>
+<p>Hold the encoder and decoder mean fixed. Let $S=\mathbb E\|X-G(H)\|^2$ be finite, and let data dimension be $d$. Optimize the scalar decoder variance $r&gt;0$. Explain what fails if the normalization term is dropped, and discuss $S=0$.</p>
+<details class="solution"><summary>Solution</summary>
+<p>The expected negative log likelihood is $S/(2r)+(d/2)\log(2\pi r)$. Its derivative is $(dr-S)/(2r^2)$. For $S&gt;0$ it decreases before $r=S/d$ and increases afterward, so this is the unique global minimum. The variance equals the average residual energy per coordinate. If only $S/(2r)$ is kept, the infimum is approached as $r$ goes to infinity: arbitrary uncertainty becomes free. Conversely, when $S=0$, the full expression tends to negative infinity as $r$ tends to zero. There is no positive-variance optimum in that idealized case. A variance floor or another modeling constraint changes the problem; zero cannot simply be inserted into a Gaussian density.</p>
+</details></section>
+
+<section class="exercise" id="ex-elbo-gap">
+<h3>Problem 5.2 — Check the ELBO equality numerically and algebraically</h3>
+<p>Use the running model at $x=(2,1)^\top$ and encoder $\mathcal N(1/2,1/4)$. Derive its posterior KL and check that adding it to the ELBO recovers the exact log evidence. Is the true posterior's prior penalty zero?</p>
+<details class="solution"><summary>Solution</summary>
+<p>The target posterior is $\mathcal N(2/3,1/6)$. Applying the scalar Gaussian KL formula yields</p>
+<div class="equation">$$
+\operatorname{KL}(q\|p(\cdot\mid x))
+=\frac12\left[\log\frac23
+ +\frac{1/4+(1/2-2/3)^2}{1/6}-1\right]
+=\frac12\left[\log\frac23+\frac23\right]
+\approx0.130600779.
+$$</div>
+<p>The reconstruction residual is $3.5$, giving negative log likelihood $\log(2\pi)+7/4$. The prior KL is $\tfrac12(\log4-1/2)$. Negating their sum gives $-4.031024247$; adding the posterior gap gives $-3.900423468$, as required. For the true posterior, the prior KL instead is $\tfrac12(\log6-7/18)\approx0.701435290$. It is positive: the observation supplies information and moves the posterior away from its prior. Closing a posterior approximation gap is different from suppressing that information.</p>
+</details></section>
+
+<section class="exercise" id="ex-weighted">
+<h3>Problem 5.3 — Solve the weighted encoder problem</h3>
+<p>In the same linear model let decoder variance $r&gt;0$ and prior weight $\rho&gt;0$. For fixed $x$, optimize over scalar Gaussian encoder mean $m$ and variance $v&gt;0$. Identify the exact-posterior case and the limit of strong prior weighting.</p>
+<details class="solution"><summary>Solution</summary>
+<p>Ignoring terms constant in $m,v$, the minimized objective is</p>
+<div class="equation">$$
+J_\rho(m,v)=\frac{\|x-Am\|^2+5v}{2r}
+ +\frac{\rho}{2}(m^2+v-\log v-1).
+$$</div>
+<p>The mean derivative is $(5m-A^\top x)/r+\rho m$. The variance derivative is $5/(2r)+(\rho/2)(1-1/v)$. Setting both to zero gives</p>
+<div class="equation">$$
+m_\rho=\frac{A^\top x}{5+\rho r},\qquad
+v_\rho=\frac{\rho r}{5+\rho r}.
+$$</div>
+<p>The mean curvature is $5/r+\rho&gt;0$; variance curvature is $\rho/(2v^2)&gt;0$, with no mixed derivative. These stationary points are the unique minima. At $\rho=1$ they equal the true posterior. At fixed $r$, increasing $\rho$ without bound sends the mean to zero and variance to one, erasing dependence on the observation. For $r=1,\rho=1/2$, the optimized weighted value is about $-3.482805430$, above the log evidence. The modified objective is not a likelihood lower bound in this case.</p>
+</details></section>
+
+<section class="exercise" id="ex-log-variance">
+<h3>Problem 5.4 — Detect a reparameterization error</h3>
+<p>A program interprets $\ell=\log v$ but samples $H=m+e^\ell\epsilon$. At $m=1/2,v=1/4$, what distribution does it actually sample? Compare its reconstruction derivative with respect to $\ell$ with the intended derivative. Explain why stopping the sample's gradient also fails.</p>
+<details class="solution"><summary>Solution</summary>
+<p>The incorrect multiplier is $v$, so its sampled variance is $v^2=1/16$, not $1/4$. Its expected reconstruction term is $\log(2\pi)+[\|x-Am\|^2+5e^{2\ell}]/2$. Differentiating gives $5e^{2\ell}=5/16$, whereas the intended derivative is $5e^\ell/2=5/8$. This is a change of both sampling law and gradient. Using the intended prior KL alongside the wrong sample would combine inconsistent encoder definitions. Finally, treating $H$ as constant in differentiation gives zero encoder reconstruction gradient, losing the dependence through both mean and scale. The correct path rule retains that dependence and then takes expectation under parameter-independent noise.</p>
+</details></section>
+
+<section class="exercise" id="ex-reconstruction-law">
+<h3>Problem 5.5 — Reconstruction error versus generated distribution</h3>
+<p>Assume $X\sim\mathcal N(0,\Sigma)$ and use the true encoder. Derive the three reconstruction errors stated in Section 5.6. Which procedure generates the full data law from an independent prior draw?</p>
+<details class="solution"><summary>Solution</summary>
+<p>For the encoder mean, reconstructed data are $AA^\top X/6$. Along the unit direction $A/\sqrt5$, data variance is six and the reconstruction multiplier is $5/6$; the residual variance is $6(1/6)^2=1/6$. Along the perpendicular direction, data variance is one and the decoder mean has no component, so the total squared error is $1+1/6=7/6$.</p>
+<p>A posterior sample can be written $H=A^\top X/6+\eta$, where $\eta\sim\mathcal N(0,1/6)$ is independent of $X$. Its decoder mean adds the independent error contribution $\|A\|^2/6=5/6$, bringing the total to two. A fresh decoder draw adds independent noise with covariance $I_2$ and trace two, bringing the total to four. These computations use expectations, not one selected reconstruction.</p>
+<p>For unconditional generation, an independent prior draw followed by the sampled decoder gives $X=AH+\xi$, hence the full covariance $\Sigma$ and exact Gaussian data law. A prior draw followed only by $AH$ has rank-one covariance. The method with the lowest reconstruction error is therefore not a substitute for the specified full generative model.</p>
+</details></section>
+
+<section class="exercise" id="ex-video-contract">
+<h3>Problem 5.6 — Audit a video tensor contract</h3>
+<p>Use the inspected Movie Gen compression rule on 17 RGB frames of size $512\times512$, with sixteen latent channels. Use patches of size $1\times2\times2$, and assume the spatial sizes divide exactly. Determine latent shape, token count, velocity patch width, decoded frame count before cropping, and scalar compression ratio. Would dividing every dimension by eight give the same answer?</p>
+<details class="solution"><summary>Solution</summary>
+<p>The latent frame count is $\lceil17/8\rceil=3$, so the latent shape is $3\times16\times64\times64$. Patching gives $3\cdot32\cdot32=3072$ tokens. Each output velocity patch contains $16\cdot1\cdot2\cdot2=64$ coordinates; the hidden width is a separate choice. Decoding produces 24 frames before seven surplus frames are cropped. The input contains $17\cdot3\cdot512^2=13{,}369{,}344$ scalars and the latent contains $3\cdot16\cdot64^2=196{,}608$, a ratio of 68. The nominal divisible-length ratio would be $3\cdot8^3/16=96$. Fractional latent frames are not permissible; the ceiling changes the actual ratio. All 3072 tokens coexist at every generation time $t$; none of these counts is a count of ODE solver steps.</p>
+</details></section>
+
+<h2 id="sources">5.10 Sources and evidence limits</h2>
+<p>The recording supplies the sequence and motivating engineering questions. The variational derivation, exact Gaussian model, distribution comparisons, exercises, computed plot, and CPU checks develop those questions into self-contained teaching material. Primary-paper claims are restricted to the listed inspected locators. The chapter reports no neural training, perceptual evaluation, current product verification, or reproduced benchmark.</p>
+<ol class="references">
+<li id="ref-course">Peter Holderrieth and Ezra Erives, <a href="https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf">Introduction to Flow Matching and Diffusion Models, 2026 course notes</a>, Section 6, PDF pp41–53, and Appendix D, pp77–80. <a href="https://www.youtube.com/watch?v=g0MB1CCBmsI">Lecture 4 recording</a> and <a href="https://diffusion.csail.mit.edu/2026/docs/20260128_Lecture_04_edited.pdf">lecture slides</a>, latent and architecture sections. The chapter follows the recording's latent-first order.</li>
+<li id="ref-vae">Diederik P. Kingma and Max Welling, <a href="https://arxiv.org/pdf/1312.6114v11">Auto-Encoding Variational Bayes</a>, originally 2013; inspected arXiv version 11, December 2022. Sections 2.1–2.4, PDF pp2–4, and Appendix B, pp10–11: generative model, ELBO identity, reparameterization, and Gaussian KL.</li>
+<li id="ref-ldm">Robin Rombach et al., <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Rombach_High-Resolution_Image_Synthesis_With_Latent_Diffusion_Models_CVPR_2022_paper.pdf">High-Resolution Image Synthesis With Latent Diffusion Models</a>, CVPR 2022, Sections 3.1–3.3, PDF pp3–4, printed pp10686–10687: perceptual compression, latent generation, and cross-attention.</li>
+<li id="ref-dit">William Peebles and Saining Xie, <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Peebles_Scalable_Diffusion_Models_with_Transformers_ICCV_2023_paper.pdf">Scalable Diffusion Models with Transformers</a>, ICCV 2023, Section 3, Figures 3–4, PDF pp3–5, printed pp4197–4199: patching, conditioning variants, and noise/covariance output head.</li>
+<li id="ref-sd3">Patrick Esser et al., <a href="https://arxiv.org/pdf/2403.03206v1">Scaling Rectified Flow Transformers for High-Resolution Image Synthesis</a>, March 2024, Sections 3–4 and Figure 2, PDF pp3–5: interpolation, time weighting, and multimodal DiT.</li>
+<li id="ref-moviegen">The Movie Gen team at Meta, <a href="https://arxiv.org/pdf/2410.13720">Movie Gen: A Cast of Media Foundation Models</a>, report dated October 4, 2024. Sections 3.1.1–3.1.3 and Figures 3–4, PDF pp4–8: temporal compression and frame rounding, residual-noise flow bridge, and video transformer.</li>
+</ol>

@@ -1,0 +1,165 @@
+{
+  "chapter": 1,
+  "title": "From generation to probability transport",
+  "status": "accepted and locally validated",
+  "body_sha256": "6dfaeeabf778217e7de8eadb9d45549f5268dc85c31d366c3dba44af87bc5ae7",
+  "sections": [
+    {
+      "id": "generation",
+      "title": "Generation as sampling",
+      "video_id": "9eJQQVrUUoI",
+      "start": 277,
+      "end": 782,
+      "lecture_material": "Data vectors, probability laws/densities, dataset, conditioning.",
+      "research_extension": "Density is not point probability; Gaussian concentration.",
+      "teaching_construction": "N(0,1) to N(2,4) recurring simulator case.",
+      "evidence_class": "definitions; derivations; finite analytic checks"
+    },
+    {
+      "id": "ode-flow",
+      "title": "Velocities, trajectories, and destinations",
+      "video_id": "9eJQQVrUUoI",
+      "start": 782,
+      "end": 1368,
+      "lecture_material": "ODEs, velocity fields, flows, linear contraction.",
+      "research_extension": "Neural derivative parameterization from Chen et al. Section 1.",
+      "teaching_construction": "Analytic affine expanding field and Gaussian endpoint.",
+      "evidence_class": "definitions; derivations; finite analytic checks"
+    },
+    {
+      "id": "well-posedness",
+      "title": "Existence and uniqueness",
+      "video_id": "9eJQQVrUUoI",
+      "start": 1368,
+      "end": 1710,
+      "lecture_material": "Nonunique square-root example, sufficient regularity.",
+      "research_extension": "Explicit global Lipschitz/growth statement and inverse limitations.",
+      "teaching_construction": "Picard/sensitivity argument, blowup example, backward uniqueness.",
+      "evidence_class": "definitions; derivations; finite analytic checks"
+    },
+    {
+      "id": "euler",
+      "title": "The finite-step sampler",
+      "video_id": "9eJQQVrUUoI",
+      "start": 1710,
+      "end": 2006,
+      "lecture_material": "Euler scheme and accuracy/compute tradeoff.",
+      "research_extension": "Exact recurrence and contraction stability analysis.",
+      "teaching_construction": "Deterministic Gaussian moments and runnable Python snippet.",
+      "evidence_class": "definitions; derivations; finite analytic checks"
+    },
+    {
+      "id": "sampling",
+      "title": "Pushforward and sampling",
+      "video_id": "9eJQQVrUUoI",
+      "start": 2006,
+      "end": 2337,
+      "lecture_material": "Random initialization, fixed parameters, endpoint sampling goal.",
+      "research_extension": "Chen et al. Section 4: relation to density evaluation.",
+      "teaching_construction": "Affine density derivation; coupled-observable and field-error bounds.",
+      "evidence_class": "definitions; derivations; finite analytic checks"
+    },
+    {
+      "id": "brownian",
+      "title": "Stochastic trajectories and Brownian noise",
+      "video_id": "9eJQQVrUUoI",
+      "start": 2337,
+      "end": 3323,
+      "lecture_material": "Processes, SDE ingredients, Brownian increments and rough paths.",
+      "research_extension": "Higham Sections 2\u20133: stochastic sums and Brownian increments.",
+      "teaching_construction": "Wrong-noise-scaling probe; exact quadratic-sum mean/variance.",
+      "evidence_class": "definitions; derivations; finite analytic checks"
+    },
+    {
+      "id": "sde",
+      "title": "Integral SDE and numerical update",
+      "video_id": "9eJQQVrUUoI",
+      "start": 3323,
+      "end": 4163,
+      "lecture_material": "dX notation, existence/uniqueness, Euler\u2013Maruyama sampling.",
+      "research_extension": "Higham Section 4 integral formulation; precise additive-noise setting.",
+      "teaching_construction": "Continuous sigma remainder counterexample; pathwise ODE reduction.",
+      "evidence_class": "definitions; derivations; finite analytic checks"
+    },
+    {
+      "id": "ou",
+      "title": "OU and the generation objective",
+      "video_id": "9eJQQVrUUoI",
+      "start": 4163,
+      "end": 4677.464,
+      "lecture_material": "OU illustration; diffusion-model sampling; closing questions.",
+      "research_extension": "Invariant-law versus finite-time-law distinction.",
+      "teaching_construction": "Exact/discrete OU laws and stationary-bias audit; joint-law example.",
+      "evidence_class": "definitions; derivations; finite analytic checks"
+    }
+  ],
+  "references": [
+    {
+      "id": "course",
+      "title": "Introduction to Flow Matching and Diffusion Models",
+      "authors": "Peter Holderrieth and Ezra Erives",
+      "year": 2026,
+      "url": "https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf",
+      "locator": "Sections 1.3\u20132.2; PDF pp. 4\u201313",
+      "supports": "Course sampling, ODE, Brownian, SDE, OU topic spine."
+    },
+    {
+      "id": "slides",
+      "title": "MIT 6.S184 Lecture 1 slides",
+      "year": 2026,
+      "url": "https://diffusion.csail.mit.edu/2026/docs/20260120_Lecture_01.pdf",
+      "locator": "PDF pp. 7\u201334; equations visually checked on pp. 19,20,29\u201332",
+      "supports": "Lecture sequence, linear examples, algorithms, and OU figure."
+    },
+    {
+      "id": "neuralode",
+      "title": "Neural Ordinary Differential Equations",
+      "year": 2018,
+      "authors": "Tian Qi Chen; Yulia Rubanova; Jesse Bettencourt; David Duvenaud",
+      "url": "https://arxiv.org/pdf/1806.07366v1",
+      "locator": "Sections 1 and 4; PDF pp. 1 and 4",
+      "supports": "Neural derivative parameterization and density-evaluation distinction."
+    },
+    {
+      "id": "higham",
+      "title": "An Algorithmic Introduction to Numerical Simulation of Stochastic Differential Equations",
+      "authors": "Desmond J. Higham",
+      "year": 2001,
+      "url": "https://www.cmor-faculty.rice.edu/~cox/stoch/dhigham.pdf",
+      "locator": "Sections 2\u20134; printed pp. 526\u2013532; PDF pp. 2\u20138",
+      "supports": "Brownian increments, stochastic sums, and integral EM formulation."
+    }
+  ],
+  "code": [
+    {
+      "path": "code/ch01.py",
+      "command": "python code/ch01.py",
+      "sha256": "3c7a30d89c5c8b33994d74d3a068db92c167dffd6e583da8cd1f3fc36d07064d",
+      "result_path": "code/ch01-results.json",
+      "scope": "Exact Gaussian moments and recurrences; no neural training"
+    }
+  ],
+  "figures": [
+    {
+      "path": "assets/ch01-checks.svg",
+      "generator": "code/ch01.py --write",
+      "type": "computed analytic Gaussian density",
+      "sha256": "da9655176ece0f7b9cce0e3dddb845dfa333bc8eea09f1394ad3b3858606028d"
+    }
+  ],
+  "metrics": {
+    "prose_words": 4943,
+    "h2_sections": 11,
+    "exercises": 6,
+    "worked_solutions": 6,
+    "python_blocks": 1
+  },
+  "evidence_limits": [
+    "Automatically generated captions; sequential complete caption read.",
+    "No audiovisual playback or source demonstration verification claimed.",
+    "Brownian existence and continuous versions invoked as foundational inputs.",
+    "Exact analytic constructed models; no empirical image-generator results.",
+    "No independent acceptance by author; reader/browser validation belongs to parent."
+  ],
+  "accepted_body_sha256": "6dfaeeabf778217e7de8eadb9d45549f5268dc85c31d366c3dba44af87bc5ae7"
+}

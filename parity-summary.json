@@ -1,0 +1,60 @@
+{
+  "method": "body diagnostics excluding math/code/navigation",
+  "diagnostics_not_acceptance_quotas": true,
+  "chapters": [
+    {
+      "file": "ch01.html",
+      "prose_words_excluding_math_and_code": 5098,
+      "major_sections": 11,
+      "python_blocks": 1,
+      "unique_external_links_including_recordings": 19,
+      "display_equations": 19,
+      "expandable_solutions": 6
+    },
+    {
+      "file": "ch02.html",
+      "prose_words_excluding_math_and_code": 5284,
+      "major_sections": 11,
+      "python_blocks": 1,
+      "unique_external_links_including_recordings": 21,
+      "display_equations": 24,
+      "expandable_solutions": 6
+    },
+    {
+      "file": "ch03.html",
+      "prose_words_excluding_math_and_code": 5048,
+      "major_sections": 11,
+      "python_blocks": 1,
+      "unique_external_links_including_recordings": 20,
+      "display_equations": 24,
+      "expandable_solutions": 6
+    },
+    {
+      "file": "ch04.html",
+      "prose_words_excluding_math_and_code": 4320,
+      "major_sections": 10,
+      "python_blocks": 1,
+      "unique_external_links_including_recordings": 17,
+      "display_equations": 9,
+      "expandable_solutions": 6
+    },
+    {
+      "file": "ch05.html",
+      "prose_words_excluding_math_and_code": 5371,
+      "major_sections": 10,
+      "python_blocks": 1,
+      "unique_external_links_including_recordings": 16,
+      "display_equations": 23,
+      "expandable_solutions": 6
+    },
+    {
+      "file": "ch06.html",
+      "prose_words_excluding_math_and_code": 5540,
+      "major_sections": 11,
+      "python_blocks": 1,
+      "unique_external_links_including_recordings": 17,
+      "display_equations": 20,
+      "expandable_solutions": 6
+    }
+  ]
+}

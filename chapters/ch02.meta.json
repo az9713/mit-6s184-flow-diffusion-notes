@@ -1,0 +1,191 @@
+{
+  "chapter": 2,
+  "title": "Flow matching: learning a probability transport",
+  "status": "accepted and locally validated",
+  "body_sha256": "aba79645cb38e69186cc338c8f920a5e5388826fc20a285d2fbb7831cb006eaf",
+  "sections": [
+    {
+      "id": "training-question",
+      "title": "Learning a generative velocity",
+      "video_id": "PNkMKWW8Khw",
+      "start": 79,
+      "end": 205,
+      "lecture_material": "Training goal and conditional/marginal framework.",
+      "research_extension": "Population target versus empirical data and numerical integration.",
+      "teaching_construction": "Continuation of the Gaussian simulator learning task.",
+      "evidence_class": "definitions; proofs; exact constructions; finite synthetic fitting checks"
+    },
+    {
+      "id": "probability-paths",
+      "title": "Conditional and marginal laws",
+      "video_id": "PNkMKWW8Khw",
+      "start": 205,
+      "end": 1090,
+      "lecture_material": "Dirac conditional endpoint, Gaussian schedules, marginal probability path.",
+      "research_extension": "Measures versus densities; finite-moment weak endpoint argument.",
+      "teaching_construction": "Independent N(0,1) to N(2,4) bridge; initial contraction.",
+      "evidence_class": "definitions; proofs; exact constructions; finite synthetic fitting checks"
+    },
+    {
+      "id": "conditional-fields",
+      "title": "Conditional Gaussian velocity",
+      "video_id": "PNkMKWW8Khw",
+      "start": 1090,
+      "end": 1639,
+      "lecture_material": "Conditional vector fields and explicit Gaussian flow.",
+      "research_extension": "Lipman affine map inversion and positive-terminal-noise boundary.",
+      "teaching_construction": "Sampled derivative cancellation and endpoint singularity analysis.",
+      "evidence_class": "definitions; proofs; exact constructions; finite synthetic fitting checks"
+    },
+    {
+      "id": "posterior-velocity",
+      "title": "Posterior averaging and marginal field",
+      "video_id": "PNkMKWW8Khw",
+      "start": 1639,
+      "end": 2101,
+      "lecture_material": "Marginalization formula and Bayesian posterior explanation.",
+      "research_extension": "Conditional expectation version and density support qualifications.",
+      "teaching_construction": "Two-atom prior-averaging failure; joint Gaussian square completion.",
+      "evidence_class": "definitions; proofs; exact constructions; finite synthetic fitting checks"
+    },
+    {
+      "id": "continuity",
+      "title": "Continuity and marginalization proof",
+      "video_id": "PNkMKWW8Khw",
+      "start": 2101,
+      "end": 3156,
+      "lecture_material": "Continuity equation, proof of marginalization, posterior/nonuniqueness questions.",
+      "research_extension": "Weak conservation proof with integrability; classical-flow identification boundary.",
+      "teaching_construction": "Control-volume sign derivation; stationary Gaussian rotation and nonuniform flux.",
+      "evidence_class": "definitions; proofs; exact constructions; finite synthetic fitting checks"
+    },
+    {
+      "id": "regression",
+      "title": "Conditional flow regression",
+      "video_id": "PNkMKWW8Khw",
+      "start": 3156,
+      "end": 4408,
+      "lecture_material": "FM/CFM losses, gradient equivalence, training algorithm, simulation-free training.",
+      "research_extension": "Orthogonal L2 decomposition; differentiability-under-expectation; finite-class limits.",
+      "teaching_construction": "Exact pi loss floor, constant predictor optimum, square-root schedule divergence.",
+      "evidence_class": "definitions; proofs; exact constructions; finite synthetic fitting checks"
+    },
+    {
+      "id": "training-and-sampling",
+      "title": "Gaussian training and fitted sampling",
+      "video_id": "PNkMKWW8Khw",
+      "start": 4408,
+      "end": 5000.382,
+      "lecture_material": "Reparameterized Gaussian loss, straight schedule, inference iteration and recap.",
+      "research_extension": "Finite-data and solver error distinguished from population regression identities.",
+      "teaching_construction": "Actual CPU affine fitting, heldout uncertainty, exact Gaussian law and Euler checks.",
+      "evidence_class": "definitions; proofs; exact constructions; finite synthetic fitting checks"
+    }
+  ],
+  "original_extensions": [
+    {
+      "id": "coupling-extension",
+      "scope": "Original Gaussian coupling/energy proof; primary research connection",
+      "recording_span": null,
+      "references": [
+        "lipman2023",
+        "tong2024",
+        "liu2022"
+      ]
+    },
+    {
+      "id": "exercises",
+      "scope": "Six original exercises with complete worked solutions",
+      "recording_span": null
+    }
+  ],
+  "references": [
+    {
+      "id": "course-notes",
+      "title": "An Introduction to Flow Matching and Diffusion Models",
+      "url": "https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf",
+      "locator": "PDF pp14-24, Section3, Theorems9,11,12, Examples8,10,13, Algorithm3",
+      "supports": "course sequence, conditional Gaussian paths, marginalization, continuity, conditional regression, sampling algorithm",
+      "year": 2026,
+      "authors": "Peter Holderrieth and Ezra Erives"
+    },
+    {
+      "id": "course-slides2",
+      "title": "Lecture2: Flow Matching",
+      "url": "https://diffusion.csail.mit.edu/2026/docs/20260122_Lecture_02.pdf",
+      "locator": "all35 pages extracted text; PDF pp20,24 visually inspected",
+      "supports": "topic sequence and algorithm; sign annotation erratum",
+      "year": 2026
+    },
+    {
+      "id": "lipman2023",
+      "title": "Flow Matching for Generative Modeling",
+      "url": "https://arxiv.org/pdf/2210.02747v2",
+      "locator": "PDF pp2-6,14-16; Sections3-4; Theorems1-3; AppendicesA-C",
+      "supports": "conditional-to-marginal field, gradient-equivalent objective, affine Gaussian field, positive terminal smoothing, conditional OT does not imply marginal OT",
+      "year": 2023,
+      "authors": "Yaron Lipman; Ricky T.Q.Chen; Heli Ben-Hamu; Maximilian Nickel; Matt Le"
+    },
+    {
+      "id": "tong2024",
+      "title": "Improving and generalizing flow-based generative models with minibatch optimal transport",
+      "url": "https://arxiv.org/pdf/2302.00482v4",
+      "locator": "PDF pp3-7,18-19; Sections2-3; Theorems3.1-3.2; Propositions3.3-3.4; AppendixA",
+      "supports": "general conditioning variables/couplings, smoothed boundary laws, independent versus OT coupling",
+      "year": 2024,
+      "authors": "Alexander Tong; Kilian Fatras; Nikolay Malkin; Guillaume Huguet; Yanlei Zhang; Jarrid Rector-Brooks; Guy Wolf; Yoshua Bengio"
+    },
+    {
+      "id": "liu2022",
+      "title": "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow",
+      "url": "https://arxiv.org/pdf/2209.03003v1",
+      "locator": "PDF pp2-5; Section2.1 method overview",
+      "supports": "linear-interpolant regression and difference between interpolant and causal ODE trajectories; brief reflow orientation",
+      "year": 2022,
+      "authors": "Xingchao Liu; Chengyue Gong; Qiang Liu"
+    },
+    {
+      "id": "lab2",
+      "title": "Lab Two: Flow Matching and Score Matching,2026 scaffold",
+      "url": "https://github.com/eje24/iap-diffusion-labs/blob/2026/lab_two.ipynb",
+      "locator": "markdown cells8-78; especially17,25-26,38-45,59,64-78",
+      "supports": "practical path/model/trainer interfaces and schedule example",
+      "year": 2026
+    }
+  ],
+  "code": [
+    {
+      "path": "code/ch02.py",
+      "command": "python code/ch02.py",
+      "sha256": "37cbf38d2a10c9d39932bf536827476bcf93bddda4dd3eb85f7c2f1f3877faf6",
+      "result_path": "code/ch02-results.json",
+      "scope": "Actual scalar affine least squares in time bins; synthetic Gaussian risk and terminal-law checks; no neural training"
+    }
+  ],
+  "figures": [
+    {
+      "path": "assets/ch02-variance-paths.svg",
+      "generator": "python code/ch02.py --write-figure",
+      "type": "Computed analytic Gaussian variance paths with shared endpoints",
+      "sha256": "ee5b938fdc04ac56086085af3cc4eeaaf3ed0c7fb793b3a143ccaa294ab0e69f"
+    }
+  ],
+  "metrics": {
+    "prose_words": 5284,
+    "h2_sections": 11,
+    "exercises": 6,
+    "worked_solutions": 6,
+    "python_blocks": 1
+  },
+  "evidence_limits": [
+    "Complete sequential automatic-caption transcript read; no audiovisual review claimed.",
+    "All slide2 extracted text and notes PDF pp14-24 inspected; bounded source-image inspection only.",
+    "Primary papers inspected at exact recorded pages; no full-paper or benchmark reproduction claim.",
+    "Weak continuity proved under compact-horizon integrability; Gaussian ODE law verified explicitly.",
+    "Finite-risk regression conditions exclude the ideal unweighted square-root schedule on the full interval.",
+    "Affine fitting is a synthetic low-dimensional teaching experiment, not neural/image training.",
+    "Author hardening and actual code execution do not establish independent scientific acceptance.",
+    "Parent-owned wrapped-reader DOM/browser/package checks remain separate."
+  ],
+  "accepted_body_sha256": "aba79645cb38e69186cc338c8f920a5e5388826fc20a285d2fbb7831cb006eaf"
+}

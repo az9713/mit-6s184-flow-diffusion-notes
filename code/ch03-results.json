@@ -1,0 +1,184 @@
+{
+  "gaussian_scores": [
+    {
+      "t": 0.25,
+      "mean": 0.5,
+      "variance": 0.8125,
+      "DSM_floor": 0.5470085470085468,
+      "noise_MSE_floor": 0.3076923076923076
+    },
+    {
+      "t": 0.5,
+      "mean": 1.0,
+      "variance": 1.25,
+      "DSM_floor": 3.2,
+      "noise_MSE_floor": 0.8
+    },
+    {
+      "t": 0.9,
+      "mean": 1.8,
+      "variance": 3.25,
+      "DSM_floor": 99.69230769230775,
+      "noise_MSE_floor": 0.996923076923077
+    },
+    {
+      "t": 0.99,
+      "mean": 1.98,
+      "variance": 3.9205,
+      "DSM_floor": 9999.744930493542,
+      "noise_MSE_floor": 0.9999744930493559
+    }
+  ],
+  "samplers": [
+    {
+      "sigma": 0.0,
+      "corrected_EM": [
+        {
+          "steps": 32,
+          "mean": 2.0,
+          "variance": 3.6460156485518147,
+          "absolute_variance_error": 0.3539843514481853
+        },
+        {
+          "steps": 128,
+          "mean": 2.0,
+          "variance": 3.9084515409593683,
+          "absolute_variance_error": 0.09154845904063169
+        },
+        {
+          "steps": 512,
+          "mean": 2.0,
+          "variance": 3.976914518050955,
+          "absolute_variance_error": 0.02308548194904514
+        },
+        {
+          "steps": 2048,
+          "mean": 2.0,
+          "variance": 3.994216107976981,
+          "absolute_variance_error": 0.005783892023019099
+        }
+      ],
+      "uncorrected_exact_endpoint": 4.0,
+      "wrong_sign_exact_endpoint": 4.0
+    },
+    {
+      "sigma": 0.5,
+      "corrected_EM": [
+        {
+          "steps": 32,
+          "mean": 2.0,
+          "variance": 3.6733640649674895,
+          "absolute_variance_error": 0.32663593503251054
+        },
+        {
+          "steps": 128,
+          "mean": 2.0,
+          "variance": 3.915643018603296,
+          "absolute_variance_error": 0.084356981396704
+        },
+        {
+          "steps": 512,
+          "mean": 2.0,
+          "variance": 3.9787358632408574,
+          "absolute_variance_error": 0.021264136759142627
+        },
+        {
+          "steps": 2048,
+          "mean": 2.0,
+          "variance": 3.9946729333042246,
+          "absolute_variance_error": 0.005327066695775429
+        }
+      ],
+      "uncorrected_exact_endpoint": 4.785398163397448,
+      "wrong_sign_exact_endpoint": 5.735617644061122
+    },
+    {
+      "sigma": 1.0,
+      "corrected_EM": [
+        {
+          "steps": 32,
+          "mean": 2.0,
+          "variance": 3.7428557064869,
+          "absolute_variance_error": 0.25714429351309986
+        },
+        {
+          "steps": 128,
+          "mean": 2.0,
+          "variance": 3.933796704019161,
+          "absolute_variance_error": 0.06620329598083918
+        },
+        {
+          "steps": 512,
+          "mean": 2.0,
+          "variance": 3.983325773746467,
+          "absolute_variance_error": 0.016674226253532876
+        },
+        {
+          "steps": 2048,
+          "mean": 2.0,
+          "variance": 3.9958236729396974,
+          "absolute_variance_error": 0.004176327060302576
+        }
+      ],
+      "uncorrected_exact_endpoint": 7.141592653589793,
+      "wrong_sign_exact_endpoint": 13.546240405904122
+    },
+    {
+      "sigma": 2.0,
+      "corrected_EM": [
+        {
+          "steps": 32,
+          "mean": 2.0,
+          "variance": 3.889951771880192,
+          "absolute_variance_error": 0.11004822811980786
+        },
+        {
+          "steps": 128,
+          "mean": 2.0,
+          "variance": 3.971730314879029,
+          "absolute_variance_error": 0.028269685120970944
+        },
+        {
+          "steps": 512,
+          "mean": 2.0,
+          "variance": 3.9928846741601878,
+          "absolute_variance_error": 0.0071153258398122254
+        },
+        {
+          "steps": 2048,
+          "mean": 2.0,
+          "variance": 3.9982181655249343,
+          "absolute_variance_error": 0.0017818344750657467
+        }
+      ],
+      "uncorrected_exact_endpoint": 16.566370614359172,
+      "wrong_sign_exact_endpoint": 181.12554106223413
+    }
+  ],
+  "mixture": {
+    "time": 0.5,
+    "x": 0.7,
+    "density": 0.312471930051051,
+    "analytic_score": 0.8882789995402057,
+    "finite_difference_score": 0.8882789994890671,
+    "score_at_zero": 0,
+    "density_curvature_ratio": 7.04
+  },
+  "restricted_weighting": {
+    "times": [
+      0.25,
+      0.75
+    ],
+    "variances": [
+      0.8125,
+      2.3125
+    ],
+    "unweighted_shared_precision_optimum": 0.64,
+    "noise_weights": [
+      0.5625,
+      0.0625
+    ],
+    "noise_weighted_shared_precision_optimum": 1.0389610389610389
+  },
+  "scope": "analytic Gaussian and mixture checks; no neural training"
+}

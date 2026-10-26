@@ -1,0 +1,107 @@
+{
+  "status": "complete",
+  "completed_at": "2026-10-26T17:22:44.320176+00:00",
+  "course_edition": "2026",
+  "numbered_lectures": 5,
+  "recordings": 6,
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "From generation to probability transport",
+      "body_sha256": "6dfaeeabf778217e7de8eadb9d45549f5268dc85c31d366c3dba44af87bc5ae7",
+      "code_sha256": "3c7a30d89c5c8b33994d74d3a068db92c167dffd6e583da8cd1f3fc36d07064d",
+      "results_sha256": "838fa33b7748dec2df9045a2a5d01fa37962a69d24ce5a0bb8fab8dfb8099686",
+      "figure_sha256": [
+        "da9655176ece0f7b9cce0e3dddb845dfa333bc8eea09f1394ad3b3858606028d"
+      ],
+      "review_rounds": 2,
+      "worked_solutions": 6
+    },
+    {
+      "chapter": 2,
+      "title": "Flow matching: learning a probability transport",
+      "body_sha256": "aba79645cb38e69186cc338c8f920a5e5388826fc20a285d2fbb7831cb006eaf",
+      "code_sha256": "37cbf38d2a10c9d39932bf536827476bcf93bddda4dd3eb85f7c2f1f3877faf6",
+      "results_sha256": "f7c7679ee97bf1655c2857fe28e96fdd5f00c310dae06a40198474c0e83adb1b",
+      "figure_sha256": [
+        "ee5b938fdc04ac56086085af3cc4eeaaf3ed0c7fb793b3a143ccaa294ab0e69f"
+      ],
+      "review_rounds": 1,
+      "worked_solutions": 6
+    },
+    {
+      "chapter": 3,
+      "title": "Scores, denoising, and stochastic sampling",
+      "body_sha256": "907b3b2baf57382122b897ec89d940cdced4d365d965bc1974931f8ef53b3c1a",
+      "code_sha256": "2ba9c9dfe5776dc678426ddd3cc14a0648a8c8b2354f52af42683a920dece52d",
+      "results_sha256": "ed94f4576cfc06fbefd4e7ae8de2eb38e862debd7e30840b283c2536359fcdff",
+      "figure_sha256": [
+        "3926df3d2f8e6f5f0e40c740d36d1952e0fa4d54b59f516041f5c4b9e2a0dfe3"
+      ],
+      "review_rounds": 1,
+      "worked_solutions": 6
+    },
+    {
+      "chapter": 4,
+      "title": "Conditioning and classifier-free guidance",
+      "body_sha256": "0e1f78efd05614c863fc1b2021efc15487fd1abbecc43abbf69e96b70473b5e6",
+      "code_sha256": "2194097d9f405b2097e75e6c279fa80bc83d1c24faec53f4e79da4f9b8fd8651",
+      "results_sha256": "6939c38d5cede4e2fa40d8bf85db757c154b8dfa899f3de71d0f04f5487e1cef",
+      "figure_sha256": [
+        "116477bd309b5004d9111bd7a1bde1a517bfc966b8ada0af1140c466e8edf4eb"
+      ],
+      "review_rounds": 2,
+      "worked_solutions": 6
+    },
+    {
+      "chapter": 5,
+      "title": "Latent spaces and the networks that generate them",
+      "body_sha256": "50854ee3414ce7173fe1878ac784b3df6abe17165e1cd639ab3886dc9d8c0d0f",
+      "code_sha256": "757d914946bc766ce0e875faf27aa81b248c0b749b424ba3a3d0b02318404956",
+      "results_sha256": "c91bacf9daad1ceb7e86d7dc8321f8a8779fd5d68d29b43cafe3a82b1dca01fc",
+      "figure_sha256": [
+        "d8cfa059ea25531e8682550e9857b7eb2695c5029633ced6d3dce029e4c7198a"
+      ],
+      "review_rounds": 1,
+      "worked_solutions": 6
+    },
+    {
+      "chapter": 6,
+      "title": "Discrete diffusion: learning the rates of a jump process",
+      "body_sha256": "dddfabc31b940a091690ac4e023869ecebcef197e6538e96d40a5c1b1ef805b2",
+      "code_sha256": "31cdf5fd4d72e236d889477f7aa643102f401ec20ddcbbf1823d9a78902d81a5",
+      "results_sha256": "cb4ea34a57b18818efa2878726a914c5ba0314372b775e3d3d9a591e04e28b59",
+      "figure_sha256": [
+        "4e24204653ba7b65c8d216876abf836af42c7b2d4d3fc66355372dae5d288295"
+      ],
+      "review_rounds": 1,
+      "worked_solutions": 6
+    }
+  ],
+  "chapter_count": 6,
+  "worked_solution_count": 36,
+  "python_program_count": 6,
+  "computed_figure_count": 6,
+  "prose_diagnostic_words": 30661,
+  "independent_scientific_review": "passed for all six exact bodies and 36 solutions",
+  "continuity_and_supporting_material_review": "passed",
+  "reader_static_and_offline_browser": "passed; 10 pages at desktop/mobile",
+  "copied_code_execution": "passed; six listings and six programs",
+  "figure_frame_and_curve_label_checks": "passed; actual SVGs tested via inline wrappers",
+  "computed_figures_rendered_and_visually_inspected": 6,
+  "source_free_rebuild": "passed; ten HTML files byte-identical",
+  "delivery_privacy_scan": "passed",
+  "scope_limits": [
+    "Caption/written-source grounding; no full audiovisual review",
+    "No complete visual inspection of every source page",
+    "No neural image-model training or benchmark reproduction",
+    "No real-system clipboard verification or human accessibility certification",
+    "Independent chapter reviews and series continuity check; no new full-book proof rereview"
+  ],
+  "publication": {
+    "status": "deployment verification pending",
+    "repository": "https://github.com/az9713/mit-6s184-flow-diffusion-notes",
+    "pages_url": "https://az9713.github.io/mit-6s184-flow-diffusion-notes/",
+    "verification_record": "publication-validation.json"
+  }
+}

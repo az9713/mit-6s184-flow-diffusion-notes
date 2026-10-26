@@ -1,0 +1,183 @@
+{
+  "attention": {
+    "output": [
+      [
+        1.3395230986533138,
+        1.3209538026933725,
+        -0.33952309865331376
+      ],
+      [
+        0.6604769013466862,
+        2.6790461973066275,
+        0.33952309865331376
+      ],
+      [
+        1.0,
+        2.0,
+        0.0
+      ]
+    ],
+    "probabilities": [
+      [
+        0.6697615493266569,
+        0.3302384506733431
+      ],
+      [
+        0.3302384506733431,
+        0.6697615493266569
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ]
+  },
+  "dimensions": {
+    "cross_attention_pairs": 12288,
+    "latent_scalars": 16384,
+    "latent_tokens": 1024,
+    "original_dit_output_patch_width": 32,
+    "pixel_scalars": 786432,
+    "pixel_tokens": 65536,
+    "scalar_reduction": 48.0,
+    "self_attention_pairs": 1048576,
+    "velocity_output_patch_width": 16
+  },
+  "encoders": [
+    {
+      "elbo": -4.031024246969291,
+      "mean": 0.5,
+      "posterior_kl": 0.13060077927925118,
+      "prior_kl": 0.4431471805599453,
+      "reconstruction_nll": 3.5878770664093453,
+      "variance": 0.25
+    },
+    {
+      "elbo": -3.9004234676900396,
+      "mean": 0.6666666666666666,
+      "posterior_kl": 0.0,
+      "prior_kl": 0.7014352901695831,
+      "reconstruction_nll": 3.1989881775204565,
+      "variance": 0.16666666666666666
+    },
+    {
+      "elbo": -6.837877066409345,
+      "mean": 0,
+      "posterior_kl": 2.9374535987193067,
+      "prior_kl": 0.0,
+      "reconstruction_nll": 6.837877066409345,
+      "variance": 1
+    }
+  ],
+  "gradient": {
+    "analytic": [
+      -1.0,
+      0.25
+    ],
+    "finite_difference": [
+      -1.0000000000509601,
+      0.2500000000349445
+    ],
+    "max_fd_error": 5.0960125008714385e-11,
+    "quadrature": [
+      -1.0,
+      0.2499999999999999
+    ]
+  },
+  "latent_laws": {
+    "deterministic_decoder_covariance": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "encoder_mean_variance": 0.8333333333333334,
+    "expected_encoder_prior_kl": 0.8958797346140275,
+    "mean_encoder_decoder_mse": 1.1666666666666667,
+    "mutual_information": 0.8958797346140275,
+    "sampled_aggregate_variance": 1.0,
+    "sampled_decoder_covariance": [
+      [
+        2.0,
+        2.0
+      ],
+      [
+        2.0,
+        5.0
+      ]
+    ],
+    "sampled_encoder_mean_decoder_mse": 2.0,
+    "sampled_encoder_sampled_decoder_mse": 4.0
+  },
+  "model": {
+    "A": [
+      1.0,
+      2.0
+    ],
+    "covariance": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "decoder_variance": 1,
+    "log_evidence": -3.9004234676900396,
+    "x": [
+      2.0,
+      1.0
+    ]
+  },
+  "patch_round_trip": {
+    "passed": true,
+    "patch_width": 8,
+    "shape": [
+      2,
+      4,
+      6
+    ],
+    "tokens": 6
+  },
+  "scope": "Exact Gaussian formulas and finite CPU contracts; no training.",
+  "video_contract": {
+    "decoded_frames": 24,
+    "latent_frames": 3,
+    "latent_tokens": 3072,
+    "patch_width": 64,
+    "raw_frames": 17,
+    "scalar_ratio": 68.0
+  },
+  "weighted_optima": [
+    {
+      "mean": 0.7272727272727273,
+      "objective": -3.4828054300634834,
+      "rho": 0.5,
+      "variance": 0.09090909090909091
+    },
+    {
+      "mean": 0.6666666666666666,
+      "objective": -3.90042346769004,
+      "rho": 1,
+      "variance": 0.16666666666666666
+    },
+    {
+      "mean": 0.5714285714285714,
+      "objective": -4.44778289204757,
+      "rho": 2,
+      "variance": 0.2857142857142857
+    },
+    {
+      "mean": 0.26666666666666666,
+      "objective": -5.831869273616834,
+      "rho": 10,
+      "variance": 0.6666666666666666
+    }
+  ]
+}

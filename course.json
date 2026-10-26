@@ -1,0 +1,62 @@
+{
+  "title": "Flow Matching and Diffusion Models",
+  "subtitle": "An independent mathematical study edition of MIT 6.S184",
+  "edition": "2026",
+  "source_url": "https://diffusion.csail.mit.edu/2026/index.html",
+  "chapters": [
+    {
+      "id": "ch01",
+      "lecture": "1",
+      "title": "From generation to probability transport",
+      "video_id": "9eJQQVrUUoI",
+      "duration": 4682,
+      "status": "accepted and locally validated",
+      "accepted_body_sha256": "6dfaeeabf778217e7de8eadb9d45549f5268dc85c31d366c3dba44af87bc5ae7"
+    },
+    {
+      "id": "ch02",
+      "lecture": "2",
+      "title": "Flow matching: learning a probability transport",
+      "video_id": "PNkMKWW8Khw",
+      "duration": 5003,
+      "status": "accepted and locally validated",
+      "accepted_body_sha256": "aba79645cb38e69186cc338c8f920a5e5388826fc20a285d2fbb7831cb006eaf"
+    },
+    {
+      "id": "ch03",
+      "lecture": "3-A",
+      "title": "Scores, denoising, and stochastic sampling",
+      "video_id": "ngC3QnYSVNM",
+      "duration": 2743,
+      "status": "accepted and locally validated",
+      "accepted_body_sha256": "907b3b2baf57382122b897ec89d940cdced4d365d965bc1974931f8ef53b3c1a"
+    },
+    {
+      "id": "ch04",
+      "lecture": "3-B",
+      "title": "Conditioning and classifier-free guidance",
+      "video_id": "8oWZ1bHwyRI",
+      "duration": 2351,
+      "status": "accepted and locally validated",
+      "accepted_body_sha256": "0e1f78efd05614c863fc1b2021efc15487fd1abbecc43abbf69e96b70473b5e6"
+    },
+    {
+      "id": "ch05",
+      "lecture": "4",
+      "title": "Latent spaces and the networks that generate them",
+      "video_id": "g0MB1CCBmsI",
+      "duration": 4855,
+      "status": "accepted and locally validated",
+      "accepted_body_sha256": "50854ee3414ce7173fe1878ac784b3df6abe17165e1cd639ab3886dc9d8c0d0f"
+    },
+    {
+      "id": "ch06",
+      "lecture": "5",
+      "title": "Discrete diffusion: learning the rates of a jump process",
+      "video_id": "d0kmyEJN2hI",
+      "duration": 4870,
+      "status": "accepted and locally validated",
+      "accepted_body_sha256": "dddfabc31b940a091690ac4e023869ecebcef197e6538e96d40a5c1b1ef805b2"
+    }
+  ]
+}

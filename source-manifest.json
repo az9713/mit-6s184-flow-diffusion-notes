@@ -1,0 +1,1142 @@
+{
+  "course": "MIT 6.S184: Generative AI with Stochastic Differential Equations",
+  "edition": "2026",
+  "course_url": "https://diffusion.csail.mit.edu/2026/index.html",
+  "source_snapshot_date": "2026-10-26",
+  "course_page_sha256": "8421758245bd214bbc7ae49573128df8169c1b12062946217fde1bd023a6136a",
+  "course_notes_authors": [
+    "Peter Holderrieth",
+    "Ezra Erives"
+  ],
+  "recording_presenter": "Peter Holderrieth",
+  "numbered_lecture_count": 5,
+  "recording_count": 6,
+  "planned_chapter_count": 6,
+  "chapter_mapping": [
+    {
+      "order": 1,
+      "lecture": "1",
+      "video_id": "9eJQQVrUUoI",
+      "status": "sources acquired; editorial status is recorded in course.json"
+    },
+    {
+      "order": 2,
+      "lecture": "2",
+      "video_id": "PNkMKWW8Khw",
+      "status": "sources acquired; editorial status is recorded in course.json"
+    },
+    {
+      "order": 3,
+      "lecture": "3-A",
+      "video_id": "ngC3QnYSVNM",
+      "status": "sources acquired; editorial status is recorded in course.json"
+    },
+    {
+      "order": 4,
+      "lecture": "3-B",
+      "video_id": "8oWZ1bHwyRI",
+      "status": "sources acquired; editorial status is recorded in course.json"
+    },
+    {
+      "order": 5,
+      "lecture": "4",
+      "video_id": "g0MB1CCBmsI",
+      "status": "sources acquired; editorial status is recorded in course.json"
+    },
+    {
+      "order": 6,
+      "lecture": "5",
+      "video_id": "d0kmyEJN2hI",
+      "status": "sources acquired; editorial status is recorded in course.json"
+    }
+  ],
+  "pdf_sources": [
+    {
+      "url": "https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf",
+      "pages": 84,
+      "sha256": "d61ddac4329c49043c633c47fadd5293204bce4c9ab28e994a04c79e7251e622",
+      "recorded_hash_matches": true,
+      "visual_inspection": "selected page inspected: PDF page 3"
+    },
+    {
+      "url": "https://diffusion.csail.mit.edu/2026/docs/20260120_Lecture_01.pdf",
+      "pages": 36,
+      "sha256": "6bfa008201cb0d14c014b92ddc7a3b50da2b868758af4975bd5bcc801bb77e86",
+      "recorded_hash_matches": true,
+      "visual_inspection": "selected page inspected: PDF page 1"
+    },
+    {
+      "url": "https://diffusion.csail.mit.edu/2026/docs/20260122_Lecture_02.pdf",
+      "pages": 35,
+      "sha256": "bed3ccc626101cc06df94004b50d539337c04fa929feee42162e4f917edccf89",
+      "recorded_hash_matches": true,
+      "visual_inspection": "not performed by this audit"
+    },
+    {
+      "url": "https://diffusion.csail.mit.edu/2026/docs/20260123_Lecture_03.pdf",
+      "pages": 46,
+      "sha256": "161cb9138dab88add94bc9bfd59007b16c15bad025448aa1039a02c63306dddd",
+      "recorded_hash_matches": true,
+      "visual_inspection": "not performed by this audit"
+    },
+    {
+      "url": "https://diffusion.csail.mit.edu/2026/docs/20260128_Lecture_04_edited.pdf",
+      "pages": 40,
+      "sha256": "e9c18c928e45fb379052b4d45d93a374ee35c69d2b59f15e31f1e3a41ca1ff51",
+      "recorded_hash_matches": true,
+      "visual_inspection": "not performed by this audit"
+    },
+    {
+      "url": "https://diffusion.csail.mit.edu/2026/docs/20260130_Lecture_05.pdf",
+      "pages": 42,
+      "sha256": "88c0f7e90d8e659e0a3cc1e7d8ebf8b5c9b0d146ffae388c004261e424d69b52",
+      "recorded_hash_matches": true,
+      "visual_inspection": "selected page inspected: PDF page 20"
+    }
+  ],
+  "recordings": [
+    {
+      "lecture": "1",
+      "video_id": "9eJQQVrUUoI",
+      "url": "https://www.youtube.com/watch?v=9eJQQVrUUoI",
+      "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 01 - Flow and Diffusion Models (2026)",
+      "duration_seconds": 4682,
+      "upload_date": "20260318",
+      "caption_language": "en",
+      "caption_kind": "YouTube automatically generated English captions",
+      "caption_sha256": "46a11d5d79b5edf41df4ad4a49b3f6328923648f15c7ba22ac127bcdaca97fef",
+      "caption_segment_count": 2057,
+      "caption_interval_coverage": {
+        "first_start_seconds": 8.12,
+        "last_end_seconds": 4677.464000000001,
+        "duration_seconds": 4682,
+        "interval_union_covered_seconds": 4190.12300000001,
+        "interval_union_ratio": 0.8949429730884259,
+        "gaps_over_five_seconds": [
+          {
+            "start": 0.0,
+            "end": 8.12,
+            "duration": 8.12
+          },
+          {
+            "start": 841.4,
+            "end": 848.16,
+            "duration": 6.759999999999991
+          },
+          {
+            "start": 852.16,
+            "end": 866.96,
+            "duration": 14.800000000000068
+          },
+          {
+            "start": 891.56,
+            "end": 897.96,
+            "duration": 6.400000000000091
+          },
+          {
+            "start": 951.0,
+            "end": 961.48,
+            "duration": 10.480000000000018
+          },
+          {
+            "start": 1093.92,
+            "end": 1100.08,
+            "duration": 6.1599999999998545
+          },
+          {
+            "start": 1116.48,
+            "end": 1121.8,
+            "duration": 5.319999999999936
+          },
+          {
+            "start": 1138.8400000000001,
+            "end": 1147.96,
+            "duration": 9.11999999999989
+          },
+          {
+            "start": 1205.3999999999999,
+            "end": 1211.08,
+            "duration": 5.680000000000064
+          },
+          {
+            "start": 1263.0800000000002,
+            "end": 1268.72,
+            "duration": 5.639999999999873
+          },
+          {
+            "start": 1904.0,
+            "end": 1927.92,
+            "duration": 23.920000000000073
+          },
+          {
+            "start": 2400.657,
+            "end": 2410.6,
+            "duration": 9.942999999999756
+          },
+          {
+            "start": 2532.7200000000003,
+            "end": 2543.68,
+            "duration": 10.959999999999582
+          },
+          {
+            "start": 2593.0,
+            "end": 2608.92,
+            "duration": 15.920000000000073
+          },
+          {
+            "start": 2799.16,
+            "end": 2808.08,
+            "duration": 8.920000000000073
+          },
+          {
+            "start": 2815.4,
+            "end": 2821.04,
+            "duration": 5.639999999999873
+          },
+          {
+            "start": 2877.16,
+            "end": 2883.6,
+            "duration": 6.440000000000055
+          },
+          {
+            "start": 2948.28,
+            "end": 2953.84,
+            "duration": 5.559999999999945
+          },
+          {
+            "start": 2963.52,
+            "end": 2969.72,
+            "duration": 6.199999999999818
+          },
+          {
+            "start": 2983.6000000000004,
+            "end": 2989.24,
+            "duration": 5.639999999999418
+          },
+          {
+            "start": 3120.56,
+            "end": 3126.8,
+            "duration": 6.2400000000002365
+          },
+          {
+            "start": 3412.6800000000003,
+            "end": 3418.04,
+            "duration": 5.359999999999673
+          },
+          {
+            "start": 3513.68,
+            "end": 3518.76,
+            "duration": 5.080000000000382
+          },
+          {
+            "start": 3677.84,
+            "end": 3687.4,
+            "duration": 9.559999999999945
+          },
+          {
+            "start": 3745.36,
+            "end": 3758.48,
+            "duration": 13.11999999999989
+          },
+          {
+            "start": 4004.92,
+            "end": 4021.88,
+            "duration": 16.960000000000036
+          },
+          {
+            "start": 4054.2000000000003,
+            "end": 4066.56,
+            "duration": 12.359999999999673
+          },
+          {
+            "start": 4216.84,
+            "end": 4224.88,
+            "duration": 8.039999999999964
+          },
+          {
+            "start": 4331.4800000000005,
+            "end": 4338.32,
+            "duration": 6.839999999999236
+          },
+          {
+            "start": 4356.72,
+            "end": 4364.4,
+            "duration": 7.6799999999993815
+          },
+          {
+            "start": 4508.08,
+            "end": 4523.6,
+            "duration": 15.520000000000437
+          },
+          {
+            "start": 4564.2,
+            "end": 4585.36,
+            "duration": 21.159999999999854
+          }
+        ],
+        "gap_count": 148,
+        "maximum_gap_seconds": 23.920000000000073,
+        "endpoint_ratio_is_not_speech_accuracy": true
+      },
+      "recording_downloaded": false,
+      "audiovisual_review": "not performed"
+    },
+    {
+      "lecture": "2",
+      "video_id": "PNkMKWW8Khw",
+      "url": "https://www.youtube.com/watch?v=PNkMKWW8Khw",
+      "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 02: Flow Matching (2026)",
+      "duration_seconds": 5003,
+      "upload_date": "20260318",
+      "caption_language": "en",
+      "caption_kind": "YouTube automatically generated English captions",
+      "caption_sha256": "6a17786ee37f7c315d95adfb67ae248d099f3f91913c74fd0a4b07fa8303f48e",
+      "caption_segment_count": 2256,
+      "caption_interval_coverage": {
+        "first_start_seconds": 8.16,
+        "last_end_seconds": 5000.3820000000005,
+        "duration_seconds": 5003,
+        "interval_union_covered_seconds": 4520.672000000012,
+        "interval_union_ratio": 0.9035922446532105,
+        "gaps_over_five_seconds": [
+          {
+            "start": 0.0,
+            "end": 8.16,
+            "duration": 8.16
+          },
+          {
+            "start": 320.0,
+            "end": 325.76,
+            "duration": 5.759999999999991
+          },
+          {
+            "start": 482.56,
+            "end": 491.52,
+            "duration": 8.95999999999998
+          },
+          {
+            "start": 753.0400000000001,
+            "end": 759.76,
+            "duration": 6.719999999999914
+          },
+          {
+            "start": 1564.72,
+            "end": 1570.24,
+            "duration": 5.519999999999982
+          },
+          {
+            "start": 1629.058,
+            "end": 1635.32,
+            "duration": 6.261999999999944
+          },
+          {
+            "start": 1673.5600000000002,
+            "end": 1678.68,
+            "duration": 5.119999999999891
+          },
+          {
+            "start": 2237.88,
+            "end": 2267.8,
+            "duration": 29.920000000000073
+          },
+          {
+            "start": 2273.52,
+            "end": 2279.72,
+            "duration": 6.199999999999818
+          },
+          {
+            "start": 2395.8,
+            "end": 2408.64,
+            "duration": 12.83999999999969
+          },
+          {
+            "start": 2529.3199999999997,
+            "end": 2536.08,
+            "duration": 6.760000000000218
+          },
+          {
+            "start": 2951.2,
+            "end": 2958.0,
+            "duration": 6.800000000000182
+          },
+          {
+            "start": 2995.6400000000003,
+            "end": 3013.48,
+            "duration": 17.83999999999969
+          },
+          {
+            "start": 3101.6,
+            "end": 3129.64,
+            "duration": 28.039999999999964
+          },
+          {
+            "start": 3132.48,
+            "end": 3142.64,
+            "duration": 10.159999999999854
+          },
+          {
+            "start": 3246.92,
+            "end": 3263.247,
+            "duration": 16.32699999999977
+          },
+          {
+            "start": 3265.267,
+            "end": 3273.0,
+            "duration": 7.733000000000175
+          },
+          {
+            "start": 3603.4,
+            "end": 3608.48,
+            "duration": 5.079999999999927
+          },
+          {
+            "start": 3753.56,
+            "end": 3761.72,
+            "duration": 8.159999999999854
+          },
+          {
+            "start": 3975.4,
+            "end": 3987.68,
+            "duration": 12.279999999999745
+          },
+          {
+            "start": 3992.96,
+            "end": 4005.16,
+            "duration": 12.199999999999818
+          },
+          {
+            "start": 4019.84,
+            "end": 4048.84,
+            "duration": 29.0
+          },
+          {
+            "start": 4151.4800000000005,
+            "end": 4162.319,
+            "duration": 10.838999999999942
+          },
+          {
+            "start": 4196.160000000001,
+            "end": 4203.72,
+            "duration": 7.559999999999491
+          },
+          {
+            "start": 4361.56,
+            "end": 4367.6,
+            "duration": 6.039999999999964
+          }
+        ],
+        "gap_count": 153,
+        "maximum_gap_seconds": 29.920000000000073,
+        "endpoint_ratio_is_not_speech_accuracy": true
+      },
+      "recording_downloaded": false,
+      "audiovisual_review": "not performed"
+    },
+    {
+      "lecture": "3-A",
+      "video_id": "ngC3QnYSVNM",
+      "url": "https://www.youtube.com/watch?v=ngC3QnYSVNM",
+      "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 03A - Score Functions (2026)",
+      "duration_seconds": 2743,
+      "upload_date": "20260318",
+      "caption_language": "en",
+      "caption_kind": "YouTube automatically generated English captions",
+      "caption_sha256": "ad0608e584f68ccad7ac72eac52bf99476daa1e35dac8bebe28debdb397afb68",
+      "caption_segment_count": 952,
+      "caption_interval_coverage": {
+        "first_start_seconds": 8.48,
+        "last_end_seconds": 2741.64,
+        "duration_seconds": 2743,
+        "interval_union_covered_seconds": 2467.817000000002,
+        "interval_union_ratio": 0.8996780896828297,
+        "gaps_over_five_seconds": [
+          {
+            "start": 0.0,
+            "end": 8.48,
+            "duration": 8.48
+          },
+          {
+            "start": 224.519,
+            "end": 234.64,
+            "duration": 10.120999999999981
+          },
+          {
+            "start": 284.36,
+            "end": 291.12,
+            "duration": 6.759999999999991
+          },
+          {
+            "start": 435.88,
+            "end": 442.88,
+            "duration": 7.0
+          },
+          {
+            "start": 452.28,
+            "end": 461.599,
+            "duration": 9.319000000000017
+          },
+          {
+            "start": 708.6,
+            "end": 715.68,
+            "duration": 7.079999999999927
+          },
+          {
+            "start": 769.688,
+            "end": 779.44,
+            "duration": 9.752000000000066
+          },
+          {
+            "start": 854.72,
+            "end": 868.88,
+            "duration": 14.159999999999968
+          },
+          {
+            "start": 919.48,
+            "end": 927.36,
+            "duration": 7.8799999999999955
+          },
+          {
+            "start": 997.16,
+            "end": 1003.279,
+            "duration": 6.119000000000028
+          },
+          {
+            "start": 1006.279,
+            "end": 1013.04,
+            "duration": 6.760999999999967
+          },
+          {
+            "start": 1276.8400000000001,
+            "end": 1288.32,
+            "duration": 11.47999999999979
+          },
+          {
+            "start": 1321.72,
+            "end": 1341.2,
+            "duration": 19.480000000000018
+          },
+          {
+            "start": 1353.08,
+            "end": 1359.76,
+            "duration": 6.680000000000064
+          },
+          {
+            "start": 1403.32,
+            "end": 1409.6,
+            "duration": 6.279999999999973
+          },
+          {
+            "start": 1564.679,
+            "end": 1580.64,
+            "duration": 15.961000000000013
+          },
+          {
+            "start": 1921.0800000000002,
+            "end": 1931.2,
+            "duration": 10.11999999999989
+          },
+          {
+            "start": 2025.88,
+            "end": 2034.24,
+            "duration": 8.3599999999999
+          },
+          {
+            "start": 2079.56,
+            "end": 2105.44,
+            "duration": 25.88000000000011
+          },
+          {
+            "start": 2205.32,
+            "end": 2221.52,
+            "duration": 16.199999999999818
+          }
+        ],
+        "gap_count": 65,
+        "maximum_gap_seconds": 25.88000000000011,
+        "endpoint_ratio_is_not_speech_accuracy": true
+      },
+      "recording_downloaded": false,
+      "audiovisual_review": "not performed"
+    },
+    {
+      "lecture": "3-B",
+      "video_id": "8oWZ1bHwyRI",
+      "url": "https://www.youtube.com/watch?v=8oWZ1bHwyRI",
+      "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 03B - Classifier-free Guidance (2026)",
+      "duration_seconds": 2351,
+      "upload_date": "20260318",
+      "caption_language": "en",
+      "caption_kind": "YouTube automatically generated English captions",
+      "caption_sha256": "7383965f0264f8197372f82468941cadd5d9ad9b7262f1d49020b4fd53115689",
+      "caption_segment_count": 959,
+      "caption_interval_coverage": {
+        "first_start_seconds": 9.12,
+        "last_end_seconds": 2346.2920000000004,
+        "duration_seconds": 2351,
+        "interval_union_covered_seconds": 1968.694000000003,
+        "interval_union_ratio": 0.8373857932794568,
+        "gaps_over_five_seconds": [
+          {
+            "start": 0.0,
+            "end": 9.12,
+            "duration": 9.12
+          },
+          {
+            "start": 236.0,
+            "end": 243.88,
+            "duration": 7.8799999999999955
+          },
+          {
+            "start": 486.76000000000005,
+            "end": 516.84,
+            "duration": 30.079999999999984
+          },
+          {
+            "start": 560.8800000000001,
+            "end": 567.839,
+            "duration": 6.958999999999946
+          },
+          {
+            "start": 791.8,
+            "end": 802.96,
+            "duration": 11.160000000000082
+          },
+          {
+            "start": 927.28,
+            "end": 941.56,
+            "duration": 14.279999999999973
+          },
+          {
+            "start": 1014.0,
+            "end": 1024.079,
+            "duration": 10.07899999999995
+          },
+          {
+            "start": 1060.9599999999998,
+            "end": 1069.4,
+            "duration": 8.440000000000282
+          },
+          {
+            "start": 1193.36,
+            "end": 1234.68,
+            "duration": 41.320000000000164
+          },
+          {
+            "start": 1237.28,
+            "end": 1260.56,
+            "duration": 23.279999999999973
+          },
+          {
+            "start": 1289.76,
+            "end": 1299.72,
+            "duration": 9.960000000000036
+          },
+          {
+            "start": 1470.64,
+            "end": 1477.6,
+            "duration": 6.959999999999809
+          },
+          {
+            "start": 1517.5600000000002,
+            "end": 1534.08,
+            "duration": 16.519999999999754
+          },
+          {
+            "start": 1549.7199999999998,
+            "end": 1556.24,
+            "duration": 6.520000000000209
+          },
+          {
+            "start": 1629.16,
+            "end": 1635.64,
+            "duration": 6.480000000000018
+          },
+          {
+            "start": 1684.6,
+            "end": 1699.08,
+            "duration": 14.480000000000018
+          },
+          {
+            "start": 1995.0800000000002,
+            "end": 2003.24,
+            "duration": 8.159999999999854
+          },
+          {
+            "start": 2005.6,
+            "end": 2013.4,
+            "duration": 7.800000000000182
+          },
+          {
+            "start": 2201.16,
+            "end": 2206.56,
+            "duration": 5.400000000000091
+          }
+        ],
+        "gap_count": 97,
+        "maximum_gap_seconds": 41.320000000000164,
+        "endpoint_ratio_is_not_speech_accuracy": true
+      },
+      "recording_downloaded": false,
+      "audiovisual_review": "not performed"
+    },
+    {
+      "lecture": "4",
+      "video_id": "g0MB1CCBmsI",
+      "url": "https://www.youtube.com/watch?v=g0MB1CCBmsI",
+      "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 04 - Latent Spaces, Neural networks (2026)",
+      "duration_seconds": 4855,
+      "upload_date": "20260318",
+      "caption_language": "en",
+      "caption_kind": "YouTube automatically generated English captions",
+      "caption_sha256": "e8c3bd7346df0a336f5985358343a3469bd94c32ffa83ef8aed36aefa20db402",
+      "caption_segment_count": 1762,
+      "caption_interval_coverage": {
+        "first_start_seconds": 8.4,
+        "last_end_seconds": 4849.7300000000005,
+        "duration_seconds": 4855,
+        "interval_union_covered_seconds": 4350.021000000002,
+        "interval_union_ratio": 0.895987847579815,
+        "gaps_over_five_seconds": [
+          {
+            "start": 0.0,
+            "end": 8.4,
+            "duration": 8.4
+          },
+          {
+            "start": 289.568,
+            "end": 295.408,
+            "duration": 5.840000000000032
+          },
+          {
+            "start": 297.428,
+            "end": 302.96,
+            "duration": 5.531999999999982
+          },
+          {
+            "start": 488.91900000000004,
+            "end": 495.599,
+            "duration": 6.67999999999995
+          },
+          {
+            "start": 715.4799999999999,
+            "end": 725.92,
+            "duration": 10.440000000000055
+          },
+          {
+            "start": 834.8389999999999,
+            "end": 844.304,
+            "duration": 9.465000000000032
+          },
+          {
+            "start": 899.48,
+            "end": 906.0,
+            "duration": 6.519999999999982
+          },
+          {
+            "start": 1013.1600000000001,
+            "end": 1023.36,
+            "duration": 10.199999999999932
+          },
+          {
+            "start": 1026.839,
+            "end": 1039.28,
+            "duration": 12.441000000000031
+          },
+          {
+            "start": 1147.32,
+            "end": 1166.568,
+            "duration": 19.248000000000047
+          },
+          {
+            "start": 1398.6,
+            "end": 1404.48,
+            "duration": 5.880000000000109
+          },
+          {
+            "start": 1533.0,
+            "end": 1541.12,
+            "duration": 8.11999999999989
+          },
+          {
+            "start": 1546.44,
+            "end": 1553.039,
+            "duration": 6.598999999999933
+          },
+          {
+            "start": 1570.52,
+            "end": 1578.08,
+            "duration": 7.559999999999945
+          },
+          {
+            "start": 1785.24,
+            "end": 1792.399,
+            "duration": 7.158999999999878
+          },
+          {
+            "start": 1872.919,
+            "end": 1896.901,
+            "duration": 23.98199999999997
+          },
+          {
+            "start": 2035.399,
+            "end": 2060.0,
+            "duration": 24.601000000000113
+          },
+          {
+            "start": 2148.6800000000003,
+            "end": 2155.359,
+            "duration": 6.678999999999633
+          },
+          {
+            "start": 2158.359,
+            "end": 2170.4,
+            "duration": 12.041000000000167
+          },
+          {
+            "start": 2220.119,
+            "end": 2226.72,
+            "duration": 6.600999999999658
+          },
+          {
+            "start": 2231.48,
+            "end": 2245.04,
+            "duration": 13.559999999999945
+          },
+          {
+            "start": 2321.4,
+            "end": 2335.839,
+            "duration": 14.43899999999985
+          },
+          {
+            "start": 2422.839,
+            "end": 2430.32,
+            "duration": 7.481000000000222
+          },
+          {
+            "start": 2494.2000000000003,
+            "end": 2505.76,
+            "duration": 11.559999999999945
+          },
+          {
+            "start": 2631.2400000000002,
+            "end": 2677.28,
+            "duration": 46.039999999999964
+          },
+          {
+            "start": 2723.079,
+            "end": 2730.72,
+            "duration": 7.640999999999622
+          },
+          {
+            "start": 2733.72,
+            "end": 2742.56,
+            "duration": 8.840000000000146
+          },
+          {
+            "start": 3037.1600000000003,
+            "end": 3045.119,
+            "duration": 7.958999999999833
+          },
+          {
+            "start": 3121.319,
+            "end": 3126.64,
+            "duration": 5.320999999999913
+          },
+          {
+            "start": 3151.72,
+            "end": 3160.64,
+            "duration": 8.920000000000073
+          },
+          {
+            "start": 3187.8,
+            "end": 3198.72,
+            "duration": 10.919999999999618
+          },
+          {
+            "start": 3201.72,
+            "end": 3209.119,
+            "duration": 7.399000000000342
+          },
+          {
+            "start": 3237.64,
+            "end": 3244.24,
+            "duration": 6.599999999999909
+          },
+          {
+            "start": 3269.319,
+            "end": 3276.0,
+            "duration": 6.68100000000004
+          },
+          {
+            "start": 4695.44,
+            "end": 4701.52,
+            "duration": 6.080000000000837
+          },
+          {
+            "start": 4849.7300000000005,
+            "end": 4855,
+            "duration": 5.269999999999527
+          }
+        ],
+        "gap_count": 111,
+        "maximum_gap_seconds": 46.039999999999964,
+        "endpoint_ratio_is_not_speech_accuracy": true
+      },
+      "recording_downloaded": false,
+      "audiovisual_review": "not performed"
+    },
+    {
+      "lecture": "5",
+      "video_id": "d0kmyEJN2hI",
+      "url": "https://www.youtube.com/watch?v=d0kmyEJN2hI",
+      "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 05 - Discrete Diffusion Models (2026)",
+      "duration_seconds": 4870,
+      "upload_date": "20260318",
+      "caption_language": "en",
+      "caption_kind": "YouTube automatically generated English captions",
+      "caption_sha256": "2387adce787b2f24e00dd755d89c369dcb3d69e509139b6d16581a4c56aeb393",
+      "caption_segment_count": 2054,
+      "caption_interval_coverage": {
+        "first_start_seconds": 9.76,
+        "last_end_seconds": 4868.071000000001,
+        "duration_seconds": 4870,
+        "interval_union_covered_seconds": 4303.167000000009,
+        "interval_union_ratio": 0.883607186858318,
+        "gaps_over_five_seconds": [
+          {
+            "start": 0.0,
+            "end": 9.76,
+            "duration": 9.76
+          },
+          {
+            "start": 190.72,
+            "end": 199.56,
+            "duration": 8.840000000000003
+          },
+          {
+            "start": 580.68,
+            "end": 588.68,
+            "duration": 8.0
+          },
+          {
+            "start": 756.5600000000001,
+            "end": 768.04,
+            "duration": 11.479999999999905
+          },
+          {
+            "start": 776.72,
+            "end": 782.12,
+            "duration": 5.399999999999977
+          },
+          {
+            "start": 943.76,
+            "end": 955.72,
+            "duration": 11.960000000000036
+          },
+          {
+            "start": 958.88,
+            "end": 992.24,
+            "duration": 33.360000000000014
+          },
+          {
+            "start": 1274.68,
+            "end": 1290.52,
+            "duration": 15.839999999999918
+          },
+          {
+            "start": 1298.44,
+            "end": 1305.76,
+            "duration": 7.319999999999936
+          },
+          {
+            "start": 1496.48,
+            "end": 1501.88,
+            "duration": 5.400000000000091
+          },
+          {
+            "start": 1799.68,
+            "end": 1818.48,
+            "duration": 18.799999999999955
+          },
+          {
+            "start": 1880.72,
+            "end": 1890.6,
+            "duration": 9.879999999999882
+          },
+          {
+            "start": 2144.6400000000003,
+            "end": 2150.24,
+            "duration": 5.599999999999454
+          },
+          {
+            "start": 2511.56,
+            "end": 2523.08,
+            "duration": 11.519999999999982
+          },
+          {
+            "start": 2672.6400000000003,
+            "end": 2693.32,
+            "duration": 20.679999999999836
+          },
+          {
+            "start": 2699.359,
+            "end": 2706.32,
+            "duration": 6.96100000000024
+          },
+          {
+            "start": 2712.3590000000004,
+            "end": 2718.56,
+            "duration": 6.200999999999567
+          },
+          {
+            "start": 2736.76,
+            "end": 2742.56,
+            "duration": 5.799999999999727
+          },
+          {
+            "start": 2772.84,
+            "end": 2777.96,
+            "duration": 5.119999999999891
+          },
+          {
+            "start": 2809.84,
+            "end": 2817.88,
+            "duration": 8.039999999999964
+          },
+          {
+            "start": 2875.0,
+            "end": 2880.96,
+            "duration": 5.960000000000036
+          },
+          {
+            "start": 2883.68,
+            "end": 2900.44,
+            "duration": 16.76000000000022
+          },
+          {
+            "start": 2927.32,
+            "end": 2936.16,
+            "duration": 8.83999999999969
+          },
+          {
+            "start": 3065.44,
+            "end": 3097.6,
+            "duration": 32.159999999999854
+          },
+          {
+            "start": 3141.4,
+            "end": 3150.44,
+            "duration": 9.039999999999964
+          },
+          {
+            "start": 3276.5600000000004,
+            "end": 3286.76,
+            "duration": 10.199999999999818
+          },
+          {
+            "start": 3657.6800000000003,
+            "end": 3669.32,
+            "duration": 11.639999999999873
+          },
+          {
+            "start": 3712.36,
+            "end": 3720.4,
+            "duration": 8.039999999999964
+          },
+          {
+            "start": 3725.0800000000004,
+            "end": 3735.56,
+            "duration": 10.479999999999563
+          },
+          {
+            "start": 3769.24,
+            "end": 3793.28,
+            "duration": 24.04000000000042
+          },
+          {
+            "start": 3817.88,
+            "end": 3851.48,
+            "duration": 33.59999999999991
+          },
+          {
+            "start": 3969.08,
+            "end": 3981.84,
+            "duration": 12.760000000000218
+          }
+        ],
+        "gap_count": 152,
+        "maximum_gap_seconds": 33.59999999999991,
+        "endpoint_ratio_is_not_speech_accuracy": true
+      },
+      "recording_downloaded": false,
+      "audiovisual_review": "not performed"
+    }
+  ],
+  "labs_repository": {
+    "url": "https://github.com/eje24/iap-diffusion-labs/tree/2026",
+    "branch": "2026",
+    "commit": "0a9f2e35fae086510d9d507f024abdcf4511ec74",
+    "exercise_notebooks": [
+      {
+        "path": "labs/lab_one.ipynb",
+        "url": "https://github.com/eje24/iap-diffusion-labs/blob/0a9f2e35fae086510d9d507f024abdcf4511ec74/labs/lab_one.ipynb",
+        "sha256": "7f2cbaa8edc229f241cc74061f4fc7d0fbf4e554184175f49578d38ea24d5730",
+        "executed": false
+      },
+      {
+        "path": "labs/lab_two.ipynb",
+        "url": "https://github.com/eje24/iap-diffusion-labs/blob/0a9f2e35fae086510d9d507f024abdcf4511ec74/labs/lab_two.ipynb",
+        "sha256": "37e38db2c1dede124dda3ed0ac053c6f7c72ef3b53483a224cf2cd77e47c23e6",
+        "executed": false
+      },
+      {
+        "path": "labs/lab_three.ipynb",
+        "url": "https://github.com/eje24/iap-diffusion-labs/blob/0a9f2e35fae086510d9d507f024abdcf4511ec74/labs/lab_three.ipynb",
+        "sha256": "3aa7cbd4143f3b9db53a551f90f56139d2f0ea5484085a51f953b6fa74c0c07a",
+        "executed": false
+      }
+    ],
+    "solutions_exist": true,
+    "license": "MIT License; copyright 2025 Ezra Erives and Peter Holderrieth"
+  },
+  "course_lab_links": [
+    {
+      "lab": 1,
+      "file_id": "1hddGSpAn1rfTQI2zacx2ueOrpAq_Boqd",
+      "status": "acquired",
+      "sha256": "7f2cbaa8edc229f241cc74061f4fc7d0fbf4e554184175f49578d38ea24d5730",
+      "source_url": "https://drive.google.com/file/d/1hddGSpAn1rfTQI2zacx2ueOrpAq_Boqd/view?usp=sharing",
+      "matches_2026_repository_scaffold": true
+    },
+    {
+      "lab": 2,
+      "file_id": "1L2ntkxl04jiiz-t40sKscXhEC_XD5FQp",
+      "status": "acquired",
+      "sha256": "37e38db2c1dede124dda3ed0ac053c6f7c72ef3b53483a224cf2cd77e47c23e6",
+      "source_url": "https://drive.google.com/file/d/1L2ntkxl04jiiz-t40sKscXhEC_XD5FQp/view?usp=sharing",
+      "matches_2026_repository_scaffold": true
+    },
+    {
+      "lab": 3,
+      "file_id": "1wKeiJBN4HS-7dsHQk_zd22Zfoc3ieJn9",
+      "status": "acquired",
+      "sha256": "3aa7cbd4143f3b9db53a551f90f56139d2f0ea5484085a51f953b6fa74c0c07a",
+      "source_url": "https://colab.research.google.com/drive/1wKeiJBN4HS-7dsHQk_zd22Zfoc3ieJn9?usp=sharing",
+      "matches_2026_repository_scaffold": true
+    }
+  ],
+  "rights_boundary": {
+    "course_site_notice": "CC BY-NC-SA; version not specified in the visible footer",
+    "downloaded_notes_explicit_license": "no license text found in extracted 84-page PDF",
+    "lab_repository": "MIT license inspected at branch 2026",
+    "raw_source_redistribution": "not included in the independent reading edition",
+    "no_rights_inference": "The website footer is not treated as evidence that every linked recording, figure, slide, or paper shares the same license."
+  },
+  "scope_limits": [
+    "Captions are automatic and can mistranscribe technical speech.",
+    "Timing coverage is distinct from transcription accuracy or audiovisual review.",
+    "PDF acquisition and text extraction do not establish visual inspection of every slide.",
+    "Official notebooks were inspected as source, not executed or trained.",
+    "Source acquisition does not establish chapter or course completion."
+  ]
+}

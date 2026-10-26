@@ -1,0 +1,270 @@
+{
+  "checked_at": "2026-10-26T19:06:28.135347+00:00",
+  "static": {
+    "status": "passed",
+    "failures": [],
+    "pages": [
+      {
+        "file": "chapter-01.html",
+        "prose_diagnostic_words": 5433,
+        "h2": 11,
+        "solutions": 6,
+        "body_sha256": "6dfaeeabf778217e7de8eadb9d45549f5268dc85c31d366c3dba44af87bc5ae7"
+      },
+      {
+        "file": "chapter-02.html",
+        "prose_diagnostic_words": 5580,
+        "h2": 11,
+        "solutions": 6,
+        "body_sha256": "aba79645cb38e69186cc338c8f920a5e5388826fc20a285d2fbb7831cb006eaf"
+      },
+      {
+        "file": "chapter-03.html",
+        "prose_diagnostic_words": 5320,
+        "h2": 11,
+        "solutions": 6,
+        "body_sha256": "907b3b2baf57382122b897ec89d940cdced4d365d965bc1974931f8ef53b3c1a"
+      },
+      {
+        "file": "chapter-04.html",
+        "prose_diagnostic_words": 4545,
+        "h2": 10,
+        "solutions": 6,
+        "body_sha256": "0e1f78efd05614c863fc1b2021efc15487fd1abbecc43abbf69e96b70473b5e6"
+      },
+      {
+        "file": "chapter-05.html",
+        "prose_diagnostic_words": 5749,
+        "h2": 10,
+        "solutions": 6,
+        "body_sha256": "50854ee3414ce7173fe1878ac784b3df6abe17165e1cd639ab3886dc9d8c0d0f"
+      },
+      {
+        "file": "chapter-06.html",
+        "prose_diagnostic_words": 5776,
+        "h2": 11,
+        "solutions": 6,
+        "body_sha256": "dddfabc31b940a091690ac4e023869ecebcef197e6538e96d40a5c1b1ef805b2"
+      },
+      {
+        "file": "index.html",
+        "prose_diagnostic_words": 492,
+        "h2": 8,
+        "solutions": 0,
+        "body_sha256": null
+      },
+      {
+        "file": "laboratory.html",
+        "prose_diagnostic_words": 598,
+        "h2": 4,
+        "solutions": 0,
+        "body_sha256": null
+      },
+      {
+        "file": "references.html",
+        "prose_diagnostic_words": 673,
+        "h2": 0,
+        "solutions": 0,
+        "body_sha256": null
+      },
+      {
+        "file": "source-map.html",
+        "prose_diagnostic_words": 1430,
+        "h2": 1,
+        "solutions": 0,
+        "body_sha256": null
+      }
+    ]
+  },
+  "browser": {
+    "status": "passed",
+    "failures": [],
+    "checks": [
+      {
+        "file": "chapter-01.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 387,
+        "overflow": false,
+        "h1": "1. From generation to probability transport",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-01.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 387,
+        "overflow": false,
+        "h1": "1. From generation to probability transport",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-02.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 330,
+        "overflow": false,
+        "h1": "2. Flow matching: learning a probability transport",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-02.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 330,
+        "overflow": false,
+        "h1": "2. Flow matching: learning a probability transport",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-03.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 343,
+        "overflow": false,
+        "h1": "3. Scores, denoising, and stochastic sampling",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-03.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 343,
+        "overflow": false,
+        "h1": "3. Scores, denoising, and stochastic sampling",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-04.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 297,
+        "overflow": false,
+        "h1": "4. Conditioning and classifier-free guidance",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-04.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 297,
+        "overflow": false,
+        "h1": "4. Conditioning and classifier-free guidance",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-05.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 315,
+        "overflow": false,
+        "h1": "5. Latent spaces and the networks that generate them",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-05.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 315,
+        "overflow": false,
+        "h1": "5. Latent spaces and the networks that generate them",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-06.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 307,
+        "overflow": false,
+        "h1": "6. Discrete diffusion: learning the rates of a jump process",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-06.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 307,
+        "overflow": false,
+        "h1": "6. Discrete diffusion: learning the rates of a jump process",
+        "brokenImages": 0
+      },
+      {
+        "file": "index.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Flow Matching and Diffusion Models",
+        "brokenImages": 0
+      },
+      {
+        "file": "index.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Flow Matching and Diffusion Models",
+        "brokenImages": 0
+      },
+      {
+        "file": "laboratory.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Numerical laboratory",
+        "brokenImages": 0
+      },
+      {
+        "file": "laboratory.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Numerical laboratory",
+        "brokenImages": 0
+      },
+      {
+        "file": "references.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Primary references",
+        "brokenImages": 0
+      },
+      {
+        "file": "references.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Primary references",
+        "brokenImages": 0
+      },
+      {
+        "file": "source-map.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Sources and coverage",
+        "brokenImages": 0
+      },
+      {
+        "file": "source-map.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Sources and coverage",
+        "brokenImages": 0
+      }
+    ],
+    "external_requests_blocked": [],
+    "clipboard": "copy handler tested against isolated clipboard API stub; real system clipboard not verified",
+    "actual_print_dialog": "not invoked; before/after hooks tested",
+    "accessibility": "automated controls/layout checks only; no human certification"
+  },
+  "scientific_acceptance": "separate per-chapter review; not established by this program"
+}

@@ -1,0 +1,194 @@
+{
+  "chapter": 5,
+  "title": "Latent spaces and the networks that generate them",
+  "status": "accepted and locally validated",
+  "body_sha256": "50854ee3414ce7173fe1878ac784b3df6abe17165e1cd639ab3886dc9d8c0d0f",
+  "sections": [
+    {
+      "id": "compression",
+      "title": "Why compress the state?",
+      "video_id": "g0MB1CCBmsI",
+      "start": 75,
+      "end": 248,
+      "lecture_material": "High-dimensional image-shaped field output; latent compression need.",
+      "research_extension": "Explicit task-dependent limits of reconstruction quality.",
+      "teaching_construction": "Dimension and cost separation; original d2/k1 case motivation.",
+      "evidence_class": "definition/derivation/finite mathematical audit; bounded primary architecture description"
+    },
+    {
+      "id": "autoencoders",
+      "title": "Reconstruction and latent laws",
+      "video_id": "g0MB1CCBmsI",
+      "start": 248,
+      "end": 708,
+      "lecture_material": "Encoder/decoder, reconstruction loss, uncontrolled latent law.",
+      "research_extension": "Smooth dimension-reduction rank obstruction.",
+      "teaching_construction": "Latent coordinate rescaling counterexample and rank proof.",
+      "evidence_class": "definition/derivation/finite mathematical audit; bounded primary architecture description"
+    },
+    {
+      "id": "probabilistic-codec",
+      "title": "Probabilistic encoder and decoder",
+      "video_id": "g0MB1CCBmsI",
+      "start": 708,
+      "end": 1246,
+      "lecture_material": "Gaussian stochastic encoder/decoder and reconstruction likelihood.",
+      "research_extension": "Kingma/Welling Section2.1; positive-density and variance conditions.",
+      "teaching_construction": "Exact A=(1,2) Gaussian model, covariance, posterior square completion.",
+      "evidence_class": "definition/derivation/finite mathematical audit; bounded primary architecture description"
+    },
+    {
+      "id": "variational-objective",
+      "title": "KL and evidence lower bound",
+      "video_id": "g0MB1CCBmsI",
+      "start": 1246,
+      "end": 2408,
+      "lecture_material": "Prior regularization, KL Gaussian calculation, weighted objective.",
+      "research_extension": "Kingma/Welling Section2.2 and AppendixB; notes AppendixD.",
+      "teaching_construction": "Full local ELBO gap proof, exact numeric gap, rho-bound distinction.",
+      "evidence_class": "definition/derivation/finite mathematical audit; bounded primary architecture description"
+    },
+    {
+      "id": "reparameterization",
+      "title": "Fixed-noise path gradients",
+      "video_id": "g0MB1CCBmsI",
+      "start": 2408,
+      "end": 3295,
+      "lecture_material": "Encoder sampling reparameterization and trainable VAE objective.",
+      "research_extension": "Kingma/Welling Sections2.3\u20132.4; dominated derivative interchange.",
+      "teaching_construction": "Quadrature/path derivative/finite-difference agreement, logvariance.",
+      "evidence_class": "definition/derivation/finite mathematical audit; bounded primary architecture description"
+    },
+    {
+      "id": "latent-generation",
+      "title": "Which latent law?",
+      "video_id": "g0MB1CCBmsI",
+      "start": 3295,
+      "end": 3458,
+      "lecture_material": "Encode dataset, fit latent flow/diffusion, decode; information loss.",
+      "research_extension": "Rombach Sections3.1\u20133.2; aggregate-vs-prior/information decomposition.",
+      "teaching_construction": "Means-vs-samples laws, exact covariance/MSE and latent bridge.",
+      "evidence_class": "definition/derivation/finite mathematical audit; bounded primary architecture description"
+    },
+    {
+      "id": "architectures",
+      "title": "Latent tensor and velocity tensor",
+      "video_id": "g0MB1CCBmsI",
+      "start": 3458,
+      "end": 4043,
+      "lecture_material": "Time/text embeddings, patchification, attention and output contract.",
+      "research_extension": "Notes6.1 U-Net extension; Rombach3.3; Peebles/Xie3 input/output.",
+      "teaching_construction": "Explicit projections and dimensions; tiny CPU patch/attention audit.",
+      "evidence_class": "definition/derivation/finite mathematical audit; bounded primary architecture description"
+    },
+    {
+      "id": "case-studies",
+      "title": "Reading large-model designs precisely",
+      "video_id": "g0MB1CCBmsI",
+      "start": 4043,
+      "end": 4849.73,
+      "lecture_material": "SD3/MovieGen design, video shapes, time convention and guidance tail.",
+      "research_extension": "EsserSections3\u20134; MovieGen3.1.1\u20133.1.3 actual residual/rounding choices.",
+      "teaching_construction": "Explicit clock translation, corrected residual endpoint, scope limits.",
+      "evidence_class": "definition/derivation/finite mathematical audit; bounded primary architecture description"
+    }
+  ],
+  "references": [
+    {
+      "id": "course",
+      "title": "Introduction to Flow Matching and Diffusion Models",
+      "authors": "Peter Holderrieth and Ezra Erives",
+      "year": 2026,
+      "url": "https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf",
+      "locator": "Section6 PDFpp41\u201353; AppendixD pp77\u201380",
+      "supports": "Codec/VAE, architecture, cases and ELBO topic content."
+    },
+    {
+      "id": "slides",
+      "title": "MIT6.S184 Lecture4 slides",
+      "year": 2026,
+      "url": "https://diffusion.csail.mit.edu/2026/docs/20260128_Lecture_04_edited.pdf",
+      "locator": "Latents pp5\u201319; architecture pp20\u201328; cases30\u201333; clocks35\u201338",
+      "supports": "Recording-correlated sequence; title-page2025 is a source typo."
+    },
+    {
+      "id": "vae",
+      "title": "Auto-Encoding Variational Bayes",
+      "authors": "Diederik P. Kingma and Max Welling",
+      "year": 2013,
+      "url": "https://arxiv.org/pdf/1312.6114v11",
+      "locator": "Version11 Dec2022; Sections2.1\u20132.4 pp2\u20134; AppendixB pp10\u201311",
+      "supports": "Joint model, posterior/ELBO gap, path gradient, Gaussian KL."
+    },
+    {
+      "id": "ldm",
+      "title": "High-Resolution Image Synthesis With Latent Diffusion Models",
+      "authors": "Robin Rombach et al.",
+      "year": 2022,
+      "url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Rombach_High-Resolution_Image_Synthesis_With_Latent_Diffusion_Models_CVPR_2022_paper.pdf",
+      "locator": "Sections3.1\u20133.3 PDFpp3\u20134; printed10686\u201310687",
+      "supports": "Perceptual/adversarial compression, mildKL/VQ, latent UNet/crossattention."
+    },
+    {
+      "id": "dit",
+      "title": "Scalable Diffusion Models with Transformers",
+      "authors": "William Peebles and Saining Xie",
+      "year": 2023,
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Peebles_Scalable_Diffusion_Models_with_Transformers_ICCV_2023_paper.pdf",
+      "locator": "Section3 Figures3\u20134 PDFpp3\u20135; printed4197\u20134199",
+      "supports": "Patch tensors, positional features, distinct blocks, noise/covariance head."
+    },
+    {
+      "id": "sd3",
+      "title": "Scaling Rectified Flow Transformers for High-Resolution Image Synthesis",
+      "authors": "Patrick Esser et al.",
+      "year": 2024,
+      "url": "https://arxiv.org/pdf/2403.03206v1",
+      "locator": "Version1 Mar5,2024; Sections3\u20134 Figure2 pp3\u20135",
+      "supports": "Data-to-noise clock, straight bridge/time sampling, multimodal attention."
+    },
+    {
+      "id": "moviegen",
+      "title": "Movie Gen: A Cast of Media Foundation Models",
+      "authors": "The Movie Gen team at Meta",
+      "year": 2024,
+      "url": "https://arxiv.org/pdf/2410.13720",
+      "locator": "Report datedOct4,2024; Sections3.1.1\u20133.1.3 Figures3\u20134 pp4\u20138",
+      "supports": "TAE8x and16channels, ceilframes, residual1e-5 bridge, video patches/blocks."
+    }
+  ],
+  "code": [
+    {
+      "path": "code/ch05.py",
+      "command": "python code/ch05.py",
+      "sha256": "757d914946bc766ce0e875faf27aa81b248c0b749b424ba3a3d0b02318404956",
+      "result_path": "code/ch05-results.json",
+      "scope": "Exact conjugate Gaussian/gradient and tensor checks; no training"
+    }
+  ],
+  "figures": [
+    {
+      "path": "assets/ch05-elbo.svg",
+      "generator": "code/ch05.py --write",
+      "type": "exact variational-objective curves, fixed variance",
+      "sha256": "d8cfa059ea25531e8682550e9857b7eb2695c5029633ced6d3dce029e4c7198a"
+    }
+  ],
+  "metrics": {
+    "prose_words": 5283,
+    "h2_sections": 10,
+    "exercises": 6,
+    "worked_solutions": 6,
+    "python_blocks": 1
+  },
+  "evidence_limits": [
+    "Complete sequential read of auto-generated recording captions; no audiovisual playback.",
+    "Selected figure/equation slide and primary-page visual check, not full visual PDF review.",
+    "Primary research claims bounded to listed inspected locators and dated papers.",
+    "Exact original Gaussian construction; no neural VAE/DiT/image training.",
+    "Reconstruction metrics are Euclidean; no perceptual or image-quality evaluation.",
+    "Neither standard ELBO nor shape counts alone establish fit/runtime claims.",
+    "Author cannot independently accept; parent owns reader/browser validation."
+  ],
+  "accepted_body_sha256": "50854ee3414ce7173fe1878ac784b3df6abe17165e1cd639ab3886dc9d8c0d0f"
+}

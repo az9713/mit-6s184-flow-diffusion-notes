@@ -1,0 +1,138 @@
+{
+  "scope": "original finite-state standard-library teaching experiment; no neural benchmark",
+  "seed_base": 61842026,
+  "monte_carlo_count": 100000,
+  "asymmetric": {
+    "exact_p1": 0.6334752877547574,
+    "holding_time_p1": 0.63236,
+    "binomial_standard_error": 0.0015237596515158968,
+    "mean_jumps": 1.54884,
+    "uniformization_p1": 0.633475287754757,
+    "omitted_poisson_mass": 4.440892098500626e-16,
+    "terms": 21,
+    "transpose_derivative_total_mass_at_state0": -1.0
+  },
+  "generator_check": {
+    "time": 0.37,
+    "max_forward_residual": 0.0,
+    "max_row_sum_error": 0.0
+  },
+  "parallel_exact_enumeration": {
+    "1": {
+      "law": {
+        "MM": 0.0,
+        "M0": 0.0,
+        "M1": 0.0,
+        "0M": 0.0,
+        "00": 0.25,
+        "01": 0.25,
+        "1M": 0.0,
+        "10": 0.25,
+        "11": 0.25
+      },
+      "invalid_mass": 0.5,
+      "derived_invalid_mass": 0.5,
+      "total_variation": 0.5
+    },
+    "4": {
+      "law": {
+        "MM": 0.0,
+        "M0": 0.0,
+        "M1": 0.0,
+        "0M": 0.0,
+        "00": 0.4375,
+        "01": 0.0625,
+        "1M": 0.0,
+        "10": 0.0625,
+        "11": 0.4375
+      },
+      "invalid_mass": 0.125,
+      "derived_invalid_mass": 0.125,
+      "total_variation": 0.125
+    },
+    "16": {
+      "law": {
+        "MM": 0.0,
+        "M0": 0.0,
+        "M1": 0.0,
+        "0M": 0.0,
+        "00": 0.484375,
+        "01": 0.015625,
+        "1M": 0.0,
+        "10": 0.015625,
+        "11": 0.484375
+      },
+      "invalid_mass": 0.03125,
+      "derived_invalid_mass": 0.03125,
+      "total_variation": 0.03125
+    },
+    "64": {
+      "law": {
+        "MM": 0.0,
+        "M0": 0.0,
+        "M1": 0.0,
+        "0M": 0.0,
+        "00": 0.49609375,
+        "01": 0.00390625,
+        "1M": 0.0,
+        "10": 0.00390625,
+        "11": 0.49609375
+      },
+      "invalid_mass": 0.0078125,
+      "derived_invalid_mass": 0.0078125,
+      "total_variation": 0.0078125
+    }
+  },
+  "event_sampler": {
+    "time": 0.5,
+    "empirical_law": {
+      "M0": 0.12384,
+      "M1": 0.12482,
+      "1M": 0.12495,
+      "MM": 0.25128,
+      "00": 0.12329,
+      "11": 0.12701,
+      "0M": 0.12481
+    },
+    "total_variation_from_true_path": 0.0032900000000000013,
+    "invalid_count": 0
+  },
+  "tabular_fit": {
+    "training_count": 80000,
+    "training_seed": 61842027,
+    "counts": {
+      "1M": {
+        "1": 6684
+      },
+      "MM": {
+        "1": 13269,
+        "0": 13462
+      },
+      "M0": {
+        "0": 6691
+      },
+      "11": {
+        "1": 13300
+      },
+      "M1": {
+        "1": 6821
+      },
+      "00": {
+        "0": 13126
+      },
+      "0M": {
+        "0": 6647
+      }
+    },
+    "posterior_zero_at_MM": 0.5036100407766264,
+    "heldout_count": 100000,
+    "heldout_seed": 61842028,
+    "heldout_token_summed_nll": 0.46446737709279584,
+    "heldout_standard_error": 0.0020693895289928942,
+    "oracle_population_nll": 0.46209812037329684,
+    "fitted_population_nll": 0.4621154973521066,
+    "exact_fitted_terminal_TV": 0.003610040776626411,
+    "note": "unrestricted tabular MLE on seven reachable contexts; terminal sampler uses updated posterior after each reveal"
+  },
+  "elapsed_seconds": 0.2809782999975141
+}

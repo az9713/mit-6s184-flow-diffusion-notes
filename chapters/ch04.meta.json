@@ -1,0 +1,104 @@
+{
+  "chapter": 4,
+  "title": "Conditioning and classifier-free guidance",
+  "status": "accepted and locally validated",
+  "body_sha256": "0e1f78efd05614c863fc1b2021efc15487fd1abbecc43abbf69e96b70473b5e6",
+  "sections": [
+    {
+      "id": "conditioning",
+      "title": "Conditional target",
+      "video_id": "8oWZ1bHwyRI",
+      "start": 0,
+      "end": 75,
+      "lecture_material": "Joint data law, conditioning and paired generation.",
+      "research_extension": "Distinction between conditional and marginal correctness.",
+      "teaching_construction": "Gaussian paired measurement construction.",
+      "evidence_class": "proved identities and original Gaussian constructions; actual finite numerical checks"
+    },
+    {
+      "id": "conditional-training",
+      "title": "Conditional flow training",
+      "video_id": "8oWZ1bHwyRI",
+      "start": 75,
+      "end": 516,
+      "lecture_material": "Prompt input, paired conditional regression and ODE sampling.",
+      "research_extension": "Finite-risk conditional expectation identity.",
+      "teaching_construction": "Exact conditional and unconditional Gaussian velocities.",
+      "evidence_class": "proved identities and original Gaussian constructions; actual finite numerical checks"
+    },
+    {
+      "id": "classifier-guidance",
+      "title": "Classifier guidance",
+      "video_id": "8oWZ1bHwyRI",
+      "start": 516,
+      "end": 1189,
+      "lecture_material": "Bayes score identity, score-to-velocity conversion and classifier scaling.",
+      "research_extension": "Positivity, differentiation and noisy-classifier conditions.",
+      "teaching_construction": "Gaussian posterior derivative check.",
+      "evidence_class": "proved identities and original Gaussian constructions; actual finite numerical checks"
+    },
+    {
+      "id": "classifier-free",
+      "title": "Classifier-free field combination",
+      "video_id": "8oWZ1bHwyRI",
+      "start": 1189,
+      "end": 1836,
+      "lecture_material": "Remove classifier and combine conditional/null fields.",
+      "research_extension": "Paper versus course scale conventions; error amplification.",
+      "teaching_construction": "Pointwise Gaussian field and branch error examples.",
+      "evidence_class": "proved identities and original Gaussian constructions; actual finite numerical checks"
+    },
+    {
+      "id": "dropout",
+      "title": "Independent condition dropout",
+      "video_id": "8oWZ1bHwyRI",
+      "start": 1836,
+      "end": 2007,
+      "lecture_material": "Null condition, dropout training and shared model.",
+      "research_extension": "Conditional projection proof and finite-model restrictions.",
+      "teaching_construction": "Label-selected dropout counterexample.",
+      "evidence_class": "proved identities and original Gaussian constructions; actual finite numerical checks"
+    },
+    {
+      "id": "sampling-and-tilts",
+      "title": "Guided sampling and limits",
+      "video_id": "8oWZ1bHwyRI",
+      "start": 2007,
+      "end": 2351,
+      "lecture_material": "Guidance is heuristic and changes distribution; diversity/cost discussion.",
+      "research_extension": "Fixed-time score algebra versus temporal transport compatibility.",
+      "teaching_construction": "Exact Gaussian endpoint counterexample and ODE/SDE mismatch.",
+      "evidence_class": "proved identities and original Gaussian constructions; actual finite numerical checks"
+    }
+  ],
+  "references": [
+    {
+      "id": "course",
+      "title": "Holderrieth and Erives, Introduction to Flow Matching and Diffusion Models (2026)",
+      "url": "https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf#page=34",
+      "locator": "Section5, PDF pp34-40; Eqs57-67, Algorithm5",
+      "supports": "Paired conditioning, classifier/CFG algebra, dropout and conditional sampling."
+    },
+    {
+      "id": "cfg",
+      "title": "Ho and Salimans, Classifier-Free Diffusion Guidance (2022)",
+      "url": "https://arxiv.org/pdf/2207.12598",
+      "locator": "PDF pp3-7; Section3.2, Eq6, Algorithms1-2, Section4",
+      "supports": "Original shared-model conditioning removal, extra guidance scale, learned-score caveat and bounded historical experimental scope."
+    }
+  ],
+  "code": {
+    "file": "code/ch04.py",
+    "results": "code/ch04-results.json",
+    "scope": "standard-library Gaussian/CFG checks, no neural training",
+    "sha256": "2194097d9f405b2097e75e6c279fa80bc83d1c24faec53f4e79da4f9b8fd8651"
+  },
+  "evidence_limits": [
+    "Full automatic-caption text read sequentially; no audiovisual review",
+    "Course notes pp34-40 and slide24-33 extracted text inspected",
+    "Ho/Salimans core pp3-7 inspected; no full-paper or visual benchmark review",
+    "Original source figure not reproduced",
+    "No neural training or production latency measurement"
+  ],
+  "accepted_body_sha256": "0e1f78efd05614c863fc1b2021efc15487fd1abbecc43abbf69e96b70473b5e6"
+}

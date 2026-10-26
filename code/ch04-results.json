@@ -1,0 +1,111 @@
+{
+  "guidance": [
+    {
+      "scale": 0,
+      "exact_ode_variance": 2,
+      "normalized_tilt_variance": 2.0,
+      "euler_refinement": [
+        {
+          "steps": 16,
+          "variance": 1.692589677863581
+        },
+        {
+          "steps": 64,
+          "variance": 1.9183887672837057
+        },
+        {
+          "steps": 256,
+          "variance": 1.9792792010541647
+        },
+        {
+          "steps": 1024,
+          "variance": 1.9947995812206263
+        }
+      ]
+    },
+    {
+      "scale": 1,
+      "exact_ode_variance": 1,
+      "normalized_tilt_variance": 1.0,
+      "euler_refinement": [
+        {
+          "steps": 16,
+          "variance": 0.8513830850977457
+        },
+        {
+          "steps": 64,
+          "variance": 0.9606241031005961
+        },
+        {
+          "steps": 256,
+          "variance": 0.9900080284302133
+        },
+        {
+          "steps": 1024,
+          "variance": 0.9974926046610126
+        }
+      ]
+    },
+    {
+      "scale": 2,
+      "exact_ode_variance": 0.5,
+      "normalized_tilt_variance": 0.6666666666666666,
+      "euler_refinement": [
+        {
+          "steps": 16,
+          "variance": 0.4187868937180847
+        },
+        {
+          "steps": 64,
+          "variance": 0.4783953050722783
+        },
+        {
+          "steps": 256,
+          "variance": 0.4945119692058769
+        },
+        {
+          "steps": 1024,
+          "variance": 0.49862247154637546
+        }
+      ]
+    },
+    {
+      "scale": 4,
+      "exact_ode_variance": 0.125,
+      "normalized_tilt_variance": 0.4,
+      "euler_refinement": [
+        {
+          "steps": 16,
+          "variance": 0.0940910613184711
+        },
+        {
+          "steps": 64,
+          "variance": 0.11666212882733393
+        },
+        {
+          "steps": 256,
+          "variance": 0.12287447943978261
+        },
+        {
+          "steps": 1024,
+          "variance": 0.12446600551105308
+        }
+      ]
+    }
+  ],
+  "biased_dropout_null_mean": -0.8,
+  "worst_case_error_multipliers": [
+    1,
+    3,
+    7
+  ],
+  "compatibility_residual_on_ode_variance_at_endpoint_sigma_one": 0.25,
+  "stipulated_cost_example_ms": {
+    "ordinary": 220,
+    "sequential_cfg": 420,
+    "batched_cfg": 300,
+    "sequential_ratio": 1.9090909090909092,
+    "batched_ratio": 1.3636363636363635
+  },
+  "scope": "exact scalar Gaussian model and deterministic Euler moments; no neural or perceptual experiment"
+}

@@ -1,0 +1,240 @@
+{
+  "chapter": 6,
+  "title": "Discrete diffusion: learning the rates of a jump process",
+  "status": "accepted and locally validated",
+  "body_sha256": "dddfabc31b940a091690ac4e023869ecebcef197e6538e96d40a5c1b1ef805b2",
+  "sections": [
+    {
+      "id": "jump-rates",
+      "title": "Jump states and source-row rates",
+      "video_id": "d0kmyEJN2hI",
+      "start": 88,
+      "end": 749,
+      "lecture_material": "CTMC definition and rate constraints.",
+      "research_extension": "Explicit orientation translation and asymmetric diagnosis.",
+      "teaching_construction": "Rates2/1 with exact law.",
+      "evidence_class": "definitions; proofs; original finite-state derivations; actual CPU fitting and sampling"
+    },
+    {
+      "id": "sparse-dependent",
+      "title": "Sparse jumps and dependent tokens",
+      "video_id": "d0kmyEJN2hI",
+      "start": 749,
+      "end": 1264,
+      "lecture_material": "Factorized neighbor sparsity.",
+      "research_extension": "Campbell dependent reverse dynamics.",
+      "teaching_construction": "Correlated target00/11; full-sequence dependence.",
+      "evidence_class": "definitions; proofs; original finite-state derivations; actual CPU fitting and sampling"
+    },
+    {
+      "id": "sampling",
+      "title": "Sampling finite-state rates",
+      "video_id": "d0kmyEJN2hI",
+      "start": 1264,
+      "end": 1938,
+      "lecture_material": "Euler and parallel per-position sampling.",
+      "research_extension": "Uniformization proof; exact holding time; commuting caveat.",
+      "teaching_construction": "Asymmetric Monte Carlo and uniformization.",
+      "evidence_class": "definitions; proofs; original finite-state derivations; actual CPU fitting and sampling"
+    },
+    {
+      "id": "conditional-paths",
+      "title": "Conditional probability paths",
+      "video_id": "d0kmyEJN2hI",
+      "start": 1938,
+      "end": 2667,
+      "lecture_material": "Matching recipe and mixture path.",
+      "research_extension": "Gat broader coupled-mixture family.",
+      "teaching_construction": "Seven-state mask-pair path.",
+      "evidence_class": "definitions; proofs; original finite-state derivations; actual CPU fitting and sampling"
+    },
+    {
+      "id": "posterior-rates",
+      "title": "Conditional and marginal rates",
+      "video_id": "d0kmyEJN2hI",
+      "start": 2667,
+      "end": 2972,
+      "lecture_material": "Posterior marginalization.",
+      "research_extension": "Support and zero-mass state extensions.",
+      "teaching_construction": "Two-token posterior rate mechanism.",
+      "evidence_class": "definitions; proofs; original finite-state derivations; actual CPU fitting and sampling"
+    },
+    {
+      "id": "forward-equation",
+      "title": "Gain/loss and marginalization proof",
+      "video_id": "d0kmyEJN2hI",
+      "start": 2972,
+      "end": 3475,
+      "lecture_material": "Forward equation and marginalization proof.",
+      "research_extension": "Positivity via stochastic approximants; bounded uniqueness; conditional product proof.",
+      "teaching_construction": "Exact flux balance and nine-state residual.",
+      "evidence_class": "definitions; proofs; original finite-state derivations; actual CPU fitting and sampling"
+    },
+    {
+      "id": "singular-endpoint",
+      "title": "Exploding hazards and terminal completion",
+      "video_id": "d0kmyEJN2hI",
+      "start": 3475,
+      "end": 3850,
+      "lecture_material": "Endpoint exploding scheduler factor.",
+      "research_extension": "Interior theorem restriction, integrated hazard and exact terminal construction.",
+      "teaching_construction": "Uniform reveal times and final-step positivity distinction.",
+      "evidence_class": "definitions; proofs; original finite-state derivations; actual CPU fitting and sampling"
+    },
+    {
+      "id": "learn-classifier",
+      "title": "Learning a token posterior",
+      "video_id": "d0kmyEJN2hI",
+      "start": 3850,
+      "end": 4071,
+      "lecture_material": "Classifier parameterization and cross-entropy.",
+      "research_extension": "KL optimum proof with support and finite-softmax limits.",
+      "teaching_construction": "Exact irreducible pair loss and tabular class.",
+      "evidence_class": "definitions; proofs; original finite-state derivations; actual CPU fitting and sampling"
+    },
+    {
+      "id": "executable-checks",
+      "title": "Fitting and finite-step diagnostics",
+      "video_id": "d0kmyEJN2hI",
+      "start": 4071,
+      "end": 4541,
+      "lecture_material": "Training and masked model examples; source demonstrations retained as orientation.",
+      "research_extension": "Representation/finite-fit/solver separation.",
+      "teaching_construction": "Actual tabular MLE, exact parallel enumeration and event-time Monte Carlo.",
+      "evidence_class": "definitions; proofs; original finite-state derivations; actual CPU fitting and sampling"
+    },
+    {
+      "id": "tradeoffs-generators",
+      "title": "Systems tradeoffs and generator viewpoint",
+      "video_id": "d0kmyEJN2hI",
+      "start": 4541,
+      "end": 4868.071,
+      "lecture_material": "Autoregressive tradeoffs, editing and Generator Matching conclusion.",
+      "research_extension": "Bounded inspection of Holderrieth test-function formalism.",
+      "teaching_construction": "Joint-law benchmark design and derived finite generator action.",
+      "evidence_class": "definitions; proofs; original finite-state derivations; actual CPU fitting and sampling"
+    }
+  ],
+  "original_extensions": [
+    {
+      "id": "problems",
+      "recording_span": null,
+      "scope": "Six original varied problems with complete worked solutions"
+    }
+  ],
+  "references": [
+    {
+      "id": "course-notes",
+      "title": "An Introduction to Flow Matching and Diffusion Models",
+      "authors": [
+        "Peter Holderrieth",
+        "Ezra Erives"
+      ],
+      "year": 2026,
+      "url": "https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf#page=54",
+      "locator": "PDF pp54\u201365, Section7; appendix C pp74\u201376",
+      "supports": "CTMC rates, conditional mixture paths, marginalization, forward equation, token classification"
+    },
+    {
+      "id": "course-slides5",
+      "title": "Lecture05: Discrete diffusion models and discrete flow matching",
+      "authors": [
+        "Peter Holderrieth",
+        "Ron Shprints"
+      ],
+      "year": 2026,
+      "url": "https://diffusion.csail.mit.edu/2026/docs/20260130_Lecture_05.pdf",
+      "locator": "All42 pages extracted text; rendered equation pages7,10,15,20,21,26,27,40; actual image inspection pp20,26,40",
+      "supports": "Recording structure, displayed rates and forward convention; hypotheses about systems tradeoffs; Generator Matching citation"
+    },
+    {
+      "id": "gat2024",
+      "title": "Discrete Flow Matching",
+      "authors": [
+        "Itai Gat",
+        "Tal Remez",
+        "Neta Shaul",
+        "Felix Kreuk",
+        "Ricky T. Q. Chen",
+        "Gabriel Synnaeve",
+        "Yossi Adi",
+        "Yaron Lipman"
+      ],
+      "year": 2024,
+      "url": "https://arxiv.org/pdf/2407.15595",
+      "locator": "arXiv v2; PDF pp3\u20137, equations7\u201310,12\u201315,20,24,28; Theorem2 and Proposition5",
+      "supports": "Coupled mixture paths, posterior averaging, parallel first-order expansion, classifier optimum"
+    },
+    {
+      "id": "campbell2022",
+      "title": "A Continuous Time Framework for Discrete Denoising Models",
+      "authors": [
+        "Andrew Campbell",
+        "Joe Benton",
+        "Valentin De Bortoli",
+        "Tom Rainforth",
+        "George Deligiannidis",
+        "Arnaud Doucet"
+      ],
+      "year": 2022,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/b5b528767aa35f5b1a60fe0aaeca0563-Paper-Conference.pdf",
+      "locator": "PDF pp3\u20136; Section3.1 source-row convention, Section4.1 commuting rates, Section4.2 Proposition3, Section4.3 tau-leaping",
+      "supports": "Rates versus probabilities, nonindependent reverse token laws despite sparse jumps, approximate simulation distinctions"
+    },
+    {
+      "id": "holderrieth2025",
+      "title": "Generator Matching: Generative modeling with arbitrary Markov processes",
+      "authors": [
+        "Peter Holderrieth",
+        "Marton Havasi",
+        "Jason Yim",
+        "Neta Shaul",
+        "Itai Gat",
+        "Tommi Jaakkola",
+        "Brian Karrer",
+        "Ricky T. Q. Chen",
+        "Yaron Lipman"
+      ],
+      "year": 2025,
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/819aaee144cb40e887a4aa9e781b1547-Paper-Conference.pdf",
+      "locator": "PDF pp3\u20137 bounded text inspection; equation8 p4, equation11 p5, Proposition1 p6",
+      "supports": "Test-function generator action, forward equation of observables, posterior-averaged generators"
+    }
+  ],
+  "code": [
+    {
+      "path": "code/ch06.py",
+      "command": "python code/ch06.py --write-figure",
+      "sha256": "31cdf5fd4d72e236d889477f7aa643102f401ec20ddcbbf1823d9a78902d81a5",
+      "result_path": "code/ch06-results.json",
+      "scope": "Actual standard-library tabular posterior MLE; asymmetric CTMC; finite enumeration and Monte Carlo; no neural model"
+    }
+  ],
+  "figures": [
+    {
+      "path": "assets/ch06-parallel-error.svg",
+      "generator": "python code/ch06.py --write-figure",
+      "type": "Computed exact parallel-sampling joint-law error for correlated pair",
+      "sha256": "4e24204653ba7b65c8d216876abf836af42c7b2d4d3fc66355372dae5d288295"
+    }
+  ],
+  "metrics": {
+    "prose_words": 5540,
+    "h2_sections": 11,
+    "exercises": 6,
+    "worked_solutions": 6,
+    "python_blocks": 1
+  },
+  "evidence_limits": [
+    "No complete audiovisual or slide-image review.",
+    "Primary sources inspected at listed pages, not full papers.",
+    "No source benchmark, large neural training or speed claim reproduced.",
+    "Homogeneous uniformization proof, asymmetric example, correlated pair and fitting code are original educational derivations.",
+    "All source rates transposed explicitly to book source-row convention; generation clock noise0 to data1.",
+    "Bounded finite-state theorem applies on compact interior intervals; exact mask endpoint construction separate.",
+    "Training population optimum is simplex/a.e. statement; finite data and finite softmax limitations stated.",
+    "Author checks do not constitute independent scientific acceptance.",
+    "Parent-owned wrapping, source-free package and reader browser gates remain separate."
+  ],
+  "accepted_body_sha256": "dddfabc31b940a091690ac4e023869ecebcef197e6538e96d40a5c1b1ef805b2"
+}

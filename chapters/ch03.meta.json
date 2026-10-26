@@ -1,0 +1,166 @@
+{
+  "chapter": 3,
+  "title": "Scores, denoising, and stochastic sampling",
+  "status": "accepted and locally validated",
+  "body_sha256": "907b3b2baf57382122b897ec89d940cdced4d365d965bc1974931f8ef53b3c1a",
+  "sections": [
+    {
+      "id": "scores",
+      "title": "Spatial scores",
+      "video_id": "ngC3QnYSVNM",
+      "start": 148,
+      "end": 241,
+      "lecture_material": "Definition and local direction of a spatial score.",
+      "research_extension": "Normalization and connected-support qualifications; Vincent Section3.",
+      "teaching_construction": "Gaussian path score and structural limits of learned score fields.",
+      "evidence_class": "definitions; proved conditional statements; exact analytic checks"
+    },
+    {
+      "id": "posterior-score",
+      "title": "Conditional-score marginalization",
+      "video_id": "ngC3QnYSVNM",
+      "start": 241,
+      "end": 694,
+      "lecture_material": "Posterior average identity; Gaussian score/velocity conversion.",
+      "research_extension": "Dominated derivative interchange and measure-valued posterior.",
+      "teaching_construction": "Gaussian posterior completing-square calculation and endpoint caveats.",
+      "evidence_class": "definitions; proved conditional statements; exact analytic checks"
+    },
+    {
+      "id": "regression",
+      "title": "Denoising regression projection",
+      "video_id": "ngC3QnYSVNM",
+      "start": 694,
+      "end": 1100,
+      "lecture_material": "Score matching and tractable conditional target.",
+      "research_extension": "Vincent Sections3\u20134/Appendix: DSM equivalence.",
+      "teaching_construction": "Finite-risk projection proof; restricted-class and optimization limits.",
+      "evidence_class": "definitions; proved conditional statements; exact analytic checks"
+    },
+    {
+      "id": "noise-objective",
+      "title": "Noise prediction and time weighting",
+      "video_id": "ngC3QnYSVNM",
+      "start": 1100,
+      "end": 1240,
+      "lecture_material": "Gaussian noise-prediction parameterization.",
+      "research_extension": "Time weighting and finite-risk conditions.",
+      "teaching_construction": "Divergent unweighted Gaussian risk and exact weighted floor.",
+      "evidence_class": "definitions; proved conditional statements; exact analytic checks"
+    },
+    {
+      "id": "stochastic-candidate",
+      "title": "Score-corrected stochastic sampler",
+      "video_id": "ngC3QnYSVNM",
+      "start": 1240,
+      "end": 1739,
+      "lecture_material": "Adding noise and score compensation to a transport velocity.",
+      "research_extension": "Explicit existence/regularity conditions.",
+      "teaching_construction": "Exact Gaussian integrating-factor/moment proof and uncorrected law.",
+      "evidence_class": "definitions; proved conditional statements; exact analytic checks"
+    },
+    {
+      "id": "fokker-planck",
+      "title": "Weak Fokker\u2013Planck and compensation proof",
+      "video_id": "ngC3QnYSVNM",
+      "start": 1739,
+      "end": 2305,
+      "lecture_material": "Laplacian, FP equation and SDE-extension cancellation.",
+      "research_extension": "Weak test formulation; Song AppendixD.1; uniqueness qualifications.",
+      "teaching_construction": "Conditional moment derivation; explicit density/current cancellation.",
+      "evidence_class": "definitions; proved conditional statements; exact analytic checks"
+    },
+    {
+      "id": "numerical-audit",
+      "title": "Finite errors and exact marginal equivalence",
+      "video_id": "ngC3QnYSVNM",
+      "start": 2305,
+      "end": 2580,
+      "lecture_material": "SDE simulation; training and numerical errors; amplitude comparisons.",
+      "research_extension": "Conditional coupled-noise drift-error bound.",
+      "teaching_construction": "Gaussian EM moments, refinement, computed variance figure and probes.",
+      "evidence_class": "definitions; proved conditional statements; exact analytic checks"
+    },
+    {
+      "id": "langevin-clock",
+      "title": "Stationarity and noising-clock extension",
+      "video_id": "ngC3QnYSVNM",
+      "start": 2580,
+      "end": 2741.64,
+      "lecture_material": "Langevin dynamics and stationary density connection.",
+      "research_extension": "Song Section3.2 reverse-time theorem and Section4.3 ODE; clock conversion is an independently added extension.",
+      "teaching_construction": "Stationary Gaussian OU check, time/sign conversion and path-law problem.",
+      "evidence_class": "definitions; proved conditional statements; exact analytic checks"
+    }
+  ],
+  "references": [
+    {
+      "id": "course",
+      "title": "Introduction to Flow Matching and Diffusion Models",
+      "authors": "Peter Holderrieth and Ezra Erives",
+      "year": 2026,
+      "url": "https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf",
+      "locator": "Sections4.1\u20134.3 PDF pp25\u201333; AppendixB pp72\u201373",
+      "supports": "Score, DSM and stochastic-sampling topic spine."
+    },
+    {
+      "id": "slides",
+      "title": "MIT 6.S184 Lecture 3 slides",
+      "year": 2026,
+      "url": "https://diffusion.csail.mit.edu/2026/docs/20260123_Lecture_03.pdf",
+      "locator": "3-A portion pp1\u201323; selected equation slides8,12\u201316,18,22 visually inspected",
+      "supports": "Recording-correlated score/DSM/FP/sampling statements."
+    },
+    {
+      "id": "vincent",
+      "title": "A Connection Between Score Matching and Denoising Autoencoders",
+      "authors": "Pascal Vincent",
+      "year": 2011,
+      "url": "https://www.iro.umontreal.ca/~vincentp/Publications/smdae_techreport.pdf",
+      "locator": "Accepted preprint TR1358 December2010; Sections3\u20134 PDF pp4\u20138; Appendix pp12\u201313",
+      "supports": "Explicit and denoising score matching equivalence."
+    },
+    {
+      "id": "song",
+      "title": "Score-Based Generative Modeling through Stochastic Differential Equations",
+      "authors": "Yang Song; Jascha Sohl-Dickstein; Diederik P. Kingma; Abhishek Kumar; Stefano Ermon; Ben Poole",
+      "year": 2021,
+      "url": "https://arxiv.org/pdf/2011.13456v2",
+      "locator": "Sections3.1\u20133.3 pp3\u20135; Section4.3 p7; AppendixD.1 pp16\u201317",
+      "supports": "Weighted score training, reverse-time SDE, probability-flow relation."
+    }
+  ],
+  "code": [
+    {
+      "path": "code/ch03.py",
+      "command": "python code/ch03.py",
+      "sha256": "2ba9c9dfe5776dc678426ddd3cc14a0648a8c8b2354f52af42683a920dece52d",
+      "result_path": "code/ch03-results.json",
+      "scope": "Exact Gaussian/mixture scores, moments and recurrences; no training"
+    }
+  ],
+  "figures": [
+    {
+      "path": "assets/ch03-variance.svg",
+      "generator": "code/ch03.py --write",
+      "type": "analytic Gaussian variance plus exact EM recurrence moments",
+      "sha256": "3926df3d2f8e6f5f0e40c740d36d1952e0fa4d54b59f516041f5c4b9e2a0dfe3"
+    }
+  ],
+  "metrics": {
+    "prose_words": 4910,
+    "h2_sections": 11,
+    "exercises": 6,
+    "worked_solutions": 6,
+    "python_blocks": 1
+  },
+  "evidence_limits": [
+    "Complete sequential read of auto-generated 3-A captions; no audiovisual playback.",
+    "Bounded selected-equation slide visual review; no protein demonstration verification.",
+    "General preservation theorem conditional on well-posed SDE/forward identification/uniqueness.",
+    "Reverse-time diffusion theorem cited through Song2021, not proved here.",
+    "Exact Gaussian/mixture constructions; no neural training or image-quality claims.",
+    "No independent scientific acceptance by author; reader validation belongs to parent."
+  ],
+  "accepted_body_sha256": "907b3b2baf57382122b897ec89d940cdced4d365d965bc1974931f8ef53b3c1a"
+}

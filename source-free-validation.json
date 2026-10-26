@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-10-26T17:19:47.492758+00:00",
+  "status": "passed",
+  "generated_html_byte_identical": true,
+  "html_file_count": 10,
+  "generated_html_sha256": {
+    "chapter-01.html": "fc63caca488be0c71b967217b3313a3c17a4a49c405aecc7a5779407cf588339",
+    "chapter-02.html": "ae8f25e4af49d5041185a5e5364bf34c6a8acfc2bf143880a8f1632db2e9eb25",
+    "chapter-03.html": "f01973107f11b5398d3292d894dd309738bf5cce0fe31152c145d5a0a6697e0f",
+    "chapter-04.html": "f40d941f3952756e3c4e47389b4bca76b8c9eb8139050122297145e63961168b",
+    "chapter-05.html": "ab3c2eb95a1ce205f183e2a03f8aeae2f240f8afca2f43e967f561b0f24d01de",
+    "chapter-06.html": "cb11b35c6dfcd288a451c8a1405b2a71d26121e1e88faece04e6a8ef5188f77a",
+    "index.html": "19d6b933d35fa9203518bb223a3a0154e0fbb19c6faeaa0066d7ad4675291aaf",
+    "laboratory.html": "6b75ac6b86ca2a61e0ca82c7953c5e401edfb41840ef05261f3249081e199016",
+    "references.html": "a9a996c065a252de5101098378aaabefaf32e8d293f1ea174d47a6d8399c91bb",
+    "source-map.html": "2864707e333482e097d3a19694fcc7a6a24aaeb566eafd0174ac50431c127c08"
+  },
+  "checks": [
+    {
+      "command": "tools/build_book.py",
+      "exit_code": 0
+    },
+    {
+      "command": "tools/validate_book.py --browser",
+      "exit_code": 0
+    },
+    {
+      "command": "tools/check_chapter_code.py",
+      "exit_code": 0
+    }
+  ],
+  "scope": "isolated book copy; no private source files or editorial records supplied"
+}
