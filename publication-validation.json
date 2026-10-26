@@ -1,6 +1,611 @@
 {
-  "status": "pending",
-  "repository": "https://github.com/az9713/mit-6s184-flow-diffusion-notes",
+  "status": "passed",
+  "checked_at": "2026-10-26T19:18:45.237799+00:00",
+  "checked_commit": "fbfb82540b7f5eb933151063b57aa12a65e2b359",
   "pages_url": "https://az9713.github.io/mit-6s184-flow-diffusion-notes/",
-  "scope": "Deployment verification will be recorded after the initial public push. Scientific acceptance is recorded separately."
+  "served_file_count": 66,
+  "served_files": [
+    {
+      "path": "README.md",
+      "expected_sha256": "e95f8f57bfb9e64d046f043bfb523cedb62c76f2fdfe336a1a6d8dc2b589f5a7",
+      "served_sha256": "e95f8f57bfb9e64d046f043bfb523cedb62c76f2fdfe336a1a6d8dc2b589f5a7",
+      "status": "passed"
+    },
+    {
+      "path": "WORKFLOW.md",
+      "expected_sha256": "78f9768f48620fc43eb0750e9e08ac9bf9ab80fcff0454c3cc89219b1eb04594",
+      "served_sha256": "78f9768f48620fc43eb0750e9e08ac9bf9ab80fcff0454c3cc89219b1eb04594",
+      "status": "passed"
+    },
+    {
+      "path": "assets/README.md",
+      "expected_sha256": "0d4f2e0c81b02f9b72e7d005b4402b0d70325a18744431509b27777bd04a9601",
+      "served_sha256": "0d4f2e0c81b02f9b72e7d005b4402b0d70325a18744431509b27777bd04a9601",
+      "status": "passed"
+    },
+    {
+      "path": "assets/book.css",
+      "expected_sha256": "7fdf3016b8ee17309436421f3d97749afbabe0c3ec95b4c742ced76449a308be",
+      "served_sha256": "7fdf3016b8ee17309436421f3d97749afbabe0c3ec95b4c742ced76449a308be",
+      "status": "passed"
+    },
+    {
+      "path": "assets/book.js",
+      "expected_sha256": "7453c8df8ba4a1302b7af1bf92992b5d5e4c2068d5215fff6ce6134a255796be",
+      "served_sha256": "7453c8df8ba4a1302b7af1bf92992b5d5e4c2068d5215fff6ce6134a255796be",
+      "status": "passed"
+    },
+    {
+      "path": "assets/ch01-checks.svg",
+      "expected_sha256": "da9655176ece0f7b9cce0e3dddb845dfa333bc8eea09f1394ad3b3858606028d",
+      "served_sha256": "da9655176ece0f7b9cce0e3dddb845dfa333bc8eea09f1394ad3b3858606028d",
+      "status": "passed"
+    },
+    {
+      "path": "assets/ch02-variance-paths.svg",
+      "expected_sha256": "ee5b938fdc04ac56086085af3cc4eeaaf3ed0c7fb793b3a143ccaa294ab0e69f",
+      "served_sha256": "ee5b938fdc04ac56086085af3cc4eeaaf3ed0c7fb793b3a143ccaa294ab0e69f",
+      "status": "passed"
+    },
+    {
+      "path": "assets/ch03-variance.svg",
+      "expected_sha256": "3926df3d2f8e6f5f0e40c740d36d1952e0fa4d54b59f516041f5c4b9e2a0dfe3",
+      "served_sha256": "3926df3d2f8e6f5f0e40c740d36d1952e0fa4d54b59f516041f5c4b9e2a0dfe3",
+      "status": "passed"
+    },
+    {
+      "path": "assets/ch04-guidance.svg",
+      "expected_sha256": "116477bd309b5004d9111bd7a1bde1a517bfc966b8ada0af1140c466e8edf4eb",
+      "served_sha256": "116477bd309b5004d9111bd7a1bde1a517bfc966b8ada0af1140c466e8edf4eb",
+      "status": "passed"
+    },
+    {
+      "path": "assets/ch05-elbo.svg",
+      "expected_sha256": "d8cfa059ea25531e8682550e9857b7eb2695c5029633ced6d3dce029e4c7198a",
+      "served_sha256": "d8cfa059ea25531e8682550e9857b7eb2695c5029633ced6d3dce029e4c7198a",
+      "status": "passed"
+    },
+    {
+      "path": "assets/ch06-parallel-error.svg",
+      "expected_sha256": "4e24204653ba7b65c8d216876abf836af42c7b2d4d3fc66355372dae5d288295",
+      "served_sha256": "4e24204653ba7b65c8d216876abf836af42c7b2d4d3fc66355372dae5d288295",
+      "status": "passed"
+    },
+    {
+      "path": "assets/mathjax-LICENSE",
+      "expected_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "served_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "status": "passed"
+    },
+    {
+      "path": "assets/mathjax-tex-svg.js",
+      "expected_sha256": "d4295dc33744836935c1399feece5159577b34c5c8ffb9f1c6324cd82e03a882",
+      "served_sha256": "d4295dc33744836935c1399feece5159577b34c5c8ffb9f1c6324cd82e03a882",
+      "status": "passed"
+    },
+    {
+      "path": "assets/site-preview.png",
+      "expected_sha256": "54a0ecb3325447dfed8fbff63bf1b26864c2187b197719cda7c24903085be846",
+      "served_sha256": "54a0ecb3325447dfed8fbff63bf1b26864c2187b197719cda7c24903085be846",
+      "status": "passed"
+    },
+    {
+      "path": "book-overview.html",
+      "expected_sha256": "216954ee60a671a4dd0c7b547fdaa5d557e955730b2c44875f6b15b1e60a191a",
+      "served_sha256": "216954ee60a671a4dd0c7b547fdaa5d557e955730b2c44875f6b15b1e60a191a",
+      "status": "passed"
+    },
+    {
+      "path": "build-record.json",
+      "expected_sha256": "507c05b82f6d3e5db632f00874594fc086a0a69ba80e6da85308c8aa48aac2de",
+      "served_sha256": "507c05b82f6d3e5db632f00874594fc086a0a69ba80e6da85308c8aa48aac2de",
+      "status": "passed"
+    },
+    {
+      "path": "chapter-01.html",
+      "expected_sha256": "fc63caca488be0c71b967217b3313a3c17a4a49c405aecc7a5779407cf588339",
+      "served_sha256": "fc63caca488be0c71b967217b3313a3c17a4a49c405aecc7a5779407cf588339",
+      "status": "passed"
+    },
+    {
+      "path": "chapter-02.html",
+      "expected_sha256": "ae8f25e4af49d5041185a5e5364bf34c6a8acfc2bf143880a8f1632db2e9eb25",
+      "served_sha256": "ae8f25e4af49d5041185a5e5364bf34c6a8acfc2bf143880a8f1632db2e9eb25",
+      "status": "passed"
+    },
+    {
+      "path": "chapter-03.html",
+      "expected_sha256": "f01973107f11b5398d3292d894dd309738bf5cce0fe31152c145d5a0a6697e0f",
+      "served_sha256": "f01973107f11b5398d3292d894dd309738bf5cce0fe31152c145d5a0a6697e0f",
+      "status": "passed"
+    },
+    {
+      "path": "chapter-04.html",
+      "expected_sha256": "f40d941f3952756e3c4e47389b4bca76b8c9eb8139050122297145e63961168b",
+      "served_sha256": "f40d941f3952756e3c4e47389b4bca76b8c9eb8139050122297145e63961168b",
+      "status": "passed"
+    },
+    {
+      "path": "chapter-05.html",
+      "expected_sha256": "ab3c2eb95a1ce205f183e2a03f8aeae2f240f8afca2f43e967f561b0f24d01de",
+      "served_sha256": "ab3c2eb95a1ce205f183e2a03f8aeae2f240f8afca2f43e967f561b0f24d01de",
+      "status": "passed"
+    },
+    {
+      "path": "chapter-06.html",
+      "expected_sha256": "cb11b35c6dfcd288a451c8a1405b2a71d26121e1e88faece04e6a8ef5188f77a",
+      "served_sha256": "cb11b35c6dfcd288a451c8a1405b2a71d26121e1e88faece04e6a8ef5188f77a",
+      "status": "passed"
+    },
+    {
+      "path": "chapter-code-validation.json",
+      "expected_sha256": "41bdec9d252b83b9f9f32afd5d764f5b179abf9a71cd378bf6e4426a59b58cc4",
+      "served_sha256": "41bdec9d252b83b9f9f32afd5d764f5b179abf9a71cd378bf6e4426a59b58cc4",
+      "status": "passed"
+    },
+    {
+      "path": "chapters/ch01.html",
+      "expected_sha256": "6dfaeeabf778217e7de8eadb9d45549f5268dc85c31d366c3dba44af87bc5ae7",
+      "served_sha256": "6dfaeeabf778217e7de8eadb9d45549f5268dc85c31d366c3dba44af87bc5ae7",
+      "status": "passed"
+    },
+    {
+      "path": "chapters/ch01.meta.json",
+      "expected_sha256": "6279810e527a6229f8db3b7e7975965f7a2cd32e1a2cf551009b8a35a3b6d7ce",
+      "served_sha256": "6279810e527a6229f8db3b7e7975965f7a2cd32e1a2cf551009b8a35a3b6d7ce",
+      "status": "passed"
+    },
+    {
+      "path": "chapters/ch02.html",
+      "expected_sha256": "aba79645cb38e69186cc338c8f920a5e5388826fc20a285d2fbb7831cb006eaf",
+      "served_sha256": "aba79645cb38e69186cc338c8f920a5e5388826fc20a285d2fbb7831cb006eaf",
+      "status": "passed"
+    },
+    {
+      "path": "chapters/ch02.meta.json",
+      "expected_sha256": "bcd3d8a03e07d9bed6929fd906febdfe88561f9035d70fcc7d3ca716abeb0cb5",
+      "served_sha256": "bcd3d8a03e07d9bed6929fd906febdfe88561f9035d70fcc7d3ca716abeb0cb5",
+      "status": "passed"
+    },
+    {
+      "path": "chapters/ch03.html",
+      "expected_sha256": "907b3b2baf57382122b897ec89d940cdced4d365d965bc1974931f8ef53b3c1a",
+      "served_sha256": "907b3b2baf57382122b897ec89d940cdced4d365d965bc1974931f8ef53b3c1a",
+      "status": "passed"
+    },
+    {
+      "path": "chapters/ch03.meta.json",
+      "expected_sha256": "4ee0c847f377ec6e6dcf06a29dfff224bbe5482683f2057cc605e09cfdd5be20",
+      "served_sha256": "4ee0c847f377ec6e6dcf06a29dfff224bbe5482683f2057cc605e09cfdd5be20",
+      "status": "passed"
+    },
+    {
+      "path": "chapters/ch04.html",
+      "expected_sha256": "0e1f78efd05614c863fc1b2021efc15487fd1abbecc43abbf69e96b70473b5e6",
+      "served_sha256": "0e1f78efd05614c863fc1b2021efc15487fd1abbecc43abbf69e96b70473b5e6",
+      "status": "passed"
+    },
+    {
+      "path": "chapters/ch04.meta.json",
+      "expected_sha256": "42635c192f29c236fefb878c0023f3103b5df04eaace9ad4f25cedec45cf26e9",
+      "served_sha256": "42635c192f29c236fefb878c0023f3103b5df04eaace9ad4f25cedec45cf26e9",
+      "status": "passed"
+    },
+    {
+      "path": "chapters/ch05.html",
+      "expected_sha256": "50854ee3414ce7173fe1878ac784b3df6abe17165e1cd639ab3886dc9d8c0d0f",
+      "served_sha256": "50854ee3414ce7173fe1878ac784b3df6abe17165e1cd639ab3886dc9d8c0d0f",
+      "status": "passed"
+    },
+    {
+      "path": "chapters/ch05.meta.json",
+      "expected_sha256": "079aec8436fbd5ff0b12b55e4bf499d664d3fd8c158ed2534539d34819a185d6",
+      "served_sha256": "079aec8436fbd5ff0b12b55e4bf499d664d3fd8c158ed2534539d34819a185d6",
+      "status": "passed"
+    },
+    {
+      "path": "chapters/ch06.html",
+      "expected_sha256": "dddfabc31b940a091690ac4e023869ecebcef197e6538e96d40a5c1b1ef805b2",
+      "served_sha256": "dddfabc31b940a091690ac4e023869ecebcef197e6538e96d40a5c1b1ef805b2",
+      "status": "passed"
+    },
+    {
+      "path": "chapters/ch06.meta.json",
+      "expected_sha256": "44db1c3b582762b016edb612e47e1dff76bb662b6ae5568d6c9188a422d37e79",
+      "served_sha256": "44db1c3b582762b016edb612e47e1dff76bb662b6ae5568d6c9188a422d37e79",
+      "status": "passed"
+    },
+    {
+      "path": "code/ch01-results.json",
+      "expected_sha256": "838fa33b7748dec2df9045a2a5d01fa37962a69d24ce5a0bb8fab8dfb8099686",
+      "served_sha256": "838fa33b7748dec2df9045a2a5d01fa37962a69d24ce5a0bb8fab8dfb8099686",
+      "status": "passed"
+    },
+    {
+      "path": "code/ch01.py",
+      "expected_sha256": "3c7a30d89c5c8b33994d74d3a068db92c167dffd6e583da8cd1f3fc36d07064d",
+      "served_sha256": "3c7a30d89c5c8b33994d74d3a068db92c167dffd6e583da8cd1f3fc36d07064d",
+      "status": "passed"
+    },
+    {
+      "path": "code/ch02-results.json",
+      "expected_sha256": "f7c7679ee97bf1655c2857fe28e96fdd5f00c310dae06a40198474c0e83adb1b",
+      "served_sha256": "f7c7679ee97bf1655c2857fe28e96fdd5f00c310dae06a40198474c0e83adb1b",
+      "status": "passed"
+    },
+    {
+      "path": "code/ch02.py",
+      "expected_sha256": "37cbf38d2a10c9d39932bf536827476bcf93bddda4dd3eb85f7c2f1f3877faf6",
+      "served_sha256": "37cbf38d2a10c9d39932bf536827476bcf93bddda4dd3eb85f7c2f1f3877faf6",
+      "status": "passed"
+    },
+    {
+      "path": "code/ch03-results.json",
+      "expected_sha256": "ed94f4576cfc06fbefd4e7ae8de2eb38e862debd7e30840b283c2536359fcdff",
+      "served_sha256": "ed94f4576cfc06fbefd4e7ae8de2eb38e862debd7e30840b283c2536359fcdff",
+      "status": "passed"
+    },
+    {
+      "path": "code/ch03.py",
+      "expected_sha256": "2ba9c9dfe5776dc678426ddd3cc14a0648a8c8b2354f52af42683a920dece52d",
+      "served_sha256": "2ba9c9dfe5776dc678426ddd3cc14a0648a8c8b2354f52af42683a920dece52d",
+      "status": "passed"
+    },
+    {
+      "path": "code/ch04-results.json",
+      "expected_sha256": "6939c38d5cede4e2fa40d8bf85db757c154b8dfa899f3de71d0f04f5487e1cef",
+      "served_sha256": "6939c38d5cede4e2fa40d8bf85db757c154b8dfa899f3de71d0f04f5487e1cef",
+      "status": "passed"
+    },
+    {
+      "path": "code/ch04.py",
+      "expected_sha256": "2194097d9f405b2097e75e6c279fa80bc83d1c24faec53f4e79da4f9b8fd8651",
+      "served_sha256": "2194097d9f405b2097e75e6c279fa80bc83d1c24faec53f4e79da4f9b8fd8651",
+      "status": "passed"
+    },
+    {
+      "path": "code/ch05-results.json",
+      "expected_sha256": "c91bacf9daad1ceb7e86d7dc8321f8a8779fd5d68d29b43cafe3a82b1dca01fc",
+      "served_sha256": "c91bacf9daad1ceb7e86d7dc8321f8a8779fd5d68d29b43cafe3a82b1dca01fc",
+      "status": "passed"
+    },
+    {
+      "path": "code/ch05.py",
+      "expected_sha256": "757d914946bc766ce0e875faf27aa81b248c0b749b424ba3a3d0b02318404956",
+      "served_sha256": "757d914946bc766ce0e875faf27aa81b248c0b749b424ba3a3d0b02318404956",
+      "status": "passed"
+    },
+    {
+      "path": "code/ch06-results.json",
+      "expected_sha256": "cb4ea34a57b18818efa2878726a914c5ba0314372b775e3d3d9a591e04e28b59",
+      "served_sha256": "cb4ea34a57b18818efa2878726a914c5ba0314372b775e3d3d9a591e04e28b59",
+      "status": "passed"
+    },
+    {
+      "path": "code/ch06.py",
+      "expected_sha256": "31cdf5fd4d72e236d889477f7aa643102f401ec20ddcbbf1823d9a78902d81a5",
+      "served_sha256": "31cdf5fd4d72e236d889477f7aa643102f401ec20ddcbbf1823d9a78902d81a5",
+      "status": "passed"
+    },
+    {
+      "path": "completion.json",
+      "expected_sha256": "1d6a27277772742574f6db136536302aba8108bd99f546cb0849f0f5cb74fec3",
+      "served_sha256": "1d6a27277772742574f6db136536302aba8108bd99f546cb0849f0f5cb74fec3",
+      "status": "passed"
+    },
+    {
+      "path": "course.json",
+      "expected_sha256": "ecc578cdcedcf467d7d7f23116e167a372d0577071cbe84e96ca26135ddf2c03",
+      "served_sha256": "ecc578cdcedcf467d7d7f23116e167a372d0577071cbe84e96ca26135ddf2c03",
+      "status": "passed"
+    },
+    {
+      "path": "editorial-review-summary.json",
+      "expected_sha256": "0c8aa1d73a4c885936031bb993dc0e8247230957f55f0f597248a67a40c796f7",
+      "served_sha256": "0c8aa1d73a4c885936031bb993dc0e8247230957f55f0f597248a67a40c796f7",
+      "status": "passed"
+    },
+    {
+      "path": "index.html",
+      "expected_sha256": "19d6b933d35fa9203518bb223a3a0154e0fbb19c6faeaa0066d7ad4675291aaf",
+      "served_sha256": "19d6b933d35fa9203518bb223a3a0154e0fbb19c6faeaa0066d7ad4675291aaf",
+      "status": "passed"
+    },
+    {
+      "path": "laboratory-body.html",
+      "expected_sha256": "dd3c21883a2e30934bef64ea1bc4766fae097274f2355bac31540be857dc5a64",
+      "served_sha256": "dd3c21883a2e30934bef64ea1bc4766fae097274f2355bac31540be857dc5a64",
+      "status": "passed"
+    },
+    {
+      "path": "laboratory.html",
+      "expected_sha256": "6b75ac6b86ca2a61e0ca82c7953c5e401edfb41840ef05261f3249081e199016",
+      "served_sha256": "6b75ac6b86ca2a61e0ca82c7953c5e401edfb41840ef05261f3249081e199016",
+      "status": "passed"
+    },
+    {
+      "path": "package-validation.json",
+      "expected_sha256": "3cd3721f6a414f4ce8c4f78b9e6bb2b099fe6e7a134d5769e601a3acf3d43eb0",
+      "served_sha256": "3cd3721f6a414f4ce8c4f78b9e6bb2b099fe6e7a134d5769e601a3acf3d43eb0",
+      "status": "passed"
+    },
+    {
+      "path": "parity-summary.json",
+      "expected_sha256": "f81f8fbbe782991dd7954bec65932f458704433c148f575941347339a4729b4c",
+      "served_sha256": "f81f8fbbe782991dd7954bec65932f458704433c148f575941347339a4729b4c",
+      "status": "passed"
+    },
+    {
+      "path": "reader-validation.json",
+      "expected_sha256": "8e574cdd99381e60a144c86dcb986485fe9f9ecdf9212520ba338b6bd09fcfd7",
+      "served_sha256": "8e574cdd99381e60a144c86dcb986485fe9f9ecdf9212520ba338b6bd09fcfd7",
+      "status": "passed"
+    },
+    {
+      "path": "references.html",
+      "expected_sha256": "a9a996c065a252de5101098378aaabefaf32e8d293f1ea174d47a6d8399c91bb",
+      "served_sha256": "a9a996c065a252de5101098378aaabefaf32e8d293f1ea174d47a6d8399c91bb",
+      "status": "passed"
+    },
+    {
+      "path": "requirements.txt",
+      "expected_sha256": "ba3fd718e41e037b44beedcc56171e40e51e08627c0bdc0b6bf9ddef293c9a38",
+      "served_sha256": "ba3fd718e41e037b44beedcc56171e40e51e08627c0bdc0b6bf9ddef293c9a38",
+      "status": "passed"
+    },
+    {
+      "path": "source-free-validation.json",
+      "expected_sha256": "380683ad629ba3265bc65f0181f28fd1e184f035dddf06ef122ce6262cb0623b",
+      "served_sha256": "380683ad629ba3265bc65f0181f28fd1e184f035dddf06ef122ce6262cb0623b",
+      "status": "passed"
+    },
+    {
+      "path": "source-manifest.json",
+      "expected_sha256": "783bfb88bc6327e5814011e8647a6c64e7a4d61f7365abe73cc880745b151223",
+      "served_sha256": "783bfb88bc6327e5814011e8647a6c64e7a4d61f7365abe73cc880745b151223",
+      "status": "passed"
+    },
+    {
+      "path": "source-map.html",
+      "expected_sha256": "2864707e333482e097d3a19694fcc7a6a24aaeb566eafd0174ac50431c127c08",
+      "served_sha256": "2864707e333482e097d3a19694fcc7a6a24aaeb566eafd0174ac50431c127c08",
+      "status": "passed"
+    },
+    {
+      "path": "source-map.json",
+      "expected_sha256": "6b3ae40c3f7bec13f1c2d663f82f297b1dd7e0839cd16ab37b9ed45dac8824b5",
+      "served_sha256": "6b3ae40c3f7bec13f1c2d663f82f297b1dd7e0839cd16ab37b9ed45dac8824b5",
+      "status": "passed"
+    },
+    {
+      "path": "tools/build_book.py",
+      "expected_sha256": "0eb790f7f564cd5f717e8efedada2227f89ce5f4e4b7040fa7cd351eda698d74",
+      "served_sha256": "0eb790f7f564cd5f717e8efedada2227f89ce5f4e4b7040fa7cd351eda698d74",
+      "status": "passed"
+    },
+    {
+      "path": "tools/check_chapter_code.py",
+      "expected_sha256": "98018fc80e89fcd04ad0dee8a0d3913391cfd7d16f86b3cc2c7c4302de07c149",
+      "served_sha256": "98018fc80e89fcd04ad0dee8a0d3913391cfd7d16f86b3cc2c7c4302de07c149",
+      "status": "passed"
+    },
+    {
+      "path": "tools/parity_audit.py",
+      "expected_sha256": "6fb51cadd288b76966a8bbcc85baaf5e5b26c0f9929e34c12af5bea97967cfd4",
+      "served_sha256": "6fb51cadd288b76966a8bbcc85baaf5e5b26c0f9929e34c12af5bea97967cfd4",
+      "status": "passed"
+    },
+    {
+      "path": "tools/validate_book.py",
+      "expected_sha256": "64a9707bb07497c7cfb253676091e769009419bf4696270c523c442ff1e1fe15",
+      "served_sha256": "64a9707bb07497c7cfb253676091e769009419bf4696270c523c442ff1e1fe15",
+      "status": "passed"
+    }
+  ],
+  "browser": {
+    "status": "passed",
+    "failures": [],
+    "checks": [
+      {
+        "file": "chapter-01.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 387,
+        "overflow": false,
+        "h1": "1. From generation to probability transport",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-01.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 387,
+        "overflow": false,
+        "h1": "1. From generation to probability transport",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-02.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 330,
+        "overflow": false,
+        "h1": "2. Flow matching: learning a probability transport",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-02.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 330,
+        "overflow": false,
+        "h1": "2. Flow matching: learning a probability transport",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-03.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 343,
+        "overflow": false,
+        "h1": "3. Scores, denoising, and stochastic sampling",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-03.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 343,
+        "overflow": false,
+        "h1": "3. Scores, denoising, and stochastic sampling",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-04.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 297,
+        "overflow": false,
+        "h1": "4. Conditioning and classifier-free guidance",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-04.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 297,
+        "overflow": false,
+        "h1": "4. Conditioning and classifier-free guidance",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-05.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 315,
+        "overflow": false,
+        "h1": "5. Latent spaces and the networks that generate them",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-05.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 315,
+        "overflow": false,
+        "h1": "5. Latent spaces and the networks that generate them",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-06.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 307,
+        "overflow": false,
+        "h1": "6. Discrete diffusion: learning the rates of a jump process",
+        "brokenImages": 0
+      },
+      {
+        "file": "chapter-06.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 307,
+        "overflow": false,
+        "h1": "6. Discrete diffusion: learning the rates of a jump process",
+        "brokenImages": 0
+      },
+      {
+        "file": "index.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Flow Matching and Diffusion Models",
+        "brokenImages": 0
+      },
+      {
+        "file": "index.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Flow Matching and Diffusion Models",
+        "brokenImages": 0
+      },
+      {
+        "file": "laboratory.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Numerical laboratory",
+        "brokenImages": 0
+      },
+      {
+        "file": "laboratory.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Numerical laboratory",
+        "brokenImages": 0
+      },
+      {
+        "file": "references.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Primary references",
+        "brokenImages": 0
+      },
+      {
+        "file": "references.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Primary references",
+        "brokenImages": 0
+      },
+      {
+        "file": "source-map.html",
+        "width": 1280,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Sources and coverage",
+        "brokenImages": 0
+      },
+      {
+        "file": "source-map.html",
+        "width": 390,
+        "mathErrors": [],
+        "renderedMath": 0,
+        "overflow": false,
+        "h1": "Sources and coverage",
+        "brokenImages": 0
+      }
+    ],
+    "external_requests_blocked": [],
+    "clipboard": "copy handler tested against isolated clipboard API stub; real system clipboard not verified",
+    "actual_print_dialog": "not invoked; before/after hooks tested",
+    "accessibility": "automated controls/layout checks only; no human certification"
+  },
+  "github_readme": {
+    "status": "passed",
+    "clickable_preview_target": "https://az9713.github.io/mit-6s184-flow-diffusion-notes/",
+    "preview_image_hash_matches": true
+  },
+  "scope_limits": [
+    "No new mathematical review or audiovisual source review",
+    "System clipboard and human accessibility certification not claimed"
+  ],
+  "repository": "https://github.com/az9713/mit-6s184-flow-diffusion-notes",
+  "pages_source": {
+    "branch": "main",
+    "path": "/"
+  },
+  "record_scope": "Verified content commit precedes this verification-metadata commit. The record excludes itself from its served-file comparison.",
+  "scientific_content": "All accepted authored bodies, code, results and figures preserved; publication changes are README presentation, preview, Git attributes and verification metadata."
 }

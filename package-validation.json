@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "checked_at": "2026-10-26T19:08:52.175079+00:00",
+  "checked_at": "2026-10-26T19:20:28.141827+00:00",
   "manifest_excludes_self": true,
   "manifest_file_count": 69,
   "privacy_failures": [],
@@ -248,8 +248,8 @@
     },
     {
       "path": "completion.json",
-      "bytes": 4830,
-      "sha256": "1d6a27277772742574f6db136536302aba8108bd99f546cb0849f0f5cb74fec3"
+      "bytes": 5000,
+      "sha256": "1c8161ca98030e674c96790ead1fdff64823518df19bd21603ed92d09419395c"
     },
     {
       "path": "course.json",
@@ -283,8 +283,8 @@
     },
     {
       "path": "publication-validation.json",
-      "bytes": 315,
-      "sha256": "63577fe36357f82bf7a2485f712360755a45353ad5ffdd3176939f649d81685d"
+      "bytes": 23930,
+      "sha256": "f74076ebe2d231309b00c70d67720aa832e7ac7cee56de32893b9a84cb6babc7"
     },
     {
       "path": "reader-validation.json",
@@ -308,8 +308,8 @@
     },
     {
       "path": "source-free-validation.json",
-      "bytes": 1463,
-      "sha256": "380683ad629ba3265bc65f0181f28fd1e184f035dddf06ef122ce6262cb0623b"
+      "bytes": 1813,
+      "sha256": "4b9b1e3a90b2ee997ac838d3cb3605ecd6cf9ef878f0e2280e6854a12b3e5d54"
     },
     {
       "path": "source-manifest.json",

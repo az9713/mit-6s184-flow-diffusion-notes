@@ -1,6 +1,10 @@
 {
-  "checked_at": "2026-10-26T17:19:47.492758+00:00",
+  "checked_at": "2026-10-26T19:16:01.310397+00:00",
   "status": "passed",
+  "source_commit": "fbfb82540b7f5eb933151063b57aa12a65e2b359",
+  "export_method": "git archive HEAD",
+  "private_sources_supplied": false,
+  "initial_export_bytes_match_committed_worktree": true,
   "generated_html_byte_identical": true,
   "html_file_count": 10,
   "generated_html_sha256": {
@@ -21,13 +25,14 @@
       "exit_code": 0
     },
     {
-      "command": "tools/validate_book.py --browser",
+      "command": "tools/check_chapter_code.py",
       "exit_code": 0
     },
     {
-      "command": "tools/check_chapter_code.py",
+      "command": "tools/validate_book.py --browser",
       "exit_code": 0
     }
   ],
-  "scope": "isolated book copy; no private source files or editorial records supplied"
+  "scope": "Actual committed public Git tree; rebuild, isolated code, and offline desktop/mobile checks",
+  "source_commit_url": "https://github.com/az9713/mit-6s184-flow-diffusion-notes/commit/fbfb82540b7f5eb933151063b57aa12a65e2b359"
 }

@@ -99,9 +99,13 @@
     "Independent chapter reviews and series continuity check; no new full-book proof rereview"
   ],
   "publication": {
-    "status": "deployment verification pending",
+    "status": "passed",
     "repository": "https://github.com/az9713/mit-6s184-flow-diffusion-notes",
     "pages_url": "https://az9713.github.io/mit-6s184-flow-diffusion-notes/",
+    "verified_content_commit": "fbfb82540b7f5eb933151063b57aa12a65e2b359",
+    "served_files_verified": 66,
+    "live_reader_page_viewport_checks": 20,
+    "github_readme_preview": "passed",
     "verification_record": "publication-validation.json"
   }
 }
